@@ -20,7 +20,6 @@
   MPOL = 0008
   NTOR = 0008
   NZETA = 80
-!Phiedge / 1 A of current in coils: -6.303364898280051e-06
   PHIEDGE =    1.0
 !----- Free Boundary Parameters -----
  LFREEB  = T,
