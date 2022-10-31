@@ -1,0 +1,51 @@
+ &INDATA
+!----- Runtime Parameters -----
+  DELT =   9.00E-01
+  NITER = 10000
+  NSTEP =  200
+  TCON0 =   2.00E+00
+  NS_ARRAY    =      16       51
+  NITER_ARRAY =     600     3000
+  FTOL_ARRAY  = 1.0E-16  1.0E-11
+
+!  NS_ARRAY    =      12      25      50      75     100     150     201
+!  NITER_ARRAY =    1200    2000    3000    4000    5000    6000   20000
+!  FTOL_ARRAY  = 1.0E-17 1.0e-17 1.0e-17 1.0e-17 1.0e-17 1.0e-17 2.0e-17
+
+  PRECON_TYPE = 'none'
+  PREC2D_THRESHOLD =   1.000000E-19
+!----- Grid Parameters -----
+  LASYM = F
+  NFP = 0005
+  MPOL = 0008
+  NTOR = 0008
+  NZETA = 80
+!Phiedge / 1 A of current in coils: -6.303364898280051e-06
+  PHIEDGE =    1.0
+!----- Free Boundary Parameters -----
+ LFREEB  = T,
+ EXTCUR  = -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 -3.41122136936906E+05 
+ MGRID_FILE = "mgrid_ellipse.nc"
+ NVACSKIP =    6
+!----- Pressure Parameters -----
+  GAMMA =    0.000000000000E+000
+  BLOAT =    1.000000000000E+000
+  SPRES_PED =    1.000000000000E+000
+  PRES_SCALE =    0.000000000000E+000
+  PMASS_TYPE = 'power_series'
+  AM =   1 -1
+!----- Current/Iota Parameters -----
+  CURTOR =  0
+  NCURR = 1
+  AI = 0 1 0
+  PIOTA_TYPE = 'power_series'
+  PCURR_TYPE = 'power_series'
+!----- Axis Parameters ----- 
+  RAXIS_CC = 10.0
+  ZAXIS_CS = 0
+!----- Boundary Parameters -----
+! n comes before m!
+RBC(   0,   0) =    10.0,     ZBS(   0,   0) =   0.0
+RBC(   0,   1) =    1.0,      ZBS(   0,   1) =   1.0
+/
+
