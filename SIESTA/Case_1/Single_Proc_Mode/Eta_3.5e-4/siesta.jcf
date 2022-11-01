@@ -1,0 +1,21 @@
+ &SIESTA_INFO
+ ETA_FACTOR = 3.5E-4
+ LCOLSCALE = T
+ L_VESSEL = F
+ LADD_PERT = T
+ LRESISTIVE = F
+ LRESTART   = F
+ LRECON    = T
+ LASYM = F
+ NITER = 1000000
+ NSIN      = 100
+ MPOLIN    = 2
+ NTORIN    = 1
+ FTOL      = 1.E-20,
+ levmarq_param = 1.0E-1,
+ MUPAR     =  0.0
+ WOUT_FILE      = 'wout_test.vmec.nc',
+ RESTART_EXT    = 'restart_Case_1',
+ MRES    = 2,
+ HELPERT = 1.0E-4,
+ /
