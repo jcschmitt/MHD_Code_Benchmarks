@@ -1,0 +1,76 @@
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.18E-06
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.50E-01       --
+    2           0.23E-01       --
+    3           0.94E-02       --
+    4           0.36E-02       --
+    5           0.12E-02       --
+    6           0.48E-03       --
+    7           0.24E-03       0.24E-03
+
+  WARNING GMRES :
+        No convergence after 
+           7  iterations 
+
+B.E. on the preconditioned system:   0.24E-03
+B.E. on the unpreconditioned system: 0.24E-03
+info(1) = -4
+Number of iterations (info(2)):     7
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.64E-06
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.38E+00       --
+    2           0.23E+00       --
+    3           0.11E+00       --
+    4           0.58E-01       --
+    5           0.29E-01       --
+    6           0.18E-01       --
+    7           0.12E-01       --
+    8           0.71E-02       --
+    9           0.48E-02       0.48E-02
+
+  WARNING GMRES :
+        No convergence after 
+           9  iterations 
+
+B.E. on the preconditioned system:   0.48E-02
+B.E. on the unpreconditioned system: 0.48E-02
+info(1) = -4
+Number of iterations (info(2)):     9

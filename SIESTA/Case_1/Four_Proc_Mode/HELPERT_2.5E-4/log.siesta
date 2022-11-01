@@ -1,0 +1,787 @@
+nprow,npcol      2     2
+icontxt_global,icontxt,icontxt_1xp,icontxt_px1      1     0     1     2
+--------------------------------------------------------------
+ SIESTA MHD EQUILIBRIUM CODE v4.0 (100917)
+ Scalable Island Equilibrium Solver for Toroidal Applications
+--------------------------------------------------------------
+
+OUTPUT FILE (SCREEN DUMP): output_test.vmec.txt
+Warning: Failed to open vessel file                                                                                                                                                                                                                                                                 
+Warning: Failed to open vessel file                                                                                                                                                                                                                                                                 
+Warning: Failed to open vessel file                                                                                                                                                                                                                                                                 
+Warning: Failed to open vessel file                                                                                                                                                                                                                                                                 
+ JACOBIAN SPECTRAL TRUNCATION ERROR: 9.95E-01
+ RECOMPUTE_LAMBDA - TIME:       0.00 S
+ Rmajor_i =    7.133E-01
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  4.197E-16
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.796E-01 B_u:   4.596E-02 B_v:   2.563E-03
+ DIV-B (rms):   0.000E+00 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.783E-03 B.GRAD-P (rms):   5.728E-16 B.GRAD-P (max):   1.631E-15 B.GRAD-P (min):  -1.631E-15
+ (J*B)/|JxB| (rms):   4.754E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   4.124E-19
+ NON-RESISTIVE RUN    ETA_FACTOR:   1.00E-04 LASYM: F L_PUSH_S: F L_PUSH_U: F L_PUSH_V: F L_PUSH_EDGE: T
+ DELTA_T:   1.00E+00 ETA_K:   1.00E-01 HESSIAN SYM: F
+ LEVMARQ_PARAM:   1.00E-01 MU_PAR:   0.00E+00
+ NEQS:   2700 NS:  100 MPOL:    2 NTOR:    1 NTHETA:    7 NZETA:    6 NGMRES-STEPS:  100
+
+ NITER (W-W0)/W0*1E6    F2(MHD)    F2(LIN)    F2SUBS     F2SUBU     F2SUBV     |V|rms     NCALLS
+     1   0.0000E+00    1.064E-04  ---------  2.133E-06  1.774E-31  5.273E-32  0.000E+00        1
+
+ Computing diagonal preconditioner -  LM parameter: 1.00E-01 mu||: 0.00E+00
+ HESSIAN AND INVERSE CALCULATION USING SERIAL THOMAS ALGORITHM
+ COLUMN-SCALING TIME:  6.790E-04 COLCND:  4.636E-05 DMINL:  4.580E-06
+ BLOCK FACTORIZATION TIME:    2.011E-02
+ Block dim:   27^2  Preconditioner size:   1.75 Mb
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      1.062E-04      5.163E-06      4.839E-07      3.197E-11
+    4      1.054E-04      4.057E-04      3.859E-05      3.184E-11
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      1.054E-04      4.057E-04      3.859E-05      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    1.099E-05 fs(2,m=1):    5.318E-05 fs(2,m!=1):   2.388E-04
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    1.153E-06 fu(2,m!=1):   8.304E-07
+ fv(1,m=0):    2.203E-10 fv(2,m=0):    1.069E-08 fv(2,m>0):    8.286E-07
+ fu(ns-1) :    4.716E-06 fu(ns)   :    4.250E-06
+ fv(ns-1) :    1.829E-06 fv(ns)   :    1.748E-06
+
+ POWER SPECTRA(SYM ) -- dB:  6.952E-12 dP:  4.048E-17
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  3.762E-07
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.796E-01 B_u:   4.596E-02 B_v:   2.563E-03
+ DIV-B (rms):   2.290E-17 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.783E-03 B.GRAD-P (rms):   2.645E-06 B.GRAD-P (max):   1.429E-05 B.GRAD-P (min):  -1.429E-05
+ (J*B)/|JxB| (rms):   4.753E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   3.957E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -3.86E-05 AT JS:   81 M:    2 N:    1   F_S-max:   1.29E-06 AT JS:   99 M:    2 N:    1
+ X^U-max:  -3.67E-06 AT JS:    2 M:    0 N:    1   F_U-max:  -4.90E-08 AT JS:   99 M:    1 N:   -1
+ X^V-max:   1.20E-06 AT JS:   98 M:    2 N:    1   F_V-max:  -9.21E-08 AT JS:  100 M:    0 N:    1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  9.783E-01
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  1.546E-09 7.699E-09 1.999E-08 3.840E-08 6.289E-08
+ JBSUPUH(JS=2-6,M=1)           :  1.385E-07 7.000E-07 1.820E-06 3.497E-06 5.729E-06
+
+ SIESTA Curtor :   0.4002E+05 VMEC Curtor :   0.4000E+05
+
+     2  -5.6945E-04    1.054E-04  1.623E-11  2.113E-06  2.794E-13  8.258E-14  4.077E-05       37
+
+ Computing block preconditioner -  LM parameter: 1.00E-01 mu||: 0.00E+00 Asym index: 1.60E-07
+ COLUMN-SCALING TIME:  8.091E-03 COLCND:  5.058E-05 DMINL:  2.584E-06
+ BLOCK FACTORIZATION TIME:    2.041E-02
+ DMIN:    2.584E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      1.716E-06      2.598E-01      2.905E-02
+    2      3.767E-07      3.764E-01      4.492E-02
+    3      1.596E-07      4.489E-01      5.534E-02
+    4      8.678E-08      5.006E-01      6.279E-02
+    5      5.365E-08      5.403E-01      6.838E-02
+    6      3.603E-08      5.719E-01      7.270E-02
+    7      2.576E-08      5.979E-01      7.612E-02
+    8      1.938E-08      6.195E-01      7.888E-02
+    9      1.523E-08      6.379E-01      8.114E-02
+   10      1.243E-08      6.538E-01      8.301E-02
+   11      1.046E-08      6.675E-01      8.458E-02
+   12      9.046E-09      6.796E-01      8.591E-02
+   13      7.996E-09      6.904E-01      8.703E-02
+   14      7.197E-09      7.000E-01      8.801E-02
+   15      6.574E-09      7.087E-01      8.886E-02
+   16      6.077E-09      7.166E-01      8.961E-02
+   17      5.673E-09      7.239E-01      9.026E-02
+   18      5.338E-09      7.306E-01      9.085E-02
+   19      5.054E-09      7.369E-01      9.137E-02
+   20      4.812E-09      7.428E-01      9.184E-02
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      4.812E-09      7.428E-01      9.184E-02      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    1.226E-03 fs(2,m=1):    2.416E-05 fs(2,m!=1):   2.648E-05
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    1.464E-05 fu(2,m!=1):   1.647E-07
+ fv(1,m=0):    2.152E-07 fv(2,m=0):    2.808E-07 fv(2,m>0):    1.020E-06
+ fu(ns-1) :    4.664E-07 fu(ns)   :    3.852E-07
+ fv(ns-1) :    1.220E-07 fv(ns)   :    2.002E-07
+
+ POWER SPECTRA(SYM ) -- dB:  1.507E-06 dP:  2.054E-11
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.594E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.789E-01 B_u:   4.598E-02 B_v:   2.562E-03
+ DIV-B (rms):   1.125E-16 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.783E-03 B.GRAD-P (rms):   1.496E-03 B.GRAD-P (max):   7.362E-03 B.GRAD-P (min):  -7.362E-03
+ (J*B)/|JxB| (rms):   4.755E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   3.927E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   9.18E-02 AT JS:   46 M:    1 N:   -1   F_S-max:  -7.36E-09 AT JS:   99 M:    0 N:    0
+ X^U-max:  -3.71E-02 AT JS:    5 M:    1 N:   -1   F_U-max:   3.92E-09 AT JS:    4 M:    1 N:   -1
+ X^V-max:  -2.02E-02 AT JS:  100 M:    2 N:    0   F_V-max:  -7.47E-09 AT JS:   87 M:    1 N:    1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  3.017E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  2.263E-05 8.872E-05 1.811E-04 2.912E-04 4.218E-04
+ JBSUPUH(JS=2-6,M=1)           :  2.275E-05 4.436E-05 5.198E-05 6.507E-05 7.428E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     3  -2.2172E-01    4.812E-09  1.816E-15  1.417E-10  4.541E-13  1.152E-13  7.465E-02       84
+ Adding helical magnetic field perturbations
+ 10^6 X Del-W    mres    nres     HelPert     rad  |m*chip+n*phip|     iota   radial width
+   3.777E-01       2      -1    -2.50E-04    0.81       0.00           0.50       0.19
+
+
+ Computing block preconditioner -  LM parameter: 4.81E-04 mu||: 0.00E+00 Asym index: 1.05E-06
+ COLUMN-SCALING TIME:  3.999E-03 COLCND:  5.056E-05 DMINL:  1.243E-08
+ BLOCK FACTORIZATION TIME:    2.127E-02
+ DMIN:    2.584E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      3.829E-06      3.928E+01      1.356E+01
+    2      6.760E-06      6.552E+01      2.381E+01
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      1.140E-05      9.271E+01      3.422E+01      7.142E-14
+    6      5.748E-06      1.398E+02      5.383E+01      7.712E-18
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      3.829E-06      3.928E+01      1.356E+01      1.000E+00
+    2      2.156E-06      2.778E+01      9.591E+00      7.071E-01
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    5.562E-04 fs(2,m=1):    1.135E-05 fs(2,m!=1):   1.045E-05
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    5.856E-06 fu(2,m!=1):   7.994E-07
+ fv(1,m=0):    1.195E-07 fv(2,m=0):    1.414E-08 fv(2,m>0):    2.487E-07
+ fu(ns-1) :    3.223E-04 fu(ns)   :    3.238E-04
+ fv(ns-1) :    8.481E-05 fv(ns)   :    8.601E-05
+
+ POWER SPECTRA(SYM ) -- dB:  2.142E-05 dP:  1.057E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.646E-05
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.778E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.002E-15 DEL_TFLUX:   1.388E-17
+ <BETA>:   3.776E-03 B.GRAD-P (rms):   5.930E-03 B.GRAD-P (max):   2.275E-02 B.GRAD-P (min):  -2.275E-02
+ (J*B)/|JxB| (rms):   4.566E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   5.084E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   1.04E+00 AT JS:   79 M:    2 N:   -1   F_S-max:   1.98E-07 AT JS:   84 M:    0 N:    0
+ X^U-max:  -5.19E+00 AT JS:   85 M:    2 N:   -1   F_U-max:  -4.58E-07 AT JS:   99 M:    2 N:   -1
+ X^V-max:  -9.59E+00 AT JS:   85 M:    2 N:   -1   F_V-max:   2.38E-07 AT JS:   99 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.968E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  3.473E-05 1.283E-04 2.499E-04 3.798E-04 5.162E-04
+ JBSUPUH(JS=2-6,M=1)           :  3.483E-05 6.020E-05 6.413E-05 6.967E-05 7.236E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     4  -9.0649E+00    2.156E-06  8.871E-13  5.125E-08  8.605E-10  4.061E-10  2.792E+00      152
+
+ Computing block preconditioner -  LM parameter: 4.81E-04 mu||: 0.00E+00 Asym index: 1.10E-06
+ COLUMN-SCALING TIME:  3.568E-03 COLCND:  5.056E-05 DMINL:  1.244E-08
+ BLOCK FACTORIZATION TIME:    2.876E-02
+ DMIN:    2.585E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      1.287E-07      3.268E+01      1.292E+01
+    2      2.903E-07      5.795E+01      2.375E+01
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      1.287E-07      3.268E+01      1.292E+01      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    2.192E-04 fs(2,m=1):    2.106E-06 fs(2,m!=1):   1.382E-06
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    1.054E-06 fu(2,m!=1):   6.611E-07
+ fv(1,m=0):    1.623E-08 fv(2,m=0):    2.181E-08 fv(2,m>0):    6.901E-08
+ fu(ns-1) :    5.518E-08 fu(ns)   :    1.355E-08
+ fv(ns-1) :    1.897E-08 fv(ns)   :    6.302E-09
+
+ POWER SPECTRA(SYM ) -- dB:  4.467E-05 dP:  2.634E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  3.838E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.762E-01 B_u:   4.598E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.117E-15 DEL_TFLUX:   1.388E-17
+ <BETA>:   3.772E-03 B.GRAD-P (rms):   8.058E-03 B.GRAD-P (max):   6.214E-02 B.GRAD-P (min):  -6.214E-02
+ (J*B)/|JxB| (rms):   4.386E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   6.077E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   6.12E-01 AT JS:   76 M:    2 N:   -1   F_S-max:   6.58E-08 AT JS:   85 M:    0 N:    0
+ X^U-max:  -7.58E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   8.91E-08 AT JS:   85 M:    2 N:   -1
+ X^V-max:  -1.29E+01 AT JS:   85 M:    2 N:   -1   F_V-max:   1.55E-07 AT JS:   85 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.591E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  4.298E-05 1.549E-04 2.914E-04 4.265E-04 5.607E-04
+ JBSUPUH(JS=2-6,M=1)           :  4.307E-05 7.038E-05 6.857E-05 6.986E-05 6.945E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     5  -1.5648E+01    1.287E-07  6.948E-14  3.048E-09  2.545E-11  3.570E-11  3.285E+00      181
+
+ Computing block preconditioner -  LM parameter: 1.00E-01 mu||: 0.00E+00 Asym index: 4.82E-06
+ COLUMN-SCALING TIME:  1.190E-03 COLCND:  5.055E-05 DMINL:  2.585E-06
+ BLOCK FACTORIZATION TIME:    3.493E-02
+ DMIN:    2.585E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      9.554E-09      1.497E-01      6.012E-02
+    2      8.197E-09      2.981E-01      1.200E-01
+    3      7.574E-09      4.456E-01      1.797E-01
+    4      7.167E-09      5.926E-01      2.394E-01
+    5      6.844E-09      7.392E-01      2.991E-01
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      6.844E-09      7.392E-01      2.991E-01      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    2.233E-04 fs(2,m=1):    1.564E-06 fs(2,m!=1):   1.099E-06
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    9.453E-07 fu(2,m!=1):   6.616E-07
+ fv(1,m=0):    1.256E-08 fv(2,m=0):    1.605E-10 fv(2,m>0):    1.491E-08
+ fu(ns-1) :    1.552E-07 fu(ns)   :    3.428E-08
+ fv(ns-1) :    4.948E-08 fv(ns)   :    1.476E-08
+
+ POWER SPECTRA(SYM ) -- dB:  4.518E-05 dP:  2.669E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  9.909E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.762E-01 B_u:   4.598E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.157E-15 DEL_TFLUX:  -6.939E-18
+ <BETA>:   3.772E-03 B.GRAD-P (rms):   1.123E-02 B.GRAD-P (max):   7.896E-02 B.GRAD-P (min):  -7.896E-02
+ (J*B)/|JxB| (rms):   4.386E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   5.734E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   1.47E-02 AT JS:   66 M:    2 N:   -1   F_S-max:  -6.20E-09 AT JS:   65 M:    2 N:   -1
+ X^U-max:  -1.80E-01 AT JS:   85 M:    2 N:   -1   F_U-max:   9.31E-08 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -2.99E-01 AT JS:   86 M:    2 N:   -1   F_V-max:   1.54E-07 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.584E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  4.317E-05 1.555E-04 2.923E-04 4.275E-04 5.615E-04
+ JBSUPUH(JS=2-6,M=1)           :  4.327E-05 7.060E-05 6.865E-05 6.982E-05 6.935E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     6  -1.5763E+01    6.844E-09  2.654E-14  1.840E-10  1.627E-11  2.996E-11  7.429E-02      213
+
+ Computing block preconditioner -  LM parameter: 6.84E-04 mu||: 0.00E+00 Asym index: 7.56E-06
+ COLUMN-SCALING TIME:  3.195E-03 COLCND:  5.055E-05 DMINL:  1.770E-08
+ BLOCK FACTORIZATION TIME:    2.087E-02
+ DMIN:    2.585E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      1.618E-09      1.722E+01      7.516E+00
+    2      4.229E-09      3.131E+01      1.366E+01
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      1.470E-07      8.841E+01      3.856E+01      7.050E-15
+    6      1.026E-07      9.653E+01      4.089E+01      3.238E-18
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      1.618E-09      1.722E+01      7.516E+00      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    1.978E-04 fs(2,m=1):    6.231E-07 fs(2,m!=1):   4.830E-07
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    4.066E-07 fu(2,m!=1):   2.841E-07
+ fv(1,m=0):    3.461E-08 fv(2,m=0):    1.641E-10 fv(2,m>0):    4.281E-09
+ fu(ns-1) :    5.682E-08 fu(ns)   :    1.452E-08
+ fv(ns-1) :    1.865E-08 fv(ns)   :    6.960E-09
+
+ POWER SPECTRA(SYM ) -- dB:  4.835E-05 dP:  2.917E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  3.539E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.759E-01 B_u:   4.598E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.233E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.770E-03 B.GRAD-P (rms):   1.134E-02 B.GRAD-P (max):   7.994E-02 B.GRAD-P (min):  -7.994E-02
+ (J*B)/|JxB| (rms):   4.325E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   6.167E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.34E-01 AT JS:   85 M:    0 N:    0   F_S-max:   7.41E-09 AT JS:   86 M:    0 N:    0
+ X^U-max:  -4.70E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   8.28E-08 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -7.52E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   1.33E-07 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.498E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  4.565E-05 1.616E-04 2.996E-04 4.338E-04 5.669E-04
+ JBSUPUH(JS=2-6,M=1)           :  4.574E-05 7.190E-05 6.836E-05 6.906E-05 6.905E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     7  -1.8321E+01    1.618E-09  1.184E-14  2.351E-11  1.116E-11  1.811E-11  1.731E+00      256
+
+ Computing block preconditioner -  LM parameter: 1.62E-04 mu||: 0.00E+00 Asym index: 7.62E-06
+ COLUMN-SCALING TIME:  4.122E-03 COLCND:  5.055E-05 DMINL:  4.185E-09
+ BLOCK FACTORIZATION TIME:    1.935E-02
+ DMIN:    2.586E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      3.076E-09      3.567E+01      1.537E+01
+    2      1.326E-08      5.328E+01      2.282E+01
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      3.665E-08      6.932E+01      2.986E+01      6.407E-16
+    7      3.665E-08      6.932E+01      2.986E+01      7.079E-20
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      3.665E-08      6.932E+01      2.986E+01      1.000E+00
+    2      9.432E-09      4.902E+01      2.111E+01      7.071E-01
+    3      2.814E-09      3.466E+01      1.493E+01      5.000E-01
+    4      1.278E-09      2.451E+01      1.056E+01      3.536E-01
+    5      1.009E-09      1.733E+01      7.465E+00      2.500E-01
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    1.868E-04 fs(2,m=1):    3.736E-07 fs(2,m!=1):   3.214E-07
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    2.583E-07 fu(2,m!=1):   1.542E-07
+ fv(1,m=0):    2.937E-08 fv(2,m=0):    8.424E-10 fv(2,m>0):    3.015E-09
+ fu(ns-1) :    4.792E-08 fu(ns)   :    1.187E-08
+ fv(ns-1) :    1.804E-08 fv(ns)   :    5.781E-09
+
+ POWER SPECTRA(SYM ) -- dB:  4.776E-05 dP:  2.977E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  3.480E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.760E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.215E-15 DEL_TFLUX:  -1.388E-17
+ <BETA>:   3.769E-03 B.GRAD-P (rms):   1.176E-02 B.GRAD-P (max):   8.138E-02 B.GRAD-P (min):  -8.138E-02
+ (J*B)/|JxB| (rms):   4.248E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   5.669E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.27E-01 AT JS:   85 M:    0 N:    0   F_S-max:   5.86E-09 AT JS:   86 M:    0 N:    0
+ X^U-max:  -4.73E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   6.23E-08 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -7.46E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   1.00E-07 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.442E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  4.743E-05 1.646E-04 3.023E-04 4.366E-04 5.699E-04
+ JBSUPUH(JS=2-6,M=1)           :  4.752E-05 7.158E-05 6.839E-05 6.902E-05 6.936E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     8  -2.0409E+01    1.009E-09  4.267E-15  1.438E-11  6.372E-12  1.013E-11  1.742E+00      305
+
+ Computing block preconditioner -  LM parameter: 1.01E-04 mu||: 0.00E+00 Asym index: 7.98E-06
+ COLUMN-SCALING TIME:  7.470E-04 COLCND:  5.055E-05 DMINL:  2.609E-09
+ BLOCK FACTORIZATION TIME:    2.153E-02
+ DMIN:    2.586E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      2.001E-09      3.100E+01      1.334E+01
+    2      6.414E-09      4.199E+01      1.802E+01
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      9.312E-09      4.783E+01      2.058E+01      7.126E-17
+    5      9.312E-09      4.783E+01      2.058E+01      8.469E-20
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      9.312E-09      4.783E+01      2.058E+01      1.000E+00
+    2      2.641E-09      3.382E+01      1.455E+01      7.071E-01
+    3      1.031E-09      2.391E+01      1.029E+01      5.000E-01
+    4      6.765E-10      1.691E+01      7.275E+00      3.536E-01
+    5      6.441E-10      1.196E+01      5.144E+00      2.500E-01
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    1.945E-04 fs(2,m=1):    1.981E-07 fs(2,m!=1):   4.046E-07
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    1.836E-07 fu(2,m!=1):   8.379E-08
+ fv(1,m=0):    3.030E-08 fv(2,m=0):    1.304E-09 fv(2,m>0):    4.205E-09
+ fu(ns-1) :    4.540E-08 fu(ns)   :    1.007E-08
+ fv(ns-1) :    1.705E-08 fv(ns)   :    4.908E-09
+
+ POWER SPECTRA(SYM ) -- dB:  4.717E-05 dP:  3.020E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  3.377E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.760E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.320E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.768E-03 B.GRAD-P (rms):   1.183E-02 B.GRAD-P (max):   8.121E-02 B.GRAD-P (min):  -8.121E-02
+ (J*B)/|JxB| (rms):   4.176E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   7.575E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -9.08E-02 AT JS:   85 M:    0 N:    0   F_S-max:   4.12E-09 AT JS:   86 M:    0 N:    0
+ X^U-max:  -3.27E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   4.67E-08 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -5.14E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   7.54E-08 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.383E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  4.944E-05 1.673E-04 3.043E-04 4.388E-04 5.724E-04
+ JBSUPUH(JS=2-6,M=1)           :  4.954E-05 7.078E-05 6.872E-05 6.889E-05 6.976E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     9  -2.1494E+01    6.441E-10  1.234E-15  9.579E-12  3.601E-12  5.685E-12  1.202E+00      350
+
+ Computing block preconditioner -  LM parameter: 6.44E-05 mu||: 0.00E+00 Asym index: 8.09E-06
+ COLUMN-SCALING TIME:  6.750E-04 COLCND:  5.055E-05 DMINL:  1.665E-09
+ BLOCK FACTORIZATION TIME:    2.122E-02
+ DMIN:    2.586E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      1.162E-09      2.556E+01      1.101E+01
+    2      2.781E-09      3.193E+01      1.373E+01
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      3.030E-09      3.391E+01      1.461E+01      2.601E-17
+    5      3.030E-09      3.391E+01      1.461E+01      3.667E-20
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      3.030E-09      3.391E+01      1.461E+01      1.000E+00
+    2      9.660E-10      2.398E+01      1.033E+01      7.071E-01
+    3      4.775E-10      1.696E+01      7.304E+00      5.000E-01
+    4      3.889E-10      1.199E+01      5.165E+00      3.536E-01
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    2.379E-04 fs(2,m=1):    1.012E-06 fs(2,m!=1):   1.547E-06
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    1.220E-07 fu(2,m!=1):   2.724E-08
+ fv(1,m=0):    7.544E-08 fv(2,m=0):    1.565E-09 fv(2,m>0):    9.154E-09
+ fu(ns-1) :    4.221E-08 fu(ns)   :    7.168E-09
+ fv(ns-1) :    1.400E-08 fv(ns)   :    3.379E-09
+
+ POWER SPECTRA(SYM ) -- dB:  4.650E-05 dP:  3.070E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.897E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.760E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.325E-15 DEL_TFLUX:  -1.388E-17
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.188E-02 B.GRAD-P (max):   8.091E-02 B.GRAD-P (min):  -8.091E-02
+ (J*B)/|JxB| (rms):   4.085E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   5.751E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -9.53E-02 AT JS:   84 M:    0 N:    0   F_S-max:   2.97E-09 AT JS:   87 M:    2 N:   -1
+ X^U-max:  -3.28E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   3.02E-08 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -5.16E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   4.90E-08 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.289E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  5.304E-05 1.713E-04 3.067E-04 4.415E-04 5.754E-04
+ JBSUPUH(JS=2-6,M=1)           :  5.314E-05 6.921E-05 6.941E-05 6.855E-05 7.038E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    10  -2.2308E+01    3.889E-10  4.070E-16  6.575E-12  1.512E-12  2.373E-12  1.205E+00      394
+
+ Computing block preconditioner -  LM parameter: 3.89E-05 mu||: 0.00E+00 Asym index: 8.18E-06
+ COLUMN-SCALING TIME:  1.185E-03 COLCND:  5.055E-05 DMINL:  1.005E-09
+ BLOCK FACTORIZATION TIME:    2.480E-02
+ DMIN:    2.585E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      3.637E-10      1.764E+01      7.590E+00
+    2      6.553E-10      2.051E+01      8.799E+00
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      7.278E-10      2.106E+01      9.030E+00      5.268E-19
+    5      7.243E-10      2.117E+01      9.032E+00      4.567E-21
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      3.637E-10      1.764E+01      7.590E+00      1.000E+00
+    2      2.068E-10      1.248E+01      5.367E+00      7.071E-01
+    3      1.930E-10      8.821E+00      3.795E+00      5.000E-01
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    3.056E-04 fs(2,m=1):    2.904E-06 fs(2,m!=1):   4.340E-06
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    8.344E-08 fu(2,m!=1):   7.923E-08
+ fv(1,m=0):    1.611E-07 fv(2,m=0):    2.698E-09 fv(2,m>0):    1.644E-08
+ fu(ns-1) :    3.853E-08 fu(ns)   :    4.408E-09
+ fv(ns-1) :    1.081E-08 fv(ns)   :    1.783E-09
+
+ POWER SPECTRA(SYM ) -- dB:  4.598E-05 dP:  3.112E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.304E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.761E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.419E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.193E-02 B.GRAD-P (max):   8.075E-02 B.GRAD-P (min):  -8.075E-02
+ (J*B)/|JxB| (rms):   4.006E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   6.614E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -7.35E-02 AT JS:   84 M:    0 N:    0   F_S-max:   2.33E-09 AT JS:   87 M:    2 N:   -1
+ X^U-max:  -2.42E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   1.74E-08 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -3.79E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   2.85E-08 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.179E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  5.800E-05 1.761E-04 3.091E-04 4.442E-04 5.781E-04
+ JBSUPUH(JS=2-6,M=1)           :  5.810E-05 6.755E-05 7.031E-05 6.810E-05 7.109E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    11  -2.2693E+01    1.930E-10  8.500E-17  3.583E-12  5.086E-13  7.966E-13  8.866E-01      437
+
+ Computing block preconditioner -  LM parameter: 1.93E-05 mu||: 0.00E+00 Asym index: 8.29E-06
+ COLUMN-SCALING TIME:  1.285E-03 COLCND:  5.055E-05 DMINL:  4.990E-10
+ BLOCK FACTORIZATION TIME:    2.832E-02
+ DMIN:    2.585E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      6.920E-11      1.092E+01      4.661E+00
+    2      9.585E-11      1.194E+01      5.053E+00
+
+ GMRES (SERIAL) CONVERGENCE SUMMARY
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|         FSQ_ARN
+    1      9.883E-11      1.204E+01      5.091E+00      1.091E-19
+    5      9.883E-11      1.204E+01      5.091E+00      6.099E-22
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      6.920E-11      1.092E+01      4.661E+00      1.000E+00
+    2      6.051E-11      7.724E+00      3.296E+00      7.071E-01
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    3.561E-04 fs(2,m=1):    5.195E-06 fs(2,m!=1):   1.145E-05
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    4.744E-08 fu(2,m!=1):   1.344E-07
+ fv(1,m=0):    2.438E-07 fv(2,m=0):    2.239E-08 fv(2,m>0):    2.155E-08
+ fu(ns-1) :    2.761E-08 fu(ns)   :    2.617E-09
+ fv(ns-1) :    7.595E-09 fv(ns)   :    8.326E-10
+
+ POWER SPECTRA(SYM ) -- dB:  4.552E-05 dP:  3.154E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.568E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.761E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.378E-15 DEL_TFLUX:   1.388E-17
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.197E-02 B.GRAD-P (max):   8.065E-02 B.GRAD-P (min):  -8.065E-02
+ (J*B)/|JxB| (rms):   3.929E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   7.314E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -6.63E-02 AT JS:   84 M:    0 N:    0   F_S-max:  -1.42E-09 AT JS:   88 M:    2 N:   -1
+ X^U-max:  -2.10E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   6.04E-09 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -3.30E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   1.02E-08 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  1.048E-03
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  6.530E-05 1.825E-04 3.118E-04 4.469E-04 5.808E-04
+ JBSUPUH(JS=2-6,M=1)           :  6.541E-05 6.697E-05 7.142E-05 6.767E-05 7.210E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    12  -2.2885E+01    6.051E-11  1.393E-17  1.343E-12  6.350E-14  9.878E-14  7.763E-01      479
+
+ Computing block preconditioner -  LM parameter: 6.05E-06 mu||: 0.00E+00 Asym index: 8.39E-06
+ COLUMN-SCALING TIME:  6.940E-04 COLCND:  5.055E-05 DMINL:  1.563E-10
+ BLOCK FACTORIZATION TIME:    1.973E-02
+ DMIN:    2.584E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      1.818E-12      4.266E+00      1.717E+00
+    2      2.103E-12      4.599E+00      1.764E+00
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      1.818E-12      4.266E+00      1.717E+00      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    3.024E-04 fs(2,m=1):    2.245E-06 fs(2,m!=1):   1.576E-05
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    1.251E-08 fu(2,m!=1):   7.081E-08
+ fv(1,m=0):    1.974E-07 fv(2,m=0):    4.335E-09 fv(2,m>0):    1.166E-07
+ fu(ns-1) :    7.189E-09 fu(ns)   :    9.796E-10
+ fv(ns-1) :    2.343E-09 fv(ns)   :    4.114E-10
+
+ POWER SPECTRA(SYM ) -- dB:  4.528E-05 dP:  3.177E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  4.579E-10
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.761E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.421E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.201E-02 B.GRAD-P (max):   8.059E-02 B.GRAD-P (min):  -8.059E-02
+ (J*B)/|JxB| (rms):   3.886E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   5.537E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -3.55E-02 AT JS:   84 M:    0 N:    0   F_S-max:  -2.65E-10 AT JS:   88 M:    2 N:   -1
+ X^U-max:  -1.09E+00 AT JS:   86 M:    2 N:   -1   F_U-max:   1.93E-10 AT JS:   85 M:    2 N:   -1
+ X^V-max:  -1.72E+00 AT JS:   85 M:    2 N:   -1   F_V-max:   3.16E-10 AT JS:   86 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  9.528E-04
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  7.186E-05 1.876E-04 3.135E-04 4.480E-04 5.823E-04
+ JBSUPUH(JS=2-6,M=1)           :  7.199E-05 6.955E-05 7.170E-05 6.810E-05 7.314E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    13  -2.2920E+01    1.818E-12  6.800E-19  1.987E-13  7.490E-17  1.086E-16  4.288E-01      508
+
+ Computing block preconditioner -  LM parameter: 1.82E-07 mu||: 0.00E+00 Asym index: 8.49E-06
+ COLUMN-SCALING TIME:  7.010E-04 COLCND:  5.055E-05 DMINL:  4.696E-12
+ BLOCK FACTORIZATION TIME:    2.087E-02
+ DMIN:    2.582E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      8.608E-16      1.925E+00      9.361E-01
+    2      8.835E-16      2.346E+00      1.293E+00
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      8.608E-16      1.925E+00      9.361E-01      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    2.841E-04 fs(2,m=1):    6.444E-07 fs(2,m!=1):   1.438E-06
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    6.192E-10 fu(2,m!=1):   2.536E-09
+ fv(1,m=0):    2.047E-07 fv(2,m=0):    1.133E-08 fv(2,m>0):    1.659E-08
+ fu(ns-1) :    1.772E-10 fu(ns)   :    1.630E-10
+ fv(ns-1) :    5.374E-11 fv(ns)   :    8.315E-11
+
+ POWER SPECTRA(SYM ) -- dB:  4.527E-05 dP:  3.178E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.080E-11
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.761E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.360E-15 DEL_TFLUX:   1.388E-17
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.204E-02 B.GRAD-P (max):   8.058E-02 B.GRAD-P (min):  -8.058E-02
+ (J*B)/|JxB| (rms):   3.884E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   6.823E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -3.97E-03 AT JS:   95 M:    0 N:    0   F_S-max:   1.73E-11 AT JS:    2 M:    0 N:    0
+ X^U-max:  -6.45E-01 AT JS:   97 M:    2 N:   -1   F_U-max:   3.04E-12 AT JS:   97 M:    2 N:   -1
+ X^V-max:  -9.36E-01 AT JS:   97 M:    2 N:   -1   F_V-max:   5.55E-12 AT JS:    2 M:    0 N:    1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  9.411E-04
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  7.277E-05 1.883E-04 3.134E-04 4.475E-04 5.822E-04
+ JBSUPUH(JS=2-6,M=1)           :  7.289E-05 7.016E-05 7.118E-05 6.863E-05 7.330E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    14  -2.2921E+01    8.608E-16  1.287E-22  1.576E-15  2.072E-20  4.464E-19  1.935E-01      537
+
+ Computing block preconditioner -  LM parameter: 1.86E-10 mu||: 0.00E+00 Asym index: 8.55E-06
+ COLUMN-SCALING TIME:  1.235E-03 COLCND:  5.055E-05 DMINL:  4.803E-15
+ BLOCK FACTORIZATION TIME:    2.240E-02
+ DMIN:    2.581E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      1.279E-19      1.499E+00      8.040E-01
+    2      1.294E-19      1.513E+00      8.078E-01
+
+ LINE SEARCH - SCAN ||X|| FOR MIN FSQ_NL
+ ---------------
+ ITER       FSQ_NL          ||X||         MAX|X|          FAC
+    1      1.279E-19      1.499E+00      8.040E-01      1.000E+00
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    2.854E-04 fs(2,m=1):    7.822E-11 fs(2,m!=1):   2.538E-10
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    3.114E-13 fu(2,m!=1):   8.843E-13
+ fv(1,m=0):    2.152E-07 fv(2,m=0):    2.496E-12 fv(2,m>0):    1.273E-11
+ fu(ns-1) :    8.341E-14 fu(ns)   :    7.431E-12
+ fv(ns-1) :    2.926E-14 fv(ns)   :    1.523E-12
+
+ POWER SPECTRA(SYM ) -- dB:  4.527E-05 dP:  3.178E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  5.995E-15
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.761E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.432E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.204E-02 B.GRAD-P (max):   8.057E-02 B.GRAD-P (min):  -8.057E-02
+ (J*B)/|JxB| (rms):   3.884E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   7.939E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.82E-03 AT JS:   97 M:    0 N:    0   F_S-max:  -1.04E-13 AT JS:   97 M:    0 N:    0
+ X^U-max:  -5.53E-01 AT JS:   98 M:    2 N:   -1   F_U-max:   1.40E-14 AT JS:   99 M:    1 N:    0
+ X^V-max:  -8.04E-01 AT JS:   98 M:    2 N:   -1   F_V-max:  -4.95E-15 AT JS:   99 M:    1 N:    0
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  9.409E-04
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  7.279E-05 1.884E-04 3.134E-04 4.475E-04 5.822E-04
+ JBSUPUH(JS=2-6,M=1)           :  7.291E-05 7.014E-05 7.117E-05 6.864E-05 7.330E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    15  -2.2921E+01    1.279E-19  1.375E-26  3.565E-21  5.171E-26  1.141E-25  1.507E-01      566
+
+ Computing block preconditioner -  LM parameter: 1.00E-10 mu||: 0.00E+00 Asym index: 8.55E-06
+ COLUMN-SCALING TIME:  6.710E-04 COLCND:  5.055E-05 DMINL:  2.582E-15
+ BLOCK FACTORIZATION TIME:    1.959E-02
+ DMIN:    2.581E-05
+ FAST CONVERGENCE SUMMARY
+ -------------
+ ITER       FSQ_NL          ||X||         MAX|X|
+    1      2.121E-25      2.700E-02      1.507E-02
+
+ SYMMETRIC FORCES: 
+ fs(1,m=1):    2.854E-04 fs(2,m=1):    2.350E-13 fs(2,m!=1):   2.595E-13
+ fu(1,m=1):    0.000E+00 fu(2,m=1):    5.576E-16 fu(2,m!=1):   8.851E-16
+ fv(1,m=0):    2.152E-07 fv(2,m=0):    9.002E-18 fv(2,m>0):    8.894E-16
+ fu(ns-1) :    3.727E-15 fu(ns)   :    2.100E-14
+ fv(ns-1) :    9.331E-16 fv(ns)   :    1.658E-14
+
+ POWER SPECTRA(SYM ) -- dB:  4.527E-05 dP:  3.178E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.873E-16
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.761E-01 B_u:   4.597E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.462E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.767E-03 B.GRAD-P (rms):   1.204E-02 B.GRAD-P (max):   8.057E-02 B.GRAD-P (min):  -8.057E-02
+ (J*B)/|JxB| (rms):   3.884E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   6.442E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   2.70E-05 AT JS:   99 M:    1 N:    1   F_S-max:   4.65E-17 AT JS:   87 M:    0 N:    0
+ X^U-max:   1.06E-02 AT JS:   99 M:    2 N:   -1   F_U-max:  -2.68E-17 AT JS:   99 M:    2 N:   -1
+ X^V-max:   1.51E-02 AT JS:   99 M:    2 N:   -1   F_V-max:  -3.93E-17 AT JS:   99 M:    2 N:   -1
+ |B^s-r12*B^u|/|B^s+r12*B^u| (m=1,r->0,  sym) :  9.409E-04
+ |J^s-r12*J^u|/|J^s+r12*J^u| (m=1,r->0,  sym) :  0.000E+00
+ JBSUPSH(JS=2-6,M=1)/r12  (sym):  7.279E-05 1.884E-04 3.134E-04 4.475E-04 5.822E-04
+ JBSUPUH(JS=2-6,M=1)           :  7.291E-05 7.014E-05 7.117E-05 6.864E-05 7.330E-05
+
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    16  -2.2921E+01    2.121E-25  1.910E-32  8.384E-27  4.518E-31  3.140E-31  2.713E-03      592
+
+ nprecon:  15 LM parameter:  1.00E-10 mu||:  0.00E+00 Symmetry Index:  8.55E-06
+ Number processors:     4
+
+==============================              =======================
+
+ TIMING INFORMATION                          RMS BOUNDARY FORCES
+
+==============================              =======================
+ Total runtime  :        4.692               fs(1,m=1)  :  0.00E+00
+ Initialization :        0.000               fs(2,m=1)  :  0.00E+00
+ Diagonal prec  :        0.097               fs(2,m!=1) :  0.00E+00
+ Compute blocks :        1.501               fu(1,m=1)  :  0.00E+00
+ Factor blocks  :        0.344               fu(2,m=1)  :  0.00E+00
+ Toijsp         :        1.591               fu(2,m!=1) :  0.00E+00
+ Tomnsp         :        2.318
+ GMRES          :        2.383
+ Conj Gradient  :        0.000
+
+ SUBROUTINES     
+ Update Pressure:        0.365               fv(1,m=0)  :  0.00E+00
+ Update Bfield  :        0.399               fv(2,m=0)  :  0.00E+00
+ CV Currents    :        0.901               fv(2,m!=0) :  0.00E+00
+ Force Harmonics:        0.017               fu(ns)     :  0.00E+00
+ Update Force   :        1.963               fu(ns-1)   :  0.00E+00
+ Update UpperV  :        0.304               fv(ns)     :  0.00E+00
+ Update State   :        0.110               fv(ns-1)   :  0.00E+00
+ Funct Island   :        3.687
+ Apply Precon   :        0.370
+ Add Perturb    :        0.118
+ Init State     :        0.146
+==============================              =======================
+
+ PARSOLVER=F    : SCALAPACK
+ PARFUNCTISL    : T
+ COLUMN SCALING : T
+ PARGMRES       : T GMRES_TYPE:  2
+ OUTPUT_TIMINGS : F
+
+ TIME DIVB      :  4.223E-03
+ TIME DIVJ      :  2.246E-03
+ TIME BGRADP    :  2.243E-03
+ TIME BDOTJ     :  4.128E-02
+
+ M (block size) :   27
+ N (block rows) :  100
+ P (processors) :    4
+
+ >> Starting dump of graphics data...
+      Creating plot box between:
+      RMIN =  4.690E-01  RMAX =  9.310E-01
+      ZMIN = -2.200E-01  ZMAX =  2.200E-01
+      Toroidal sections computed:    2
+
+      Completed.
+      Pressure (PGPLOT) using CYLINDRICAL coords..
+
+      Completed.
+      Pressure (PGPLOT) using SIESTA coords..
+
+      Graphics output completed in    0.965 s
+  Writing output to "siesta_profiles.txt" is finished!
+change context:123   was called       1500 times, total       0.12 secs
+factor call:123      was called         15 times, total       0.19 secs
+pdgeadd call:123     was called        142 times, total       0.00 secs
+solver call:123      was called        142 times, total       0.38 secs
+pdgeadd2 call:123    was called        142 times, total       0.00 secs

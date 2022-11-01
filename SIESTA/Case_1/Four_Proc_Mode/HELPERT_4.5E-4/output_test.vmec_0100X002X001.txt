@@ -1,0 +1,347 @@
+--------------------------------------------------------------
+ SIESTA MHD EQUILIBRIUM CODE v4.0 (100917)
+ Scalable Island Equilibrium Solver for Toroidal Applications
+--------------------------------------------------------------
+
+CASE: test.vmec
+ DATE = Oct 29,2022  TIME = 14:06:48
+
+ 1 mres:    2 HelPert:  4.50E-04 HelPertA:  0.00E+00
+
+ ngmres_type:    2 iOrtho:    3 lColScale:  T
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  4.197E-16
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.796E-01 B_u:   4.596E-02 B_v:   2.563E-03
+ DIV-B (rms):   0.000E+00 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.783E-03 B.GRAD-P (rms):   5.728E-16 B.GRAD-P (max):   1.631E-15 B.GRAD-P (min):  -1.631E-15
+ (J*B)/|JxB| (rms):   4.754E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   4.124E-19
+ NON-RESISTIVE RUN    ETA_FACTOR:   1.00E-04 LASYM: F L_PUSH_S: F L_PUSH_U: F L_PUSH_V: F L_PUSH_EDGE: T
+ DELTA_T:   1.00E+00 ETA_K:   1.00E-01 HESSIAN SYM: F
+ LEVMARQ_PARAM:   1.00E-01 MU_PAR:   0.00E+00
+ NEQS:   2700 NS:  100 MPOL:    2 NTOR:    1 NTHETA:    7 NZETA:    6 NGMRES-STEPS:  100
+
+ NITER (W-W0)/W0*1E6    F2(MHD)    F2(LIN)    F2SUBS     F2SUBU     F2SUBV     |V|rms     NCALLS
+     1   0.0000E+00    1.064E-04  ---------  2.133E-06  1.774E-31  5.273E-32  0.000E+00        1
+
+ Computing diagonal preconditioner -  LM parameter: 1.00E-01 mu||: 0.00E+00
+ Block dim:   27^2  Preconditioner size:   1.75 Mb
+ ||X||-GMRES =   4.057E-04 MAX(|X|) =   3.859E-05
+ POWER SPECTRA(SYM ) -- dB:  6.952E-12 dP:  4.048E-17
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  3.762E-07
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.796E-01 B_u:   4.596E-02 B_v:   2.563E-03
+ DIV-B (rms):   2.290E-17 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.783E-03 B.GRAD-P (rms):   2.645E-06 B.GRAD-P (max):   1.429E-05 B.GRAD-P (min):  -1.429E-05
+ (J*B)/|JxB| (rms):   4.753E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   3.957E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -3.86E-05 AT JS:   81 M:    2 N:    1   F_S-max:   1.29E-06 AT JS:   99 M:    2 N:    1
+ X^U-max:  -3.67E-06 AT JS:    2 M:    0 N:    1   F_U-max:  -4.90E-08 AT JS:   99 M:    1 N:   -1
+ X^V-max:   1.20E-06 AT JS:   98 M:    2 N:    1   F_V-max:  -9.21E-08 AT JS:  100 M:    0 N:    1
+ SIESTA Curtor :   0.4002E+05 VMEC Curtor :   0.4000E+05
+
+     2  -5.6945E-04    1.054E-04  1.623E-11  2.113E-06  2.794E-13  8.258E-14  4.077E-05       37
+
+ Computing block preconditioner -  LM parameter: 1.00E-01 mu||: 0.00E+00 Asym index: 1.60E-07
+ ||X||-GMRES =   7.428E-01 MAX(|X|) =   9.184E-02
+ POWER SPECTRA(SYM ) -- dB:  1.507E-06 dP:  2.054E-11
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.594E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.789E-01 B_u:   4.598E-02 B_v:   2.562E-03
+ DIV-B (rms):   1.125E-16 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.783E-03 B.GRAD-P (rms):   1.496E-03 B.GRAD-P (max):   7.362E-03 B.GRAD-P (min):  -7.362E-03
+ (J*B)/|JxB| (rms):   4.755E+01 (J_par)/|J_tot| (rms):   9.998E-01   DIV-J (rms):   3.927E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   9.18E-02 AT JS:   46 M:    1 N:   -1   F_S-max:  -7.36E-09 AT JS:   99 M:    0 N:    0
+ X^U-max:  -3.71E-02 AT JS:    5 M:    1 N:   -1   F_U-max:   3.92E-09 AT JS:    4 M:    1 N:   -1
+ X^V-max:  -2.02E-02 AT JS:  100 M:    2 N:    0   F_V-max:  -7.47E-09 AT JS:   87 M:    1 N:    1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     3  -2.2172E-01    4.812E-09  1.816E-15  1.417E-10  4.541E-13  1.152E-13  7.465E-02       84
+ Adding helical magnetic field perturbations
+ 10^6 X Del-W    mres    nres     HelPert     rad  |m*chip+n*phip|     iota   radial width
+   1.253E+00       2      -1    -4.50E-04    0.81       0.00           0.50       0.19
+
+
+ Computing block preconditioner -  LM parameter: 4.81E-04 mu||: 0.00E+00 Asym index: 1.05E-06
+ ||X||-GMRES =   6.451E+01 MAX(|X|) =   2.108E+01
+ POWER SPECTRA(SYM ) -- dB:  5.554E-05 dP:  2.673E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.961E-05
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.757E-01 B_u:   4.598E-02 B_v:   2.561E-03
+ DIV-B (rms):   1.605E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.766E-03 B.GRAD-P (rms):   9.983E-03 B.GRAD-P (max):   3.782E-02 B.GRAD-P (min):  -3.782E-02
+ (J*B)/|JxB| (rms):   4.364E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   5.665E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   1.61E+00 AT JS:   77 M:    2 N:   -1   F_S-max:  -3.58E-07 AT JS:   78 M:    2 N:   -1
+ X^U-max:  -7.46E+00 AT JS:   85 M:    2 N:   -1   F_U-max:  -8.25E-07 AT JS:   99 M:    2 N:   -1
+ X^V-max:  -1.49E+01 AT JS:   85 M:    2 N:   -1   F_V-max:   4.50E-07 AT JS:   76 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     4  -2.4399E+01    7.909E-06  7.805E-12  1.900E-07  2.922E-09  1.689E-09  4.585E+00      152
+
+ Computing block preconditioner -  LM parameter: 4.81E-04 mu||: 0.00E+00 Asym index: 1.76E-06
+ ||X||-GMRES =   5.470E+01 MAX(|X|) =   2.067E+01
+ POWER SPECTRA(SYM ) -- dB:  1.201E-04 dP:  6.627E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  9.748E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.712E-01 B_u:   4.598E-02 B_v:   2.561E-03
+ DIV-B (rms):   2.008E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.753E-03 B.GRAD-P (rms):   1.366E-02 B.GRAD-P (max):   9.832E-02 B.GRAD-P (min):  -9.832E-02
+ (J*B)/|JxB| (rms):   4.098E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   8.305E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   1.00E+00 AT JS:   72 M:    2 N:   -1   F_S-max:  -2.00E-07 AT JS:   87 M:    2 N:   -1
+ X^U-max:  -1.13E+01 AT JS:   86 M:    2 N:   -1   F_U-max:   1.45E-07 AT JS:   88 M:    2 N:   -1
+ X^V-max:  -2.07E+01 AT JS:   86 M:    2 N:   -1   F_V-max:   2.42E-07 AT JS:   86 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     5  -4.2376E+01    8.695E-07  2.778E-12  2.140E-08  1.421E-10  1.904E-10  5.498E+00      195
+
+ Computing block preconditioner -  LM parameter: 1.00E-01 mu||: 0.00E+00 Asym index: 7.60E-06
+ ||X||-GMRES =   1.898E+00 MAX(|X|) =   7.364E-01
+ POWER SPECTRA(SYM ) -- dB:  1.215E-04 dP:  6.725E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.841E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.710E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   1.996E-15 DEL_TFLUX:  -6.939E-18
+ <BETA>:   3.753E-03 B.GRAD-P (rms):   1.815E-02 B.GRAD-P (max):   1.155E-01 B.GRAD-P (min):  -1.155E-01
+ (J*B)/|JxB| (rms):   4.097E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   7.165E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:   3.91E-02 AT JS:   59 M:    2 N:   -1   F_S-max:  -8.68E-09 AT JS:   57 M:    2 N:   -1
+ X^U-max:  -4.27E-01 AT JS:   86 M:    2 N:   -1   F_U-max:   1.36E-07 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -7.36E-01 AT JS:   86 M:    2 N:   -1   F_V-max:   2.38E-07 AT JS:   86 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     6  -4.2862E+01    1.578E-08  6.131E-14  4.525E-10  3.730E-11  8.999E-11  1.907E-01      230
+
+ Computing block preconditioner -  LM parameter: 1.58E-03 mu||: 0.00E+00 Asym index: 1.19E-05
+ ||X||-GMRES =   1.259E+01 MAX(|X|) =   5.114E+00
+ POWER SPECTRA(SYM ) -- dB:  1.278E-04 dP:  7.089E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  7.762E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.704E-01 B_u:   4.599E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.156E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.751E-03 B.GRAD-P (rms):   1.833E-02 B.GRAD-P (max):   1.173E-01 B.GRAD-P (min):  -1.173E-01
+ (J*B)/|JxB| (rms):   4.044E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   8.018E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.40E-01 AT JS:   85 M:    0 N:    0   F_S-max:   1.18E-08 AT JS:   87 M:    0 N:    0
+ X^U-max:  -3.03E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   1.23E-07 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -5.11E+00 AT JS:   87 M:    2 N:   -1   F_V-max:   2.09E-07 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     7  -4.5824E+01    5.588E-09  1.153E-13  1.052E-10  2.846E-11  6.266E-11  1.266E+00      273
+
+ Computing block preconditioner -  LM parameter: 5.59E-04 mu||: 0.00E+00 Asym index: 1.20E-05
+ ||X||-GMRES =   7.967E+01 MAX(|X|) =   2.985E+01
+ POWER SPECTRA(SYM ) -- dB:  1.288E-04 dP:  7.229E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  7.309E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.703E-01 B_u:   4.599E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.106E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.750E-03 B.GRAD-P (rms):   1.869E-02 B.GRAD-P (max):   1.179E-01 B.GRAD-P (min):  -1.179E-01
+ (J*B)/|JxB| (rms):   3.991E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   1.033E-18
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.01E-01 AT JS:   85 M:    0 N:    0   F_S-max:   1.22E-08 AT JS:   87 M:    0 N:    0
+ X^U-max:  -2.23E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   1.08E-07 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -3.73E+00 AT JS:   87 M:    2 N:   -1   F_V-max:   1.83E-07 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     8  -4.7827E+01    4.841E-09  4.519E-14  9.399E-11  2.180E-11  4.779E-11  1.001E+00      324
+
+ Computing block preconditioner -  LM parameter: 4.84E-04 mu||: 0.00E+00 Asym index: 1.24E-05
+ ||X||-GMRES =   6.061E+01 MAX(|X|) =   2.373E+01
+ POWER SPECTRA(SYM ) -- dB:  1.306E-04 dP:  7.420E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  6.315E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.702E-01 B_u:   4.599E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.200E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.748E-03 B.GRAD-P (rms):   1.882E-02 B.GRAD-P (max):   1.180E-01 B.GRAD-P (min):  -1.180E-01
+ (J*B)/|JxB| (rms):   3.917E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   1.095E-18
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.16E-01 AT JS:   85 M:    0 N:    0   F_S-max:   1.11E-08 AT JS:   87 M:    0 N:    0
+ X^U-max:  -2.51E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   8.84E-08 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -4.19E+00 AT JS:   87 M:    2 N:   -1   F_V-max:   1.50E-07 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+     9  -4.9725E+01    3.197E-09  2.504E-14  5.638E-11  1.501E-11  3.280E-11  1.077E+00      374
+
+ Computing block preconditioner -  LM parameter: 3.20E-04 mu||: 0.00E+00 Asym index: 1.25E-05
+ ||X||-GMRES =   4.817E+01 MAX(|X|) =   1.846E+01
+ POWER SPECTRA(SYM ) -- dB:  1.319E-04 dP:  7.579E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  9.250E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.701E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.228E-15 DEL_TFLUX:   1.388E-17
+ <BETA>:   3.748E-03 B.GRAD-P (rms):   1.899E-02 B.GRAD-P (max):   1.179E-01 B.GRAD-P (min):  -1.179E-01
+ (J*B)/|JxB| (rms):   3.844E+01 (J_par)/|J_tot| (rms):   9.997E-01   DIV-J (rms):   1.026E-18
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -9.51E-02 AT JS:   85 M:    0 N:    0   F_S-max:   9.78E-09 AT JS:   87 M:    0 N:    0
+ X^U-max:  -1.95E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   7.22E-08 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -3.26E+00 AT JS:   87 M:    2 N:   -1   F_V-max:   1.22E-07 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    10  -5.0973E+01    2.260E-09  1.054E-14  3.903E-11  1.021E-11  2.239E-11  8.559E-01      424
+
+ Computing block preconditioner -  LM parameter: 2.26E-04 mu||: 0.00E+00 Asym index: 1.27E-05
+ ||X||-GMRES =   3.806E+01 MAX(|X|) =   1.439E+01
+ POWER SPECTRA(SYM ) -- dB:  1.332E-04 dP:  7.773E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.235E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.700E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.354E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.747E-03 B.GRAD-P (rms):   1.913E-02 B.GRAD-P (max):   1.179E-01 B.GRAD-P (min):  -1.179E-01
+ (J*B)/|JxB| (rms):   3.749E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   1.110E-18
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.09E-01 AT JS:   85 M:    0 N:    0   F_S-max:   8.75E-09 AT JS:   87 M:    0 N:    0
+ X^U-max:  -2.15E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   5.36E-08 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -3.60E+00 AT JS:   87 M:    2 N:   -1   F_V-max:   9.08E-08 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    11  -5.2119E+01    1.602E-09  4.675E-15  2.911E-11  5.749E-12  1.269E-11  9.564E-01      473
+
+ Computing block preconditioner -  LM parameter: 1.60E-04 mu||: 0.00E+00 Asym index: 1.28E-05
+ ||X||-GMRES =   2.721E+01 MAX(|X|) =   1.014E+01
+ POWER SPECTRA(SYM ) -- dB:  1.342E-04 dP:  7.927E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.385E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.699E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.327E-15 DEL_TFLUX:  -6.939E-18
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.929E-02 B.GRAD-P (max):   1.177E-01 B.GRAD-P (min):  -1.177E-01
+ (J*B)/|JxB| (rms):   3.673E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   1.210E-18
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -8.05E-02 AT JS:   85 M:    0 N:    0   F_S-max:   7.19E-09 AT JS:   87 M:    0 N:    0
+ X^U-max:  -1.51E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   3.98E-08 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -2.53E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   6.75E-08 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    12  -5.2732E+01    1.047E-09  1.470E-15  1.965E-11  3.232E-12  7.188E-12  6.838E-01      522
+
+ Computing block preconditioner -  LM parameter: 1.05E-04 mu||: 0.00E+00 Asym index: 1.30E-05
+ ||X||-GMRES =   1.988E+01 MAX(|X|) =   7.471E+00
+ POWER SPECTRA(SYM ) -- dB:  1.353E-04 dP:  8.098E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.421E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.698E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.492E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.942E-02 B.GRAD-P (max):   1.176E-01 B.GRAD-P (min):  -1.176E-01
+ (J*B)/|JxB| (rms):   3.587E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   8.549E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -8.46E-02 AT JS:   85 M:    0 N:    0   F_S-max:   5.63E-09 AT JS:   87 M:    0 N:    0
+ X^U-max:  -1.54E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   2.54E-08 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -2.64E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   4.32E-08 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    13  -5.3204E+01    6.247E-10  4.805E-16  1.256E-11  1.348E-12  3.021E-12  7.064E-01      570
+
+ Computing block preconditioner -  LM parameter: 6.25E-05 mu||: 0.00E+00 Asym index: 1.31E-05
+ ||X||-GMRES =   1.075E+01 MAX(|X|) =   4.032E+00
+ POWER SPECTRA(SYM ) -- dB:  1.366E-04 dP:  8.297E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.186E-08
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.697E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.474E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.957E-02 B.GRAD-P (max):   1.175E-01 B.GRAD-P (min):  -1.175E-01
+ (J*B)/|JxB| (rms):   3.490E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   8.098E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -9.20E-02 AT JS:   85 M:    0 N:    0   F_S-max:   3.65E-09 AT JS:   87 M:    0 N:    0
+ X^U-max:  -1.62E+00 AT JS:   87 M:    2 N:   -1   F_U-max:   9.84E-09 AT JS:   87 M:    2 N:   -1
+ X^V-max:  -2.85E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   1.69E-08 AT JS:   87 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    14  -5.3528E+01    2.766E-10  9.124E-17  6.433E-12  2.152E-13  4.829E-13  7.640E-01      612
+
+ Computing block preconditioner -  LM parameter: 2.77E-05 mu||: 0.00E+00 Asym index: 1.33E-05
+ ||X||-GMRES =   5.113E+00 MAX(|X|) =   1.724E+00
+ POWER SPECTRA(SYM ) -- dB:  1.374E-04 dP:  8.425E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  4.810E-09
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.697E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.597E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.973E-02 B.GRAD-P (max):   1.172E-01 B.GRAD-P (min):  -1.172E-01
+ (J*B)/|JxB| (rms):   3.429E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   8.536E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -5.59E-02 AT JS:   85 M:    0 N:    0   F_S-max:   7.22E-10 AT JS:   87 M:    0 N:    0
+ X^U-max:  -9.56E-01 AT JS:   86 M:    2 N:   -1   F_U-max:   6.95E-10 AT JS:   86 M:    2 N:   -1
+ X^V-max:  -1.72E+00 AT JS:   86 M:    2 N:   -1   F_V-max:   1.09E-09 AT JS:   86 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    15  -5.3607E+01    1.404E-11  2.397E-18  7.775E-13  1.559E-15  3.207E-15  5.138E-01      641
+
+ Computing block preconditioner -  LM parameter: 1.40E-06 mu||: 0.00E+00 Asym index: 1.35E-05
+ ||X||-GMRES =   3.881E+00 MAX(|X|) =   1.748E+00
+ POWER SPECTRA(SYM ) -- dB:  1.374E-04 dP:  8.435E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.805E-10
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.696E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.529E-15 DEL_TFLUX:   0.000E+00
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.983E-02 B.GRAD-P (max):   1.169E-01 B.GRAD-P (min):  -1.169E-01
+ (J*B)/|JxB| (rms):   3.424E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   1.007E-18
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.75E-02 AT JS:   94 M:    0 N:    0   F_S-max:   4.98E-11 AT JS:    2 M:    0 N:    0
+ X^U-max:  -1.17E+00 AT JS:   96 M:    2 N:   -1   F_U-max:   4.26E-11 AT JS:   96 M:    2 N:   -1
+ X^V-max:  -1.75E+00 AT JS:   96 M:    2 N:   -1   F_V-max:   6.33E-11 AT JS:   96 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    16  -5.3610E+01    1.552E-14  5.221E-20  2.305E-14  2.928E-18  2.718E-17  3.901E-01      670
+
+ Computing block preconditioner -  LM parameter: 1.65E-09 mu||: 0.00E+00 Asym index: 1.36E-05
+ ||X||-GMRES =   5.268E+00 MAX(|X|) =   2.697E+00
+ POWER SPECTRA(SYM ) -- dB:  1.374E-04 dP:  8.435E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  1.201E-14
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.696E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.396E-15 DEL_TFLUX:  -1.388E-17
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.984E-02 B.GRAD-P (max):   1.170E-01 B.GRAD-P (min):  -1.170E-01
+ (J*B)/|JxB| (rms):   3.424E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   9.997E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -1.17E-02 AT JS:   96 M:    0 N:    0   F_S-max:   9.70E-13 AT JS:   97 M:    0 N:    0
+ X^U-max:  -1.89E+00 AT JS:   98 M:    2 N:   -1   F_U-max:   2.39E-13 AT JS:    2 M:    0 N:    1
+ X^V-max:  -2.70E+00 AT JS:   98 M:    2 N:   -1   F_V-max:  -2.23E-13 AT JS:    2 M:    1 N:    0
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    17  -5.3610E+01    1.102E-17  4.321E-24  2.927E-18  2.878E-23  1.526E-21  5.295E-01      700
+
+ Computing block preconditioner -  LM parameter: 1.01E-10 mu||: 0.00E+00 Asym index: 1.36E-05
+ ||X||-GMRES =   1.753E-01 MAX(|X|) =   1.380E-01
+ POWER SPECTRA(SYM ) -- dB:  1.374E-04 dP:  8.435E-08
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  4.617E-16
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   3.696E-01 B_u:   4.598E-02 B_v:   2.560E-03
+ DIV-B (rms):   2.431E-15 DEL_TFLUX:   1.388E-17
+ <BETA>:   3.746E-03 B.GRAD-P (rms):   1.984E-02 B.GRAD-P (max):   1.170E-01 B.GRAD-P (min):  -1.170E-01
+ (J*B)/|JxB| (rms):   3.424E+01 (J_par)/|J_tot| (rms):   9.996E-01   DIV-J (rms):   7.962E-19
+SYMMETRIC DISPLACEMENTS AND FORCES
+ X^S-max:  -3.22E-04 AT JS:   99 M:    0 N:    0   F_S-max:   5.71E-17 AT JS:   41 M:    0 N:    0
+ X^U-max:  -9.31E-02 AT JS:   99 M:    2 N:   -1   F_U-max:   2.45E-16 AT JS:   99 M:    2 N:   -1
+ X^V-max:  -1.38E-01 AT JS:   99 M:    2 N:   -1   F_V-max:   3.59E-16 AT JS:   99 M:    2 N:   -1
+ SIESTA Curtor :   0.4006E+05 VMEC Curtor :   0.4000E+05
+
+    18  -5.3610E+01    2.405E-25  5.993E-32  9.673E-27  1.498E-29  9.971E-30  1.761E-02      726
+
+ nprecon:  17 LM parameter:  1.01E-10 mu||:  0.00E+00 Symmetry Index:  1.36E-05
+ Number processors:     4
+
+==============================              =======================
+
+ TIMING INFORMATION                          RMS BOUNDARY FORCES
+
+==============================              =======================
+ Total runtime  :        5.908               fs(1,m=1)  :  0.00E+00
+ Initialization :        0.000               fs(2,m=1)  :  0.00E+00
+ Diagonal prec  :        0.101               fs(2,m!=1) :  0.00E+00
+ Compute blocks :        1.723               fu(1,m=1)  :  0.00E+00
+ Factor blocks  :        0.365               fu(2,m=1)  :  0.00E+00
+ Toijsp         :        2.003               fu(2,m!=1) :  0.00E+00
+ Tomnsp         :        2.874
+ GMRES          :        3.359
+ Conj Gradient  :        0.000
+
+ SUBROUTINES     
+ Update Pressure:        0.459               fv(1,m=0)  :  0.00E+00
+ Update Bfield  :        0.508               fv(2,m=0)  :  0.00E+00
+ CV Currents    :        1.135               fv(2,m!=0) :  0.00E+00
+ Force Harmonics:        0.015               fu(ns)     :  0.00E+00
+ Update Force   :        2.483               fu(ns-1)   :  0.00E+00
+ Update UpperV  :        0.380               fv(ns)     :  0.00E+00
+ Update State   :        0.121               fv(ns-1)   :  0.00E+00
+ Funct Island   :        4.704
+ Apply Precon   :        0.502
+ Add Perturb    :        0.121
+ Init State     :        0.164
+==============================              =======================
+
+ PARSOLVER=F    : SCALAPACK
+ PARFUNCTISL    : T
+ COLUMN SCALING : T
+ PARGMRES       : T GMRES_TYPE:  2
+ OUTPUT_TIMINGS : F
+
+ TIME DIVB      :  7.127E-03
+ TIME DIVJ      :  2.384E-03
+ TIME BGRADP    :  2.447E-03
+ TIME BDOTJ     :  4.480E-02
+
+ M (block size) :   27
+ N (block rows) :  100
+ P (processors) :    4

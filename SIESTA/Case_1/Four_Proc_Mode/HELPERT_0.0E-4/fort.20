@@ -1,0 +1,37 @@
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.48E-08
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.16E+00       --
+    2           0.46E-01       --
+    3           0.15E-01       --
+    4           0.78E-02       --
+    5           0.43E-02       --
+    6           0.28E-02       --
+    7           0.19E-02       0.19E-02
+
+  WARNING GMRES :
+        No convergence after 
+           7  iterations 
+
+B.E. on the preconditioned system:   0.19E-02
+B.E. on the unpreconditioned system: 0.19E-02
+info(1) = -4
+Number of iterations (info(2)):     7

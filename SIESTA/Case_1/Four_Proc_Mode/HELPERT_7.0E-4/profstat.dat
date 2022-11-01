@@ -1,0 +1,5 @@
+change context:123   was called       2000 times, total       0.00 secs
+factor call:123      was called         20 times, total       0.12 secs
+pdgeadd call:123     was called        224 times, total       0.00 secs
+solver call:123      was called        224 times, total       0.50 secs
+pdgeadd2 call:123    was called        224 times, total       0.00 secs

@@ -1,0 +1,522 @@
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.18E-06
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.41E-01       --
+    2           0.24E-01       --
+    3           0.15E-01       --
+    4           0.94E-02       --
+    5           0.65E-02       --
+    6           0.45E-02       --
+    7           0.32E-02       --
+    8           0.27E-02       0.27E-02
+
+  WARNING GMRES :
+        No convergence after 
+           8  iterations 
+
+B.E. on the preconditioned system:   0.27E-02
+B.E. on the unpreconditioned system: 0.27E-02
+info(1) = -4
+Number of iterations (info(2)):     8
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.22E-02
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.94E-01       --
+    2           0.43E-01       --
+    3           0.21E-01       --
+    4           0.11E-01       --
+    5           0.68E-02       0.68E-02
+
+  WARNING GMRES :
+        No convergence after 
+           5  iterations 
+
+B.E. on the preconditioned system:   0.68E-02
+B.E. on the unpreconditioned system: 0.68E-02
+info(1) = -4
+Number of iterations (info(2)):     5
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.32E-03
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.70E-01       --
+    2           0.29E-01       --
+    3           0.16E-01       --
+    4           0.12E-01       --
+    5           0.98E-02       --
+    6           0.67E-02       0.67E-02
+
+  WARNING GMRES :
+        No convergence after 
+           6  iterations 
+
+B.E. on the preconditioned system:   0.67E-02
+B.E. on the unpreconditioned system: 0.67E-02
+info(1) = -4
+Number of iterations (info(2)):     6
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.49E-04
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.61E-01       --
+    2           0.32E-01       --
+    3           0.29E-01       --
+    4           0.20E-01       --
+    5           0.12E-01       --
+    6           0.71E-02       0.71E-02
+
+  WARNING GMRES :
+        No convergence after 
+           6  iterations 
+
+B.E. on the preconditioned system:   0.71E-02
+B.E. on the unpreconditioned system: 0.71E-02
+info(1) = -4
+Number of iterations (info(2)):     6
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.25E-05
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.20E+00       --
+    2           0.11E+00       --
+    3           0.80E-01       --
+    4           0.50E-01       --
+    5           0.27E-01       0.27E-01
+
+  WARNING GMRES :
+        No convergence after 
+           5  iterations 
+
+B.E. on the preconditioned system:   0.27E-01
+B.E. on the unpreconditioned system: 0.27E-01
+info(1) = -4
+Number of iterations (info(2)):     5
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.15E-05
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.14E+00       --
+    2           0.62E-01       --
+    3           0.43E-01       --
+    4           0.31E-01       --
+    5           0.17E-01       0.17E-01
+
+  WARNING GMRES :
+        No convergence after 
+           5  iterations 
+
+B.E. on the preconditioned system:   0.17E-01
+B.E. on the unpreconditioned system: 0.17E-01
+info(1) = -4
+Number of iterations (info(2)):     5
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.84E-06
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.12E+00       --
+    2           0.51E-01       --
+    3           0.28E-01       --
+    4           0.18E-01       --
+    5           0.14E-01       0.14E-01
+
+  WARNING GMRES :
+        No convergence after 
+           5  iterations 
+
+B.E. on the preconditioned system:   0.14E-01
+B.E. on the unpreconditioned system: 0.14E-01
+info(1) = -4
+Number of iterations (info(2)):     5
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.48E-06
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.11E+00       --
+    2           0.44E-01       --
+    3           0.22E-01       --
+    4           0.14E-01       --
+    5           0.11E-01       0.11E-01
+
+  WARNING GMRES :
+        No convergence after 
+           5  iterations 
+
+B.E. on the preconditioned system:   0.11E-01
+B.E. on the unpreconditioned system: 0.11E-01
+info(1) = -4
+Number of iterations (info(2)):     5
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.21E-06
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.49E-01       --
+    2           0.23E-01       --
+    3           0.15E-01       --
+    4           0.10E-01       --
+    5           0.73E-02       0.73E-02
+
+  WARNING GMRES :
+        No convergence after 
+           5  iterations 
+
+B.E. on the preconditioned system:   0.73E-02
+B.E. on the unpreconditioned system: 0.73E-02
+info(1) = -4
+Number of iterations (info(2)):     5
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.39E-07
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.11E+00       --
+    2           0.47E-01       0.47E-01
+
+  WARNING GMRES :
+        No convergence after 
+           2  iterations 
+
+B.E. on the preconditioned system:   0.47E-01
+B.E. on the unpreconditioned system: 0.47E-01
+info(1) = -4
+Number of iterations (info(2)):     2
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.14E-07
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.12E+00       --
+    2           0.49E-01       0.49E-01
+
+  WARNING GMRES :
+        No convergence after 
+           2  iterations 
+
+B.E. on the preconditioned system:   0.49E-01
+B.E. on the unpreconditioned system: 0.49E-01
+info(1) = -4
+Number of iterations (info(2)):     2
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.21E-07
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.10E+00       --
+    2           0.47E-01       0.47E-01
+
+  WARNING GMRES :
+        No convergence after 
+           2  iterations 
+
+B.E. on the preconditioned system:   0.47E-01
+B.E. on the unpreconditioned system: 0.47E-01
+info(1) = -4
+Number of iterations (info(2)):     2
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.18E-07
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.42E-01       --
+    2           0.21E-01       --
+    3           0.10E-01       --
+    4           0.64E-02       --
+    5           0.52E-02       --
+    6           0.45E-02       0.45E-02
+
+  WARNING GMRES :
+        No convergence after 
+           6  iterations 
+
+B.E. on the preconditioned system:   0.45E-02
+B.E. on the unpreconditioned system: 0.45E-02
+info(1) = -4
+Number of iterations (info(2)):     6
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.63E-08
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.27E-01       --
+    2           0.12E-01       --
+    3           0.89E-02       --
+    4           0.69E-02       --
+    5           0.53E-02       --
+    6           0.30E-02       0.30E-02
+
+  WARNING GMRES :
+        No convergence after 
+           6  iterations 
+
+B.E. on the preconditioned system:   0.30E-02
+B.E. on the unpreconditioned system: 0.30E-02
+info(1) = -4
+Number of iterations (info(2)):     6
+                    CONVERGENCE HISTORY FOR GMRES
+
+Errors are displayed in unit:  6
+Warnings are displayed in unit: 21
+Matrix size:    2700
+Local matrix size:    2700
+Restart:     200
+Right preconditioning
+Iterative classical Gram-Schmidt
+User supplied initial guess
+True residual computed at restart
+Maximum number of iterations:   100
+Tolerance for convergence: 0.61E-12
+Backward error on the unpreconditioned system Ax = b:
+    the residual is normalised by ||b||
+Backward error on the preconditioned system (P1)A(P2)y = (P1)b:
+    the preconditioned residual is normalised by ||(P1)b||
+Optimal size for the local workspace: 594701
+
+Convergence history: b.e. on the preconditioned system
+ Iteration   Arnoldi b.e.    True b.e.
+    1           0.14E-02       --
+    2           0.30E-03       --
+    3           0.63E-04       --
+    4           0.35E-05       0.31E-04
+
+  WARNING GMRES :
+        No convergence after 
+           4  iterations 
+
+B.E. on the preconditioned system:   0.31E-04
+B.E. on the unpreconditioned system: 0.31E-04
+info(1) = -4
+Number of iterations (info(2)):     4
