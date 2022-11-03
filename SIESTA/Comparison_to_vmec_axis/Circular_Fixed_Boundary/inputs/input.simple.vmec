@@ -1,0 +1,38 @@
+&INDATA
+LFORBAL = F,
+LFREEB = F,
+DELT = 1.0,
+NFP = 1,
+NS_ARRAY = 100,
+FTOL_ARRAY = 1.0E-20,
+NITER = 100000,
+NSTEP = 100,
+NTOR = 0,
+MPOL = 2,
+NZETA = 1,
+TCON0 = 2.0,
+LASYM = F,
+
+RAXIS(0) = 0.75,
+ZAXIS(0) = 0.0,
+
+RBC(0,0) = 0.7,
+RBC(0,1) = 0.2,
+ZBS(0,0) = 0.0,
+ZBS(0,1) = 0.1,
+
+GAMMA = 0.0,
+PHIEDGE = -0.05,
+BLOAT = 1.0,
+
+NCURR = 1,
+CURTOR = 40000,
+AC_AUX_S = 0.0, 1.0,
+AC_AUX_F = 1.0, 0.0,
+PCURR_TYPE = 'line_segment_ip',
+
+PRES_SCALE = 5000.0,
+AM_AUX_S = 0.0, 1.0,
+AM_AUX_F = 1.0, 0.0,
+PMASS_TYPE = 'line_segment',
+/
