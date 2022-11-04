@@ -1,0 +1,50 @@
+ &INDATA
+! VMEC execution parameters.
+ mgrid_file = 'mgrid_circle.nc'
+ LFORBAL = .false.
+ LFREEB = .true.
+ DELT = 0.7
+ TCON0 = 2.0
+ NFP = 1
+ NS_ARRAY = 100
+ FTOL_ARRAY = 1e-20
+ NITER = 150000
+ NSTEP = 200
+ NTOR = 0
+ MPOL = 3
+ NZETA = 36
+ NVACSKIP = 9
+ LASYM = .false.
+ OMP_NUM_THREADS = 1
+ EXTCUR = -3263440.0 2*-886302.0 -3263440.0 1.0
+
+! Fitting parameters.
+ GAMMA = 0.0
+ phiedge = 0.575055
+ BLOAT = 1.0
+
+! Initial Position.
+ RAXIS = 0.0
+ RAXIS(0) = 1.0
+ ZAXIS = 0.0
+ RBC = 0.0
+ RBC(0,0) = 1.0
+ RBC(0,1) = 0.01
+ ZBS = 0.0
+ ZBS(0,1) = 0.01
+
+! Plasma current parameters.
+ NCURR = 1
+ curtor = 1699975.473328
+ pcurr_type = 'line_segment_i'
+ ac_aux_s = 0.0 1.0
+ ac_aux_f = 0.0 1.0
+
+! Plasma pressure parameters
+ SPRES_PED = 1.0
+ PRES_SCALE = 1000000.0
+ pmass_type = 'line_segment'
+ am_aux_s = 0.0 1.0
+ am_aux_f = 1.0 0.0
+ /
+$
