@@ -1,0 +1,40 @@
+#!/bin/bash -l
+# Standard output and error:
+#SBATCH -o ./tjob.out.%j
+#SBATCH -e ./tjob.err.%j
+# Initial working directory:
+#SBATCH -D ./
+# Job Name:
+#SBATCH -J j_st
+# Queue (Partition):
+#SBATCH --partition=express
+# Number of nodes and MPI tasks per node:
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=36
+#
+#SBATCH --mail-type=none
+#SBATCH --mail-user=<userid>@rzg.mpg.de
+#
+#SBATCH --mem=120000
+#
+# Wall clock limit:
+#SBATCH --time=0:30:00
+
+# Load modules and run the program:
+module purge
+module load cmake
+module load intel/21.3.0
+module load impi/2021.3 
+module load mkl
+module load hdf5-mpi
+module load netcdf-mpi
+module load git
+module load anaconda/3/2020.02
+module list
+
+
+#  srun ~/src/stellinstall/trunk/build/bin/xv3fit -c_diff input.v3fit > v3fit.log
+srun ~/src/Stellarator-Tools/build_20221017/_deps/siesta-build/xsiesta
+
+
+

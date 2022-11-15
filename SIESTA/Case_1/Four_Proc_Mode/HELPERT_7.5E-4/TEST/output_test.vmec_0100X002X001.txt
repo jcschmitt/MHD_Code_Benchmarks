@@ -1,0 +1,11 @@
+--------------------------------------------------------------
+ SIESTA MHD EQUILIBRIUM CODE v4.0 (100917)
+ Scalable Island Equilibrium Solver for Toroidal Applications
+--------------------------------------------------------------
+
+CASE: test.vmec
+ DATE = Nov 15,2022  TIME = 20:14:50
+
+ 1 mres:    2 HelPert:  7.50E-04 HelPertA:  0.00E+00
+
+ ngmres_type:    2 iOrtho:    3 lColScale:  T

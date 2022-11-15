@@ -1,0 +1,61 @@
+
+Please note that in the future you will need to specify an explicit version
+also when loading the 'anaconda' module, just as is already required for the
+compiler and MPI modules. In case you need to load the anaconda module for your
+jobs, please adapt your submit scripts already now. Use
+
+  module load anaconda/3/2021.11
+
+to load version 3/2021.11 explicitly, for example.
+
+
+Please note that in the future you will need to specify an explicit version
+also when loading the 'anaconda' module, just as is already required for the
+compiler and MPI modules. In case you need to load the anaconda module for your
+jobs, please adapt your submit scripts already now. Use
+
+  module load anaconda/3/2021.11
+
+to load version 3/2021.11 explicitly, for example.
+
+
+Please note that in the future you will need to specify an explicit version
+also when loading the 'anaconda' module, just as is already required for the
+compiler and MPI modules. In case you need to load the anaconda module for your
+jobs, please adapt your submit scripts already now. Use
+
+  module load anaconda/3/2021.11
+
+to load version 3/2021.11 explicitly, for example.
+
+
+Please note that in the future you will need to specify an explicit version
+also when loading the 'anaconda' module, just as is already required for the
+compiler and MPI modules. In case you need to load the anaconda module for your
+jobs, please adapt your submit scripts already now. Use
+
+  module load anaconda/3/2021.11
+
+to load version 3/2021.11 explicitly, for example.
+
+Currently Loaded Modulefiles:
+ 1) cmake/3.24            5) hdf5-mpi/1.12.2              
+ 2) intel/21.3.0          6) netcdf-mpi/4.4.1(default)    
+ 3) impi/2021.3           7) git/2.35                     
+ 4) mkl/2021.2(default)   8) anaconda/3/2020.02(default)  
+
+Key:
+(symbolic-version)  
+Abort(1) on node 30 (rank 30 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 30
+Abort(1) on node 27 (rank 27 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 27
+Abort(1) on node 28 (rank 28 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 28
+Abort(1) on node 29 (rank 29 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 29
+Abort(1) on node 31 (rank 31 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 31
+Abort(1) on node 32 (rank 32 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 32
+Abort(1) on node 33 (rank 33 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 33
+Abort(1) on node 34 (rank 34 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 34
+Abort(1) on node 35 (rank 35 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 35
+slurmstepd: error: *** STEP 3346316.0 ON ravc4005 CANCELLED AT 2022-11-15T20:14:50 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: ravc4005: tasks 0-35: Killed
+srun: launch/slurm: _step_signal: Terminating StepId=3346316.0

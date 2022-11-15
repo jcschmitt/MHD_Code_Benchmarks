@@ -1,0 +1,30 @@
+&SIESTA_INFO
+ ETA_FACTOR = 1.E-4
+ LCOLSCALE = T
+ L_VESSEL = F            !  Turn on free boundary
+ LADD_PERT =  F          !  Turn on islands
+ LRESISTIVE = F
+ LRESTART   = F          !  Start from restart file.
+ LRECON    = T
+ NITER     = 1000000     !  Number of solver iterations.
+ NSIN      = 100         !  Number of internal grid surfaces.
+ NSIN_EXT  = 50          !  Number of external grid surfaces.
+ MPOLIN    = 12           !  Number of poloidal modes
+ NTORIN    = 12           !  Number of torodial modes.
+ NFPIN     = 5           !  Number of field periods.
+ FTOL      = 1.E-20      !  Solve tolerance.
+ levmarq_param = 1.0E-1  !  Levenberg–Marquardt parameters
+ MUPAR     =  0.0
+ WOUT_FILE      = 'wout_20180927.016_3500_401a_Rec001.nc'                   !  VMEC equilibrium
+ MGRID_FILE     = '/u/jsch/v3fit_runs/MGRIDS/mgrid_w7x_Kisslinger_ideal_v1_nfp_5_stellsym_nzeta_80_siesta_v0.nc'  !  External fields.
+ VESSEL_FILE    = 'vessel_w7x_v1.dat'                                     !  Extended boundary.
+ RESTART_EXT    = 'restart_wout_20180927.016_3500_401a_Rec001',                                       !  Restart file extension.
+ MRES           = 1,       !  Poloidal island resonance.
+ HELPERT        = 5.0E-4,  !  Island perturbation amplitude.
+ L_TRACING = F  !  Parameters for Don's poincare code.
+ NVS = 100      !
+ NUS = 101      !
+ NSS = 101      !
+ NPHIS = 2      !
+ /
+
