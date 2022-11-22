@@ -1,0 +1,409 @@
+nprow,npcol      5     8
+icontxt_global,icontxt,icontxt_1xp,icontxt_px1      1     0     1     2
+--------------------------------------------------------------
+ SIESTA MHD EQUILIBRIUM CODE v4.0 (100917)
+ Scalable Island Equilibrium Solver for Toroidal Applications
+--------------------------------------------------------------
+
+OUTPUT FILE (SCREEN DUMP): output_20180927.016_3500_401a_Rec001.txt
+ JACOBIAN SPECTRAL TRUNCATION ERROR: 9.95E-01
+ RECOMPUTE_LAMBDA - TIME:      13.50 S
+           9          12           3  1.250555214937776E-012
+           8          10           9  1.250555214937776E-012
+          12         -11          10  1.364242052659392E-012
+          10         -10          14  1.364242052659392E-012
+           9         -10          18  1.250555214937776E-012
+          12          12          22 -1.364242052659392E-012
+           6          10          23 -1.364242052659392E-012
+           5          12          23  1.250555214937776E-012
+          10          12          24 -1.364242052659392E-012
+           9         -12          29  1.364242052659392E-012
+           4         -12          32 -1.421085471520200E-012
+           4         -12          33  1.364242052659392E-012
+           4         -12          48  1.250555214937776E-012
+           8         -12          49  1.250555214937776E-012
+           4         -12          52 -1.364242052659392E-012
+           7         -12          53 -1.293187779083382E-012
+           3         -11          53  1.275424210689380E-012
+           8         -11          56  1.250555214937776E-012
+           8         -11          57 -1.307398633798584E-012
+           8          12          58  1.364242052659392E-012
+          10         -12          62  1.364242052659392E-012
+           9          12          64  1.591615728102624E-012
+          11         -12          66  1.250555214937776E-012
+           3          12          66  1.250555214937776E-012
+           2         -11          67  1.421085471520200E-012
+           5         -11          70  1.364242052659392E-012
+          10         -11          70  1.250555214937776E-012
+          11          12          70 -1.364242052659392E-012
+           1         -12          80  1.364242052659392E-012
+           3         -12          80  1.364242052659392E-012
+           6          12          80 -1.818989403545856E-012
+           6          -9          82 -1.364242052659392E-012
+          10          12          82  1.364242052659392E-012
+           3         -11          83 -1.222133505507372E-012
+           9         -11          83 -1.364242052659392E-012
+           9         -12          84 -1.364242052659392E-012
+           7         -12          87  1.250555214937776E-012
+           3         -10          87 -1.364242052659392E-012
+          12          -9          87 -1.421085471520200E-012
+          10          12          87 -1.762145984685048E-012
+           3         -10          88  1.392663762089796E-012
+           6          10          92 -1.364242052659392E-012
+           5         -12          95  1.307398633798584E-012
+           9          12          97 -1.364242052659392E-012
+           1         -12          98  1.364242052659392E-012
+ Failed Diverence Test.
+ Rmajor_i =    5.583E+00
+ RMS EDGE CURRENT ||KSUPS(NS)|| =  2.246E-15
+ SPECTRAL TRUNC ERROR - p:   0.000E+00 B_s:   5.759E-04 B_u:   5.485E-04 B_v:   5.590E-05
+ DIV-B (rms):   9.550E-16 DEL_TFLUX:   0.000E+00
+ <BETA>:   2.910E-03 B.GRAD-P (rms):   5.324E-14 B.GRAD-P (max):   1.870E-13 B.GRAD-P (min):  -1.870E-13
+ (J*B)/|JxB| (rms):   2.939E-01 (J_par)/|J_tot| (rms):   2.820E-01   DIV-J (rms):   1.632E-15
+ NON-RESISTIVE RUN    ETA_FACTOR:   1.00E-04 LASYM: F L_PUSH_S: F L_PUSH_U: F L_PUSH_V: F L_PUSH_EDGE: T
+ DELTA_T:   1.00E+00 ETA_K:   1.00E-01 HESSIAN SYM: F
+ LEVMARQ_PARAM:   1.00E-01 MU_PAR:   0.00E+00
+ NEQS:  97500 NS:  100 MPOL:   12 NTOR:   12 NTHETA:   21 NZETA:   40 NGMRES-STEPS:  100
+
+ NITER (W-W0)/W0*1E6    F2(MHD)    F2(LIN)    F2SUBS     F2SUBU     F2SUBV     |V|rms     NCALLS
+     1   0.0000E+00    2.089E-07  ---------  3.262E-07  9.243E-33  1.200E-32  0.000E+00        1
+{    0,   36}:  On entry to 
+{    0,   37}:  On entry to 
+{    0,   38}:  On entry to 
+{    0,   39}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,    2}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,    5}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,    7}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   11}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   19}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   20}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   22}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   25}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   27}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   30}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          36           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+DESCINIT parameter number    6 had an illegal value 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          39           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           2           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           5           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           7           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   13}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   16}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          22           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          27           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   29}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          29           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          30           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   32}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   33}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          33           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          37           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          38           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,    8}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          11           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   12}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          13           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          16           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          19           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          20           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          25           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          32           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,    4}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,    6}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           8           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,    9}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          12           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   14}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          14           1
+           0         975         975
+ Locp,m,mb          975         975         975
+{    0,   17}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          17           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   21}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          21           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   26}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          26           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   31}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          31           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           4           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           6           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           9           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   23}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          23           1
+           0         975         975
+ Locp,m,mb          975         975         975
+{    0,   24}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          24           1
+           0         975         975
+ Locp,m,mb          975         975         975
+{    0,   15}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          15           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,    1}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,    3}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   10}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   18}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   28}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+{    0,   35}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           1           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0           3           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          10           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          18           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          28           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+{    0,   34}:  On entry to 
+DESCINIT parameter number    6 had an illegal value 
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          35           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+ myrow,mycol,nprow,npcol,desc(LLD_),lld            0          34           1
+           0         975         975
+ Locp,m,mb          975         975         975
+ error: an assertion failed with this tag:
+ descinit descA_1xp
+  n1 =  F
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: jsch(30228)
+Job name:  j_st
+Node list: ravc3487
+Job start: Tue Nov 15 20:20:15 CET 2022
+Job end:   Tue Nov 15 20:20:47 CET 2022
+Work dir:  /u/jsch/data/SIESTA_runs/W7X/test_cases/FOM003_1sttest/multinode/./
+Command:   /raven/u/jsch/data/SIESTA_runs/W7X/test_cases/FOM003_1sttest/multinode/slurm_siesta_1
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID           JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode 
+------------ ---------- ------ ------ ------ ------------ ------------ ---------- -------- 
+3346326            j_st      1           144                             00:00:32      9:0 
+3346326.0       xsiesta      1     40    144      141.24M       10.15M   00:00:20      0:9 
+  
+Maximum memory per node: 5.78532 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 40.6 %
+     

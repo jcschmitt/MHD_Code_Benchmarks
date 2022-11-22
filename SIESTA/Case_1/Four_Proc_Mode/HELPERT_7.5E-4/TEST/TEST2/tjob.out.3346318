@@ -1,0 +1,100 @@
+nprow,npcol      6     8
+icontxt_global,icontxt,icontxt_1xp,icontxt_px1      1     0     1     2
+--------------------------------------------------------------
+ SIESTA MHD EQUILIBRIUM CODE v4.0 (100917)
+ Scalable Island Equilibrium Solver for Toroidal Applications
+--------------------------------------------------------------
+
+OUTPUT FILE (SCREEN DUMP): output_test.vmec.txt
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ JACOBIAN SPECTRAL TRUNCATION ERROR: 9.95E-01
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: jsch(30228)
+Job name:  j_st
+Node list: ravc3327
+Job start: Tue Nov 15 20:15:55 CET 2022
+Job end:   Tue Nov 15 20:16:09 CET 2022
+Work dir:  /u/jsch/MHD_Code_Benchmarks/SIESTA/Case_1/Four_Proc_Mode/HELPERT_7.5E-4/TEST/TEST2/./
+Command:   /raven/u/jsch/MHD_Code_Benchmarks/SIESTA/Case_1/Four_Proc_Mode/HELPERT_7.5E-4/TEST/TEST2/slurm_siesta
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID           JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode 
+------------ ---------- ------ ------ ------ ------------ ------------ ---------- -------- 
+3346318            j_st      1           144                             00:00:14      9:0 
+3346318.0       xsiesta      1     48    144       35.44M        7.21M   00:00:07      0:9 
+  
+Maximum memory per node: 1.74173 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 0 %
+     

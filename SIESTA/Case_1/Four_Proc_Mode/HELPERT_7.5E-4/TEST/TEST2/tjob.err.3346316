@@ -1,0 +1,10 @@
+
+Please note that in the future you will need to specify an explicit version
+also when loading the 'anaconda' module, just as is already required for the
+compiler and MPI modules. In case you need to load the anaconda module for your
+jobs, please adapt your submit scripts already now. Use
+
+  module load anaconda/3/2021.11
+
+to load version 3/2021.11 explicitly, for example.
+

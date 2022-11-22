@@ -1,0 +1,64 @@
+nprow,npcol      6     6
+icontxt_global,icontxt,icontxt_1xp,icontxt_px1      1     0     1     2
+--------------------------------------------------------------
+ SIESTA MHD EQUILIBRIUM CODE v4.0 (100917)
+ Scalable Island Equilibrium Solver for Toroidal Applications
+--------------------------------------------------------------
+
+OUTPUT FILE (SCREEN DUMP): output_test.vmec.txt
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+ error: an assertion failed with this tag:
+ scalcounts != mblk_size2 in SetupScalingAllGather
+  n1 =  F
+  n1 =  F
+  n1 =  F
+  n1 =  F
+  n1 =  F
+  n1 =  F
+  n1 =  F
+  n1 =  F
+  n1 =  F
+ JACOBIAN SPECTRAL TRUNCATION ERROR: 9.95E-01
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: jsch(30228)
+Job name:  j_st
+Node list: ravc4005
+Job start: Tue Nov 15 20:13:49 CET 2022
+Job end:   Tue Nov 15 20:14:51 CET 2022
+Work dir:  /u/jsch/MHD_Code_Benchmarks/SIESTA/Case_1/Four_Proc_Mode/HELPERT_7.5E-4/TEST/./
+Command:   /raven/u/jsch/MHD_Code_Benchmarks/SIESTA/Case_1/Four_Proc_Mode/HELPERT_7.5E-4/TEST/slurm_general_6x72_cdiff
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID           JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode 
+------------ ---------- ------ ------ ------ ------------ ------------ ---------- -------- 
+3346316            j_st      1            72                             00:01:02      9:0 
+3346316.0       xsiesta      1     36     72       34.28M        8.47M   00:00:06      0:9 
+  
+Maximum memory per node: 1.26356 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 0 %
+     
