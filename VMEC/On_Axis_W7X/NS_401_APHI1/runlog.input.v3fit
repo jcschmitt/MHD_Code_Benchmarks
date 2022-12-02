@@ -1,0 +1,22 @@
+ V3FITA RUN
+   Namelist Input from file input.v3fit
+   my_task is 
+ v3post                                                                         
+  
+  *** In task v3post
+  *** Constructing equilibrium model
+  *** Initializing VMEC equilibrium from file input.vmec
+  *** Constructing signals
+  *** Constructing magnetic signals from /u/jsch/v3fit_runs/DIAGNOSTICS/MAGNETIC
+ S/V7_Kisslinger_ideal_v1_nfp_5_stellsym_nzeta_80/w7x_magnetic_diagnostics_sens.
+ dat_mdsig.LIST
+  *** Constructing limiter signals
+  *** Constructing prior signals
+  *** Constructing combination signals
+  *** Resizing context arrays
+  *** Starting initial equilibrium convergence
+Model converged  T    83193    83192 All
+  *** Calculating modeled signals
+g^2 =  1.89339E+00
+  *** Writing context to disk
+  *** V3FIT run time (s):    1120.78

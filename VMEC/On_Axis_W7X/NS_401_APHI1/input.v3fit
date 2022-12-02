@@ -1,0 +1,261 @@
+&v3fit_main_nli
+  vmec_nli_filename = 'input.vmec'
+
+! Reconstruction Controls
+  my_task = 'v3post'
+  nrstep = 20
+  dg2_stop = 0.01
+  cut_svd = 2.0E-5
+  cut_eff = 1.0E-4
+  cut_marg_eff = 0.0
+  cut_delta_a = 0.0
+  cut_dg2 = 0.0
+  astep_max = 100.0
+  step_type = 'lm'
+
+! Reconstruction Parameters
+
+! Reconstruction Signals
+
+! Magnetics
+  mdsig_list_filename = '/u/jsch/v3fit_runs/DIAGNOSTICS/MAGNETICS/V7_Kisslinger_ideal_v1_nfp_5_stellsym_nzeta_80/w7x_magnetic_diagnostics_sens.dat_mdsig.LIST'
+  mag_a = T
+
+! Saddle Flux loops
+  sdo_weight_a(  1) = 0.0 sdo_sigma_a(  1) =  5.00000e-04 sdo_data_a(  1) =  0.00000e+00  !QDK10XS100
+  sdo_weight_a(  2) = 0.0 sdo_sigma_a(  2) =  5.00000e-04 sdo_data_a(  2) =  0.00000e+00  !QDK10XS200
+  sdo_weight_a(  3) = 1.0 sdo_sigma_a(  3) =  5.00000e-04 sdo_data_a(  3) =  0.00000e+00  !QDK10XS300
+  sdo_weight_a(  4) = 1.0 sdo_sigma_a(  4) =  5.00000e-04 sdo_data_a(  4) =  0.00000e+00  !QDK10XS400
+  sdo_weight_a(  5) = 1.0 sdo_sigma_a(  5) =  5.00000e-04 sdo_data_a(  5) =  0.00000e+00  !QDK11XS500
+  sdo_weight_a(  6) = 1.0 sdo_sigma_a(  6) =  5.00000e-04 sdo_data_a(  6) =  0.00000e+00  !QDK11XS600
+  sdo_weight_a(  7) = 1.0 sdo_sigma_a(  7) =  5.00000e-04 sdo_data_a(  7) =  0.00000e+00  !QDK11XS700
+  sdo_weight_a(  8) = 1.0 sdo_sigma_a(  8) =  5.00000e-04 sdo_data_a(  8) =  0.00000e+00  !QDK11XS800
+  sdo_weight_a(  9) = 1.0 sdo_sigma_a(  9) =  5.00000e-04 sdo_data_a(  9) =  0.00000e+00  !QDK20XS100
+  sdo_weight_a( 10) = 1.0 sdo_sigma_a( 10) =  5.00000e-04 sdo_data_a( 10) =  0.00000e+00  !QDK20XS200
+  sdo_weight_a( 11) = 1.0 sdo_sigma_a( 11) =  5.00000e-04 sdo_data_a( 11) =  0.00000e+00  !QDK20XS400
+  sdo_weight_a( 12) = 1.0 sdo_sigma_a( 12) =  5.00000e-04 sdo_data_a( 12) =  0.00000e+00  !QDK20XS900
+  sdo_weight_a( 13) = 1.0 sdo_sigma_a( 13) =  5.00000e-04 sdo_data_a( 13) =  0.00000e+00  !QDK21XS500
+  sdo_weight_a( 14) = 1.0 sdo_sigma_a( 14) =  5.00000e-04 sdo_data_a( 14) =  0.00000e+00  !QDK21XS600
+  sdo_weight_a( 15) = 0.0 sdo_sigma_a( 15) =  5.00000e-04 sdo_data_a( 15) =  0.00000e+00  !QDK21XS700
+  sdo_weight_a( 16) = 0.0 sdo_sigma_a( 16) =  5.00000e-04 sdo_data_a( 16) =  0.00000e+00  !QDK21XS800
+  sdo_weight_a( 17) = 1.0 sdo_sigma_a( 17) =  5.00000e-04 sdo_data_a( 17) =  0.00000e+00  !QDK30XS100
+  sdo_weight_a( 18) = 1.0 sdo_sigma_a( 18) =  5.00000e-04 sdo_data_a( 18) =  0.00000e+00  !QDK30XS200
+  sdo_weight_a( 19) = 0.0 sdo_sigma_a( 19) =  5.00000e-04 sdo_data_a( 19) =  0.00000e+00  !QDK30XS400
+  sdo_weight_a( 20) = 0.0 sdo_sigma_a( 20) =  5.00000e-04 sdo_data_a( 20) =  0.00000e+00  !QDK30XS900
+  sdo_weight_a( 21) = 0.0 sdo_sigma_a( 21) =  5.00000e-04 sdo_data_a( 21) =  0.00000e+00  !QDK31XS500
+  sdo_weight_a( 22) = 0.0 sdo_sigma_a( 22) =  5.00000e-04 sdo_data_a( 22) =  0.00000e+00  !QDK31XS600
+  sdo_weight_a( 23) = 0.0 sdo_sigma_a( 23) =  5.00000e-04 sdo_data_a( 23) =  0.00000e+00  !QDK31XS700
+  sdo_weight_a( 24) = 0.0 sdo_sigma_a( 24) =  5.00000e-04 sdo_data_a( 24) =  0.00000e+00  !QDK31XS800
+  sdo_weight_a( 25) = 0.0 sdo_sigma_a( 25) =  5.00000e-04 sdo_data_a( 25) =  0.00000e+00  !QDK40XS100
+  sdo_weight_a( 26) = 0.0 sdo_sigma_a( 26) =  5.00000e-04 sdo_data_a( 26) =  0.00000e+00  !QDK40XS200
+  sdo_weight_a( 27) = 0.0 sdo_sigma_a( 27) =  5.00000e-04 sdo_data_a( 27) =  0.00000e+00  !QDK40XS400
+  sdo_weight_a( 28) = 0.0 sdo_sigma_a( 28) =  5.00000e-04 sdo_data_a( 28) =  0.00000e+00  !QDK40XS900
+  sdo_weight_a( 29) = 0.0 sdo_sigma_a( 29) =  5.00000e-04 sdo_data_a( 29) =  0.00000e+00  !QDK41XS500
+  sdo_weight_a( 30) = 0.0 sdo_sigma_a( 30) =  5.00000e-04 sdo_data_a( 30) =  0.00000e+00  !QDK41XS600
+  sdo_weight_a( 31) = 0.0 sdo_sigma_a( 31) =  5.00000e-04 sdo_data_a( 31) =  0.00000e+00  !QDK41XS700
+  sdo_weight_a( 32) = 0.0 sdo_sigma_a( 32) =  5.00000e-04 sdo_data_a( 32) =  0.00000e+00  !QDK41XS800
+  sdo_weight_a( 33) = 0.0 sdo_sigma_a( 33) =  5.00000e-04 sdo_data_a( 33) =  0.00000e+00  !QDK50XS100
+  sdo_weight_a( 34) = 0.0 sdo_sigma_a( 34) =  5.00000e-04 sdo_data_a( 34) =  0.00000e+00  !QDK50XS200
+  sdo_weight_a( 35) = 0.0 sdo_sigma_a( 35) =  5.00000e-04 sdo_data_a( 35) =  0.00000e+00  !QDK50XS300
+  sdo_weight_a( 36) = 0.0 sdo_sigma_a( 36) =  5.00000e-04 sdo_data_a( 36) =  0.00000e+00  !QDK50XS400
+  sdo_weight_a( 37) = 0.0 sdo_sigma_a( 37) =  5.00000e-04 sdo_data_a( 37) =  0.00000e+00  !QDK51XS500
+  sdo_weight_a( 38) = 0.0 sdo_sigma_a( 38) =  5.00000e-04 sdo_data_a( 38) =  0.00000e+00  !QDK51XS600
+  sdo_weight_a( 39) = 0.0 sdo_sigma_a( 39) =  5.00000e-04 sdo_data_a( 39) =  0.00000e+00  !QDK51XS700
+  sdo_weight_a( 40) = 0.0 sdo_sigma_a( 40) =  5.00000e-04 sdo_data_a( 40) =  0.00000e+00  !QDK51XS800
+! Diamagnetic loops
+  sdo_weight_a( 41) = 1.0 sdo_sigma_a( 41) =  5.00000e-04 sdo_data_a( 41) =  0.00000e+00  !QXD20CE001
+  sdo_weight_a( 42) = 1.0 sdo_sigma_a( 42) =  5.00000e-04 sdo_data_a( 42) =  0.00000e+00  !QXD20CE002
+  sdo_weight_a( 43) = 1.0 sdo_sigma_a( 43) =  5.00000e-04 sdo_data_a( 43) =  0.00000e+00  !QXD31CE001
+  sdo_weight_a( 44) = 1.0 sdo_sigma_a( 44) =  5.00000e-04 sdo_data_a( 44) =  0.00000e+00  !QXD31CE002
+  sdo_weight_a( 45) = 0.0 sdo_sigma_a( 45) =  5.00000e-04 sdo_data_a( 45) =  0.00000e+00  !QXD31CE101
+  sdo_weight_a( 46) = 0.0 sdo_sigma_a( 46) =  5.00000e-04 sdo_data_a( 46) =  0.00000e+00  !QXD31CE102
+  sdo_weight_a( 47) = 0.0 sdo_sigma_a( 47) =  5.00000e-04 sdo_data_a( 47) =  0.00000e+00  !QXD31CE201
+  sdo_weight_a( 48) = 0.0 sdo_sigma_a( 48) =  5.00000e-04 sdo_data_a( 48) =  0.00000e+00  !QXD31CE202
+  sdo_weight_a( 49) = 0.0 sdo_sigma_a( 49) =  5.00000e-04 sdo_data_a( 49) =  0.00000e+00  !QXD31CE301
+  sdo_weight_a( 50) = 0.0 sdo_sigma_a( 50) =  5.00000e-04 sdo_data_a( 50) =  0.00000e+00  !QXD31CE302
+  sdo_weight_a( 51) = 0.0 sdo_sigma_a( 51) =  5.00000e-04 sdo_data_a( 51) =  0.00000e+00  !QXD31CE401
+  sdo_weight_a( 52) = 0.0 sdo_sigma_a( 52) =  5.00000e-04 sdo_data_a( 52) =  0.00000e+00  !QXD31CE402
+  sdo_weight_a( 53) = 0.0 sdo_sigma_a( 53) =  5.00000e-04 sdo_data_a( 53) =  0.00000e+00  !QXD50CE001
+  sdo_weight_a( 54) = 0.0 sdo_sigma_a( 54) =  5.00000e-04 sdo_data_a( 54) =  0.00000e+00  !QXD50CE002
+! Rogowskis
+  sdo_weight_a( 55) = 0.0 sdo_sigma_a( 55) =  5.00000e-04 sdo_data_a( 55) =  0.00000e+00  !QXO21CE111
+  sdo_weight_a( 56) = 0.0 sdo_sigma_a( 56) =  5.00000e-04 sdo_data_a( 56) =  0.00000e+00  !QXO21CE112
+  sdo_weight_a( 57) = 0.0 sdo_sigma_a( 57) =  5.00000e-04 sdo_data_a( 57) =  0.00000e+00  !QXO21CE113
+  sdo_weight_a( 58) = 0.0 sdo_sigma_a( 58) =  5.00000e-04 sdo_data_a( 58) =  0.00000e+00  !QXO21CE114
+  sdo_weight_a( 59) = 0.0 sdo_sigma_a( 59) =  5.00000e-04 sdo_data_a( 59) =  0.00000e+00  !QXO21CE121
+  sdo_weight_a( 60) = 0.0 sdo_sigma_a( 60) =  5.00000e-04 sdo_data_a( 60) =  0.00000e+00  !QXO21CE122
+  sdo_weight_a( 61) = 0.0 sdo_sigma_a( 61) =  5.00000e-04 sdo_data_a( 61) =  0.00000e+00  !QXO21CE123
+  sdo_weight_a( 62) = 0.0 sdo_sigma_a( 62) =  5.00000e-04 sdo_data_a( 62) =  0.00000e+00  !QXO21CE124
+  sdo_weight_a( 63) = 0.0 sdo_sigma_a( 63) =  5.00000e-04 sdo_data_a( 63) =  0.00000e+00  !QXO21CE131
+  sdo_weight_a( 64) = 0.0 sdo_sigma_a( 64) =  5.00000e-04 sdo_data_a( 64) =  0.00000e+00  !QXO21CE132
+  sdo_weight_a( 65) = 0.0 sdo_sigma_a( 65) =  5.00000e-04 sdo_data_a( 65) =  0.00000e+00  !QXO21CE133
+  sdo_weight_a( 66) = 0.0 sdo_sigma_a( 66) =  5.00000e-04 sdo_data_a( 66) =  0.00000e+00  !QXO21CE134
+  sdo_weight_a( 67) = 0.0 sdo_sigma_a( 67) =  5.00000e-04 sdo_data_a( 67) =  0.00000e+00  !QXO21CE141
+  sdo_weight_a( 68) = 0.0 sdo_sigma_a( 68) =  5.00000e-04 sdo_data_a( 68) =  0.00000e+00  !QXO21CE142
+  sdo_weight_a( 69) = 0.0 sdo_sigma_a( 69) =  5.00000e-04 sdo_data_a( 69) =  0.00000e+00  !QXO21CE143
+  sdo_weight_a( 70) = 0.0 sdo_sigma_a( 70) =  5.00000e-04 sdo_data_a( 70) =  0.00000e+00  !QXO21CE144
+  sdo_weight_a( 71) = 0.0 sdo_sigma_a( 71) =  5.00000e-04 sdo_data_a( 71) =  0.00000e+00  !QXO21CE151
+  sdo_weight_a( 72) = 0.0 sdo_sigma_a( 72) =  5.00000e-04 sdo_data_a( 72) =  0.00000e+00  !QXO21CE152
+  sdo_weight_a( 73) = 0.0 sdo_sigma_a( 73) =  5.00000e-04 sdo_data_a( 73) =  0.00000e+00  !QXO21CE153
+  sdo_weight_a( 74) = 0.0 sdo_sigma_a( 74) =  5.00000e-04 sdo_data_a( 74) =  0.00000e+00  !QXO21CE154
+  sdo_weight_a( 75) = 0.0 sdo_sigma_a( 75) =  5.00000e-04 sdo_data_a( 75) =  0.00000e+00  !QXO21CE161
+  sdo_weight_a( 76) = 0.0 sdo_sigma_a( 76) =  5.00000e-04 sdo_data_a( 76) =  0.00000e+00  !QXO21CE162
+  sdo_weight_a( 77) = 0.0 sdo_sigma_a( 77) =  5.00000e-04 sdo_data_a( 77) =  0.00000e+00  !QXO21CE163
+  sdo_weight_a( 78) = 0.0 sdo_sigma_a( 78) =  5.00000e-04 sdo_data_a( 78) =  0.00000e+00  !QXO21CE164
+  sdo_weight_a( 79) = 0.0 sdo_sigma_a( 79) =  5.00000e-04 sdo_data_a( 79) =  0.00000e+00  !QXO21CE171
+  sdo_weight_a( 80) = 0.0 sdo_sigma_a( 80) =  5.00000e-04 sdo_data_a( 80) =  0.00000e+00  !QXO21CE172
+  sdo_weight_a( 81) = 0.0 sdo_sigma_a( 81) =  5.00000e-04 sdo_data_a( 81) =  0.00000e+00  !QXO21CE173
+  sdo_weight_a( 82) = 0.0 sdo_sigma_a( 82) =  5.00000e-04 sdo_data_a( 82) =  0.00000e+00  !QXO21CE174
+  sdo_weight_a( 83) = 0.0 sdo_sigma_a( 83) =  5.00000e-04 sdo_data_a( 83) =  0.00000e+00  !QXO21CE181
+  sdo_weight_a( 84) = 0.0 sdo_sigma_a( 84) =  5.00000e-04 sdo_data_a( 84) =  0.00000e+00  !QXO21CE182
+  sdo_weight_a( 85) = 0.0 sdo_sigma_a( 85) =  5.00000e-04 sdo_data_a( 85) =  0.00000e+00  !QXO21CE183
+  sdo_weight_a( 86) = 0.0 sdo_sigma_a( 86) =  5.00000e-04 sdo_data_a( 86) =  0.00000e+00  !QXO21CE184
+  sdo_weight_a( 87) = 0.0 sdo_sigma_a( 87) =  5.00000e-04 sdo_data_a( 87) =  0.00000e+00  !QXO21CE213
+  sdo_weight_a( 88) = 0.0 sdo_sigma_a( 88) =  5.00000e-04 sdo_data_a( 88) =  0.00000e+00  !QXO21CE214
+  sdo_weight_a( 89) = 0.0 sdo_sigma_a( 89) =  5.00000e-04 sdo_data_a( 89) =  0.00000e+00  !QXO21CE263
+  sdo_weight_a( 90) = 0.0 sdo_sigma_a( 90) =  5.00000e-04 sdo_data_a( 90) =  0.00000e+00  !QXO21CE264
+  sdo_weight_a( 91) = 0.0 sdo_sigma_a( 91) =  5.00000e-04 sdo_data_a( 91) =  0.00000e+00  !QXO21CE273
+  sdo_weight_a( 92) = 0.0 sdo_sigma_a( 92) =  5.00000e-04 sdo_data_a( 92) =  0.00000e+00  !QXO21CE274
+  sdo_weight_a( 93) = 0.0 sdo_sigma_a( 93) =  5.00000e-04 sdo_data_a( 93) =  0.00000e+00  !QXO21CE311
+  sdo_weight_a( 94) = 0.0 sdo_sigma_a( 94) =  5.00000e-04 sdo_data_a( 94) =  0.00000e+00  !QXO21CE312
+  sdo_weight_a( 95) = 0.0 sdo_sigma_a( 95) =  5.00000e-04 sdo_data_a( 95) =  0.00000e+00  !QXO21CE313
+  sdo_weight_a( 96) = 0.0 sdo_sigma_a( 96) =  5.00000e-04 sdo_data_a( 96) =  0.00000e+00  !QXO21CE314
+  sdo_weight_a( 97) = 0.0 sdo_sigma_a( 97) =  5.00000e-04 sdo_data_a( 97) =  0.00000e+00  !QXO21CE321
+  sdo_weight_a( 98) = 0.0 sdo_sigma_a( 98) =  5.00000e-04 sdo_data_a( 98) =  0.00000e+00  !QXO21CE322
+  sdo_weight_a( 99) = 0.0 sdo_sigma_a( 99) =  5.00000e-04 sdo_data_a( 99) =  0.00000e+00  !QXO21CE323
+  sdo_weight_a(100) = 0.0 sdo_sigma_a(100) =  5.00000e-04 sdo_data_a(100) =  0.00000e+00  !QXO21CE324
+  sdo_weight_a(101) = 0.0 sdo_sigma_a(101) =  5.00000e-04 sdo_data_a(101) =  0.00000e+00  !QXO21CE331
+  sdo_weight_a(102) = 0.0 sdo_sigma_a(102) =  5.00000e-04 sdo_data_a(102) =  0.00000e+00  !QXO21CE332
+  sdo_weight_a(103) = 0.0 sdo_sigma_a(103) =  5.00000e-04 sdo_data_a(103) =  0.00000e+00  !QXO21CE333
+  sdo_weight_a(104) = 0.0 sdo_sigma_a(104) =  5.00000e-04 sdo_data_a(104) =  0.00000e+00  !QXO21CE334
+  sdo_weight_a(105) = 0.0 sdo_sigma_a(105) =  5.00000e-04 sdo_data_a(105) =  0.00000e+00  !QXO21CE341
+  sdo_weight_a(106) = 0.0 sdo_sigma_a(106) =  5.00000e-04 sdo_data_a(106) =  0.00000e+00  !QXO21CE342
+  sdo_weight_a(107) = 0.0 sdo_sigma_a(107) =  5.00000e-04 sdo_data_a(107) =  0.00000e+00  !QXO21CE343
+  sdo_weight_a(108) = 0.0 sdo_sigma_a(108) =  5.00000e-04 sdo_data_a(108) =  0.00000e+00  !QXO21CE344
+  sdo_weight_a(109) = 0.0 sdo_sigma_a(109) =  5.00000e-04 sdo_data_a(109) =  0.00000e+00  !QXO21CE351
+  sdo_weight_a(110) = 0.0 sdo_sigma_a(110) =  5.00000e-04 sdo_data_a(110) =  0.00000e+00  !QXO21CE352
+  sdo_weight_a(111) = 0.0 sdo_sigma_a(111) =  5.00000e-04 sdo_data_a(111) =  0.00000e+00  !QXO21CE353
+  sdo_weight_a(112) = 0.0 sdo_sigma_a(112) =  5.00000e-04 sdo_data_a(112) =  0.00000e+00  !QXO21CE354
+  sdo_weight_a(113) = 0.0 sdo_sigma_a(113) =  5.00000e-04 sdo_data_a(113) =  0.00000e+00  !QXO21CE381
+  sdo_weight_a(114) = 0.0 sdo_sigma_a(114) =  5.00000e-04 sdo_data_a(114) =  0.00000e+00  !QXO21CE382
+  sdo_weight_a(115) = 0.0 sdo_sigma_a(115) =  5.00000e-04 sdo_data_a(115) =  0.00000e+00  !QXO21CE383
+  sdo_weight_a(116) = 0.0 sdo_sigma_a(116) =  5.00000e-04 sdo_data_a(116) =  0.00000e+00  !QXO21CE384
+  sdo_weight_a(117) = 0.0 sdo_sigma_a(117) =  5.00000e-04 sdo_data_a(117) =  0.00000e+00  !QXO21CE391
+  sdo_weight_a(118) = 0.0 sdo_sigma_a(118) =  5.00000e-04 sdo_data_a(118) =  0.00000e+00  !QXO21CE392
+  sdo_weight_a(119) = 0.0 sdo_sigma_a(119) =  5.00000e-04 sdo_data_a(119) =  0.00000e+00  !QXO21CE393
+  sdo_weight_a(120) = 0.0 sdo_sigma_a(120) =  5.00000e-04 sdo_data_a(120) =  0.00000e+00  !QXO21CE394
+  sdo_weight_a(121) = 0.0 sdo_sigma_a(121) =  5.00000e-04 sdo_data_a(121) =  0.00000e+00  !QXO21CE471
+  sdo_weight_a(122) = 0.0 sdo_sigma_a(122) =  5.00000e-04 sdo_data_a(122) =  0.00000e+00  !QXO21CE472
+  sdo_weight_a(123) = 0.0 sdo_sigma_a(123) =  5.00000e-04 sdo_data_a(123) =  0.00000e+00  !QXO21CE473
+  sdo_weight_a(124) = 0.0 sdo_sigma_a(124) =  5.00000e-04 sdo_data_a(124) =  0.00000e+00  !QXO21CE474
+  sdo_weight_a(125) = 0.0 sdo_sigma_a(125) =  5.00000e-04 sdo_data_a(125) =  0.00000e+00  !QXO30CE231
+  sdo_weight_a(126) = 0.0 sdo_sigma_a(126) =  5.00000e-04 sdo_data_a(126) =  0.00000e+00  !QXO30CE232
+  sdo_weight_a(127) = 0.0 sdo_sigma_a(127) =  5.00000e-04 sdo_data_a(127) =  0.00000e+00  !QXO30CE233
+  sdo_weight_a(128) = 0.0 sdo_sigma_a(128) =  5.00000e-04 sdo_data_a(128) =  0.00000e+00  !QXO30CE234
+  sdo_weight_a(129) = 0.0 sdo_sigma_a(129) =  5.00000e-04 sdo_data_a(129) =  0.00000e+00  !QXO30CE241
+  sdo_weight_a(130) = 0.0 sdo_sigma_a(130) =  5.00000e-04 sdo_data_a(130) =  0.00000e+00  !QXO30CE242
+  sdo_weight_a(131) = 0.0 sdo_sigma_a(131) =  5.00000e-04 sdo_data_a(131) =  0.00000e+00  !QXO30CE243
+  sdo_weight_a(132) = 0.0 sdo_sigma_a(132) =  5.00000e-04 sdo_data_a(132) =  0.00000e+00  !QXO30CE244
+  sdo_weight_a(133) = 0.0 sdo_sigma_a(133) =  5.00000e-04 sdo_data_a(133) =  0.00000e+00  !QXO30CE291
+  sdo_weight_a(134) = 0.0 sdo_sigma_a(134) =  5.00000e-04 sdo_data_a(134) =  0.00000e+00  !QXO30CE292
+  sdo_weight_a(135) = 0.0 sdo_sigma_a(135) =  5.00000e-04 sdo_data_a(135) =  0.00000e+00  !QXO30CE293
+  sdo_weight_a(136) = 0.0 sdo_sigma_a(136) =  5.00000e-04 sdo_data_a(136) =  0.00000e+00  !QXO30CE294
+  sdo_weight_a(137) = 0.0 sdo_sigma_a(137) =  5.00000e-04 sdo_data_a(137) =  0.00000e+00  !QXO30CE311
+  sdo_weight_a(138) = 0.0 sdo_sigma_a(138) =  5.00000e-04 sdo_data_a(138) =  0.00000e+00  !QXO30CE312
+  sdo_weight_a(139) = 0.0 sdo_sigma_a(139) =  5.00000e-04 sdo_data_a(139) =  0.00000e+00  !QXO30CE313
+  sdo_weight_a(140) = 0.0 sdo_sigma_a(140) =  5.00000e-04 sdo_data_a(140) =  0.00000e+00  !QXO30CE314
+  sdo_weight_a(141) = 0.0 sdo_sigma_a(141) =  5.00000e-04 sdo_data_a(141) =  0.00000e+00  !QXO30CE321
+  sdo_weight_a(142) = 0.0 sdo_sigma_a(142) =  5.00000e-04 sdo_data_a(142) =  0.00000e+00  !QXO30CE322
+  sdo_weight_a(143) = 0.0 sdo_sigma_a(143) =  5.00000e-04 sdo_data_a(143) =  0.00000e+00  !QXO30CE323
+  sdo_weight_a(144) = 0.0 sdo_sigma_a(144) =  5.00000e-04 sdo_data_a(144) =  0.00000e+00  !QXO30CE324
+  sdo_weight_a(145) = 0.0 sdo_sigma_a(145) =  5.00000e-04 sdo_data_a(145) =  0.00000e+00  !QXO30CE351
+  sdo_weight_a(146) = 0.0 sdo_sigma_a(146) =  5.00000e-04 sdo_data_a(146) =  0.00000e+00  !QXO30CE352
+  sdo_weight_a(147) = 0.0 sdo_sigma_a(147) =  5.00000e-04 sdo_data_a(147) =  0.00000e+00  !QXO30CE353
+  sdo_weight_a(148) = 0.0 sdo_sigma_a(148) =  5.00000e-04 sdo_data_a(148) =  0.00000e+00  !QXO30CE354
+  sdo_weight_a(149) = 0.0 sdo_sigma_a(149) =  5.00000e-04 sdo_data_a(149) =  0.00000e+00  !QXO30CE361
+  sdo_weight_a(150) = 0.0 sdo_sigma_a(150) =  5.00000e-04 sdo_data_a(150) =  0.00000e+00  !QXO30CE362
+  sdo_weight_a(151) = 0.0 sdo_sigma_a(151) =  5.00000e-04 sdo_data_a(151) =  0.00000e+00  !QXO30CE363
+  sdo_weight_a(152) = 0.0 sdo_sigma_a(152) =  5.00000e-04 sdo_data_a(152) =  0.00000e+00  !QXO30CE364
+  sdo_weight_a(153) = 0.0 sdo_sigma_a(153) =  5.00000e-04 sdo_data_a(153) =  0.00000e+00  !QXO30CE371
+  sdo_weight_a(154) = 0.0 sdo_sigma_a(154) =  5.00000e-04 sdo_data_a(154) =  0.00000e+00  !QXO30CE372
+  sdo_weight_a(155) = 0.0 sdo_sigma_a(155) =  5.00000e-04 sdo_data_a(155) =  0.00000e+00  !QXO30CE373
+  sdo_weight_a(156) = 0.0 sdo_sigma_a(156) =  5.00000e-04 sdo_data_a(156) =  0.00000e+00  !QXO30CE374
+  sdo_weight_a(157) = 0.0 sdo_sigma_a(157) =  5.00000e-04 sdo_data_a(157) =  0.00000e+00  !QXO30CE381
+  sdo_weight_a(158) = 0.0 sdo_sigma_a(158) =  5.00000e-04 sdo_data_a(158) =  0.00000e+00  !QXO30CE382
+  sdo_weight_a(159) = 0.0 sdo_sigma_a(159) =  5.00000e-04 sdo_data_a(159) =  0.00000e+00  !QXO30CE383
+  sdo_weight_a(160) = 0.0 sdo_sigma_a(160) =  5.00000e-04 sdo_data_a(160) =  0.00000e+00  !QXO30CE384
+  sdo_weight_a(161) = 0.0 sdo_sigma_a(161) =  5.00000e-04 sdo_data_a(161) =  0.00000e+00  !QXO30CE391
+  sdo_weight_a(162) = 0.0 sdo_sigma_a(162) =  5.00000e-04 sdo_data_a(162) =  0.00000e+00  !QXO30CE392
+  sdo_weight_a(163) = 0.0 sdo_sigma_a(163) =  5.00000e-04 sdo_data_a(163) =  0.00000e+00  !QXO30CE393
+  sdo_weight_a(164) = 0.0 sdo_sigma_a(164) =  5.00000e-04 sdo_data_a(164) =  0.00000e+00  !QXO30CE394
+  sdo_weight_a(165) = 0.0 sdo_sigma_a(165) =  5.00000e-04 sdo_data_a(165) =  0.00000e+00  !QXO30CE431
+  sdo_weight_a(166) = 0.0 sdo_sigma_a(166) =  5.00000e-04 sdo_data_a(166) =  0.00000e+00  !QXO30CE432
+  sdo_weight_a(167) = 0.0 sdo_sigma_a(167) =  5.00000e-04 sdo_data_a(167) =  0.00000e+00  !QXO30CE433
+  sdo_weight_a(168) = 0.0 sdo_sigma_a(168) =  5.00000e-04 sdo_data_a(168) =  0.00000e+00  !QXO30CE434
+  sdo_weight_a(169) = 0.0 sdo_sigma_a(169) =  5.00000e-04 sdo_data_a(169) =  0.00000e+00  !QXO31CE113
+  sdo_weight_a(170) = 0.0 sdo_sigma_a(170) =  5.00000e-04 sdo_data_a(170) =  0.00000e+00  !QXO31CE114
+  sdo_weight_a(171) = 0.0 sdo_sigma_a(171) =  5.00000e-04 sdo_data_a(171) =  0.00000e+00  !QXO31CE123
+  sdo_weight_a(172) = 0.0 sdo_sigma_a(172) =  5.00000e-04 sdo_data_a(172) =  0.00000e+00  !QXO31CE124
+  sdo_weight_a(173) = 0.0 sdo_sigma_a(173) =  5.00000e-04 sdo_data_a(173) =  0.00000e+00  !QXO31CE133
+  sdo_weight_a(174) = 0.0 sdo_sigma_a(174) =  5.00000e-04 sdo_data_a(174) =  0.00000e+00  !QXO31CE134
+  sdo_weight_a(175) = 0.0 sdo_sigma_a(175) =  5.00000e-04 sdo_data_a(175) =  0.00000e+00  !QXO31CE143
+  sdo_weight_a(176) = 0.0 sdo_sigma_a(176) =  5.00000e-04 sdo_data_a(176) =  0.00000e+00  !QXO31CE144
+  sdo_weight_a(177) = 0.0 sdo_sigma_a(177) =  5.00000e-04 sdo_data_a(177) =  0.00000e+00  !QXO31CE153
+  sdo_weight_a(178) = 0.0 sdo_sigma_a(178) =  5.00000e-04 sdo_data_a(178) =  0.00000e+00  !QXO31CE154
+  sdo_weight_a(179) = 0.0 sdo_sigma_a(179) =  5.00000e-04 sdo_data_a(179) =  0.00000e+00  !QXO31CE163
+  sdo_weight_a(180) = 0.0 sdo_sigma_a(180) =  5.00000e-04 sdo_data_a(180) =  0.00000e+00  !QXO31CE164
+  sdo_weight_a(181) = 0.0 sdo_sigma_a(181) =  5.00000e-04 sdo_data_a(181) =  0.00000e+00  !QXO31CE173
+  sdo_weight_a(182) = 0.0 sdo_sigma_a(182) =  5.00000e-04 sdo_data_a(182) =  0.00000e+00  !QXO31CE174
+  sdo_weight_a(183) = 0.0 sdo_sigma_a(183) =  5.00000e-04 sdo_data_a(183) =  0.00000e+00  !QXO31CE183
+  sdo_weight_a(184) = 0.0 sdo_sigma_a(184) =  5.00000e-04 sdo_data_a(184) =  0.00000e+00  !QXO31CE184
+  sdo_weight_a(185) = 1.0 sdo_sigma_a(185) =  5.00000e-04 sdo_data_a(185) =  0.00000e+00  !QXO40CE231
+  sdo_weight_a(186) = 1.0 sdo_sigma_a(186) =  5.00000e-04 sdo_data_a(186) =  0.00000e+00  !QXO40CE232
+  sdo_weight_a(187) = 0.0 sdo_sigma_a(187) =  5.00000e-04 sdo_data_a(187) =  0.00000e+00  !QXO40CE233
+  sdo_weight_a(188) = 0.0 sdo_sigma_a(188) =  5.00000e-04 sdo_data_a(188) =  0.00000e+00  !QXO40CE234
+  sdo_weight_a(189) = 1.0 sdo_sigma_a(189) =  5.00000e-04 sdo_data_a(189) =  0.00000e+00  !QXO40CE241
+  sdo_weight_a(190) = 1.0 sdo_sigma_a(190) =  5.00000e-04 sdo_data_a(190) =  0.00000e+00  !QXO40CE242
+  sdo_weight_a(191) = 0.0 sdo_sigma_a(191) =  5.00000e-04 sdo_data_a(191) =  0.00000e+00  !QXO40CE243
+  sdo_weight_a(192) = 0.0 sdo_sigma_a(192) =  5.00000e-04 sdo_data_a(192) =  0.00000e+00  !QXO40CE244
+  sdo_weight_a(193) = 1.0 sdo_sigma_a(193) =  5.00000e-04 sdo_data_a(193) =  0.00000e+00  !QXO40CE291
+  sdo_weight_a(194) = 1.0 sdo_sigma_a(194) =  5.00000e-04 sdo_data_a(194) =  0.00000e+00  !QXO40CE292
+  sdo_weight_a(195) = 0.0 sdo_sigma_a(195) =  5.00000e-04 sdo_data_a(195) =  0.00000e+00  !QXO40CE293
+  sdo_weight_a(196) = 0.0 sdo_sigma_a(196) =  5.00000e-04 sdo_data_a(196) =  0.00000e+00  !QXO40CE294
+  sdo_weight_a(197) = 1.0 sdo_sigma_a(197) =  5.00000e-04 sdo_data_a(197) =  0.00000e+00  !QXO40CE311
+  sdo_weight_a(198) = 1.0 sdo_sigma_a(198) =  5.00000e-04 sdo_data_a(198) =  0.00000e+00  !QXO40CE312
+  sdo_weight_a(199) = 0.0 sdo_sigma_a(199) =  5.00000e-04 sdo_data_a(199) =  0.00000e+00  !QXO40CE313
+  sdo_weight_a(200) = 0.0 sdo_sigma_a(200) =  5.00000e-04 sdo_data_a(200) =  0.00000e+00  !QXO40CE314
+  sdo_weight_a(201) = 0.0 sdo_sigma_a(201) =  5.00000e-04 sdo_data_a(201) =  0.00000e+00  !QXO40CE321
+  sdo_weight_a(202) = 0.0 sdo_sigma_a(202) =  5.00000e-04 sdo_data_a(202) =  0.00000e+00  !QXO40CE322
+  sdo_weight_a(203) = 0.0 sdo_sigma_a(203) =  5.00000e-04 sdo_data_a(203) =  0.00000e+00  !QXO40CE323
+  sdo_weight_a(204) = 0.0 sdo_sigma_a(204) =  5.00000e-04 sdo_data_a(204) =  0.00000e+00  !QXO40CE324
+  sdo_weight_a(205) = 1.0 sdo_sigma_a(205) =  5.00000e-04 sdo_data_a(205) =  0.00000e+00  !QXO40CE351
+  sdo_weight_a(206) = 1.0 sdo_sigma_a(206) =  5.00000e-04 sdo_data_a(206) =  0.00000e+00  !QXO40CE352
+  sdo_weight_a(207) = 0.0 sdo_sigma_a(207) =  5.00000e-04 sdo_data_a(207) =  0.00000e+00  !QXO40CE353
+  sdo_weight_a(208) = 0.0 sdo_sigma_a(208) =  5.00000e-04 sdo_data_a(208) =  0.00000e+00  !QXO40CE354
+  sdo_weight_a(209) = 1.0 sdo_sigma_a(209) =  5.00000e-04 sdo_data_a(209) =  0.00000e+00  !QXO40CE361
+  sdo_weight_a(210) = 1.0 sdo_sigma_a(210) =  5.00000e-04 sdo_data_a(210) =  0.00000e+00  !QXO40CE362
+  sdo_weight_a(211) = 0.0 sdo_sigma_a(211) =  5.00000e-04 sdo_data_a(211) =  0.00000e+00  !QXO40CE363
+  sdo_weight_a(212) = 0.0 sdo_sigma_a(212) =  5.00000e-04 sdo_data_a(212) =  0.00000e+00  !QXO40CE364
+  sdo_weight_a(213) = 1.0 sdo_sigma_a(213) =  5.00000e-04 sdo_data_a(213) =  0.00000e+00  !QXO40CE371
+  sdo_weight_a(214) = 1.0 sdo_sigma_a(214) =  5.00000e-04 sdo_data_a(214) =  0.00000e+00  !QXO40CE372
+  sdo_weight_a(215) = 0.0 sdo_sigma_a(215) =  5.00000e-04 sdo_data_a(215) =  0.00000e+00  !QXO40CE373
+  sdo_weight_a(216) = 0.0 sdo_sigma_a(216) =  5.00000e-04 sdo_data_a(216) =  0.00000e+00  !QXO40CE374
+  sdo_weight_a(217) = 1.0 sdo_sigma_a(217) =  5.00000e-04 sdo_data_a(217) =  0.00000e+00  !QXO40CE381
+  sdo_weight_a(218) = 1.0 sdo_sigma_a(218) =  5.00000e-04 sdo_data_a(218) =  0.00000e+00  !QXO40CE382
+  sdo_weight_a(219) = 0.0 sdo_sigma_a(219) =  5.00000e-04 sdo_data_a(219) =  0.00000e+00  !QXO40CE383
+  sdo_weight_a(220) = 0.0 sdo_sigma_a(220) =  5.00000e-04 sdo_data_a(220) =  0.00000e+00  !QXO40CE384
+  sdo_weight_a(221) = 1.0 sdo_sigma_a(221) =  5.00000e-04 sdo_data_a(221) =  0.00000e+00  !QXO40CE391
+  sdo_weight_a(222) = 1.0 sdo_sigma_a(222) =  5.00000e-04 sdo_data_a(222) =  0.00000e+00  !QXO40CE392
+  sdo_weight_a(223) = 0.0 sdo_sigma_a(223) =  5.00000e-04 sdo_data_a(223) =  0.00000e+00  !QXO40CE393
+  sdo_weight_a(224) = 0.0 sdo_sigma_a(224) =  5.00000e-04 sdo_data_a(224) =  0.00000e+00  !QXO40CE394
+  sdo_weight_a(225) = 1.0 sdo_sigma_a(225) =  5.00000e-04 sdo_data_a(225) =  0.00000e+00  !QXO40CE431
+  sdo_weight_a(226) = 1.0 sdo_sigma_a(226) =  5.00000e-04 sdo_data_a(226) =  0.00000e+00  !QXO40CE432
+  sdo_weight_a(227) = 0.0 sdo_sigma_a(227) =  5.00000e-04 sdo_data_a(227) =  0.00000e+00  !QXO40CE433
+  sdo_weight_a(228) = 0.0 sdo_sigma_a(228) =  5.00000e-04 sdo_data_a(228) =  0.00000e+00  !QXO40CE434
+  sdo_weight_a(229) = 1.0 sdo_sigma_a(229) =  5.00000e-04 sdo_data_a(229) =  0.00000e+00  !QXR11CE001
+  sdo_weight_a(230) = 1.0 sdo_sigma_a(230) =  5.00000e-04 sdo_data_a(230) =  0.00000e+00  !QXR11CE002
+  sdo_weight_a(231) = 1.0 sdo_sigma_a(231) =  5.00000e-04 sdo_data_a(231) =  0.00000e+00  !QXR11CE003
+  sdo_weight_a(232) = 1.0 sdo_sigma_a(232) =  5.00000e-04 sdo_data_a(232) =  0.00000e+00  !QXR11CE004
+  sdo_weight_a(233) = 1.0 sdo_sigma_a(233) =  5.00000e-04 sdo_data_a(233) =  0.00000e+00  !QXR40CE003
+  sdo_weight_a(234) = 1.0 sdo_sigma_a(234) =  5.00000e-04 sdo_data_a(234) =  0.00000e+00  !QXR40CE004
+/

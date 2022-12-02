@@ -1,0 +1,62 @@
+      --- _ ......._-_--.          
+     ( |\ /      / /| \  \         
+      /  /     .'  -=-'   `.       
+     /  /    .'             )      
+   _/  /   .'        _.)   /       
+  / o   o        _.-' /  .'        
+  \          _.-'    / .'*|        
+   \______.-'//    .'.' \*|        
+    \|  \ | //   .'.' _ |*|        
+     `   \|//  .'.'_ _ _|*|        
+      .  .// .'.' | _ _ \*|        
+      \`-|\_/ /    \ _ _ \*\       
+       `/'\__/      \ _ _ \*\      
+       /^|           \ _ _ \*      
+      '  `  Welcome   \ _ _ \*VVVVVVVVVVVVV
+             To        \ _ _ _V  V  V  V  V  V
+              COBRA!    \____V__V__V__V__V__V__V
+ 
+ 
+<<==-- What are you doing today?
+<<==-- 1: Just logging in
+<<==-- 2: V3FIT (GNU)    NOT TESTED
+<<==-- 3: V3FIT (INTEL)
+<<==-- 4: STELLOPT    NOT TESTED
+<<==-- 5: SFINCS    NOT TESTED
+<<==-- 6: FLARE
+
+<<-- Alrighty then! Nothing special is loaded
+Setting aliases for v3fit_cleanup
+Adding ~/.local/bin to PATH
+
+<<== Finished with preparation. Welcome to COBRA!
+<----These have not been tested (as of April 8, 2018)
+<----These have not been tested (as of April 8, 2018)
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: jsch(30228)
+Job name:  j_st
+Node list: co[4613-4620]
+Job start: Thu Oct 21 20:27:08 CEST 2021
+Job end:   Thu Oct 21 20:45:57 CEST 2021
+Work dir:  /u/jsch/v3fit_runs/w7x_v3fit_fingerprints/XPs/XP_20180927.30/fingerprint_limiter/NS_401_APHI1/./
+Command:   /cobra/u/jsch/v3fit_runs/w7x_v3fit_fingerprints/XPs/XP_20180927.30/fingerprint_limiter/NS_401_APHI1/slurm_v3fit
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+       JobID    JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode 
+------------ ---------- ------ ------ ------ ------------ ------------ ---------- -------- 
+4694162            j_st      8           640                             00:18:49      0:0 
+4694162.0        xv3fit      8    320    320    14079.94M      679.79M   00:18:44      0:0 
+  
+Maximum memory per node: 576.714 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 99.0 %
+     

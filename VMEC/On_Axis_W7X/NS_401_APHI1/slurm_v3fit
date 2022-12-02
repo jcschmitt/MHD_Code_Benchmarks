@@ -1,0 +1,28 @@
+#!/bin/bash -l
+# Standard output and error:
+#SBATCH -o ./tjob.out.%j
+#SBATCH -e ./tjob.err.%j
+# Initial working directory:
+#SBATCH -D ./
+# Job Name:
+#SBATCH -J j_st
+# Queue (Partition):
+#SBATCH --partition=short
+# Number of nodes and MPI tasks per node:
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=40
+#
+#SBATCH --mem=185000
+#
+#SBATCH --mail-type=none
+#SBATCH --mail-user=<userid>@rzg.mpg.de
+#
+# Wall clock limit:
+#SBATCH --time=4:00:00
+
+# Run the program:
+source ~/prep_v3fit_intel.sh
+module list
+srun ~/src/stellinstall/trunk/build/bin/xv3fit input.v3fit > v3fit.log
+
+
