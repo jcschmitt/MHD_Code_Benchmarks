@@ -1,0 +1,966 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amsmath}
+\usepackage[
+	colorlinks=true,
+]{hyperref}
+
+% Brackets
+\newcommand{\brackets}[1]{\left(#1\right)}
+\newcommand{\sqbrackets}[1]{\left[#1\right]}
+\newcommand{\cbrackets}[1]{\left\{#1\right\}}
+
+%  Vectors
+\renewcommand{\vec}[1]{\boldsymbol#1}
+\newcommand{\unitv}[1]{\hat{\vec{#1}}}
+
+% Basis vectors
+\newcommand{\co}[1]{\vec{e}_{#1}}
+\newcommand{\con}[1]{\vec{e}^{#1}}
+
+\newcommand{\pd}[2]{\frac{\partial#1}{\partial#2}}
+
+% Equations
+\newcommand{\equ}[2]{
+	\begin{equation}
+    \begin{split}
+	#1
+	\label{#2}
+	\end{split}
+	\end{equation}
+}
+
+\newcommand{\dotp}[2]{#1\cdot#2}
+\newcommand{\crossp}[2]{#1\times#2}
+
+% Operators
+\newcommand{\curl}[1]{\crossp{\nabla}{#1}}
+\newcommand{\divergence}[1]{\dotp{\nabla}{#1}}
+
+\title{SIESTA Boundary Condition Notes}
+\author{Mark Cianciosa}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+Handling the boundaries in SIESTA and by extension VMEC is critical to the correctness of the solution. 
+This document notes derives the boundary conditions for real and Fourier quantities for various operations and quantities in VMEC.
+
+\section{Basis Vectors}
+The SIESTA basis vectors are defined by the geometry $R$ and $Z$ quantities. 
+For the stellarator symmetric case, $R$ does not swap sign across the origin while $Z$ does except at the center.
+This implies a cosine and sine parities of these quantities respectively.
+See section \ref{sub:sec:real_space} for the conditions on boundary conditions at the origin.
+At the origin, the $R$ and $Z$ values do not change with the poloidal angle.
+This implies that all $m>0$ terms must be zero.
+
+\subsection{Derivatives of $R$ and $Z$}
+$R$ at $u=\frac{\pi}{2},v=0$ and $u=-\frac{\pi}{2},v=0$ is symmetric above and below the origin.
+This mirror image implies that radial derivatives must have opposite signs with a zero derivative at the origin.
+However at $u=0,v=0$ and $u=\pi,v=0$, the values changes with out a sign flip implying a non zero derivative.
+Similarly, $Z$ at since $Z$ is zero at $u=0,v=0$ and $u=\pi,v=0$, the origin derivative should be zero as well.
+At other angles, the value of $Z$ changes sign.
+Both of these factors imply a $m=1$ poloidal mode structure to any radial derivative quantity.
+\equ{
+\pd{A\brackets{s=0}}{s}=
+\begin{array}{lr}
+0 & m\ne1
+\end{array}
+}{equ:dads}
+
+From section \ref{sub:sec:real_space} $R$ and $Z$ at the origin, lack any $m>0$ terms.
+This causes all poloidal derivatives to be zero.
+\equ{
+\pd{A\brackets{s=0}}{u}=0
+}{equ:dadu}
+This is consistent with the view that origin is a single point so any move the $u$ direction results in no change in the $R,Z$ position.
+Note this condition is not universal as we will see for vector quantities.
+In the toroidal direction, there are no special conditions.
+
+\section{Basis Vector}
+The covariant basis vectors are defined by derivatives with respect to the coordinates.
+\equ{
+\co{i}=\pd{R\unitv{r}}{i}+\pd{Z\unitv{z}}{i}
+}{equ:basis}
+The $\co{s}$ basis vector becomes,
+\equ{
+\co{s}=\pd{R}{s}\unitv{r}+\pd{Z}{s}\unitv{z}
+}{equ:esubs}
+Since, radial derivatives only have $m=1$ terms, 
+\equ{
+A_{s}=\dotp{\vec{A}}{\co{s}}
+}{equ:asubs}
+the contravariant components only contain $m=1$ terms at $s=0$.
+Note this implies a non-zero poloidal derivative.
+
+From equation \ref{equ:dadu}, the $\co{u}$ basis should be zero at $s=0$.
+\equ{
+\co{u}=\pd{R}{u}\unitv{r}+\pd{Z}{u}\unitv{z}=0
+}{equ:esubu}
+This implies that at the origin 
+\equ{
+A_{u}=\dotp{\vec{A}}{\co{u}}=0
+}{equ:asubu}
+
+Since toroidal derivatives retain the m=0 mode structure,
+\equ{
+\co{v}=\pd{R}{v}\unitv{r}+R\unitv{\phi}+\pd{Z}{v}\unitv{z}
+}{equ:esubv}
+non-zero only for $m=0$ terms.
+Since $\pd{R}{v}$, $\pd{Z}{v}$, and $R$ are zero for any $m>0$ this implies that
+\equ{
+A_{v}=\dotp{\vec{A}}{\co{v}}
+}{equ:asubv}
+the contravariant components only contain $m=0$ terms at $s=0$.
+
+\subsection{Jacobian}
+The Jacobian of the this coordinate system is obtained from
+\equ{
+\jmath=\dotp{\co{s}}{\crossp{\co{u}}{\co{v}}}
+}{equ:jacobian}
+Because of condition \ref{equ:esubu}, the Jacobian should be zero at the origin.
+This implies that quantities times the Jacobian would be zero.
+\equ{
+\begin{array}{l}
+\jmath A^{i}=0 \\
+\jmath A_{i}=0
+\end{array}
+}{equ:jacobian_vector}
+This futher implies that poloidal and toroidal derivatives at the origin are zero as well.
+\equ{
+\begin{array}{l}
+\pd{\jmath A^{i}}{u}=0 \\
+\pd{\jmath A^{i}}{v}=0
+\end{array}
+}{equ:jacobian_dervative}
+However we will see that this is not necessarily the case for $\mathcal{J}A^{u}$ $m=1$ components.
+
+\section{Physics Quantities}
+Some of the Fourier modes represent physical quantities of interest.
+
+\subsection{Magnetic Flux}
+The magnetic flux through a surface is defined as 
+\equ{
+\Phi=\iint\dotp{\vec{B}}{d\vec{a}}=\oint\dotp{\vec{A}}{d\vec{l}}
+}{equ:magnetic_flux}
+Poloidal flux is defined to be
+\equ{
+\chi=\oint\dotp{\vec{A}}{\co{v}dv}=\oint A_{v}dv=2\pi A^{m0}_{v}\cos\brackets{mu}
+}{equ:poloidal_flux}
+While in general, the polodial flux does not need to be zero at the origin, we can choose that point as the zero reference.
+From the condition \ref{equ:covariant_boundary_v} at the origin, $m>0$ terms of $A_{v}$ are zero implying that $\chi=2\pi A^{00}_{v}=0$.
+
+Alternatively, using the area integration,
+\equ{
+\chi=\iint\dotp{\vec{B}}{\mathcal{J}\con{u}dvds}=2\pi\cos\brackets{mu}\int\mathcal{J}B_{m0}^{u}ds
+}{equ:poloidal_flux_area}
+This implies 
+\equ{
+\chi'=2\pi\mathcal{J}B_{m0}^{u}\cos\brackets{mu}
+}{equ:poloidal_flux_prime}
+At the origin from equation \ref{equ:jacobian_vector}
+\equ{
+\chi'=2\pi\mathcal{J}B_{m0}^{u}\cos\brackets{mu}=0
+}{equ:poloidal_flux_prime_origin}
+
+Similarly for the toroidal flux, 
+\equ{
+\phi=\oint\dotp{\vec{A}}{\co{u}du}=\oint A_{u}du=2\pi A^{0n}_{u}\cos\brackets{nNv}
+}{equ:toroidal_flux}
+At the origin, the toroidal area goes to zero implying that toroidal flux goes to zero.
+From equation \ref{equ:asubu}, $A_u=0$ for all values of $n$ consistent with the condition of the zero area.
+
+Alternatively, using the area integration,
+\equ{
+\phi=\iint\dotp{\vec{B}}{\mathcal{J}\con{v}duds}=2\pi\cos\brackets{nNv}\int\mathcal{J}B_{0n}^{v}ds
+}{equ:toroidal_flux_area}
+This implies that
+\equ{
+\phi'=2\pi\mathcal{J}B_{0n}^{v}\cos\brackets{nNv}
+}{equ:toroidal_flux_prime}
+At the origin from equation \ref{equ:jacobian_vector},
+\equ{
+\phi'=2\pi\mathcal{J}B_{0n}^{v}\cos\brackets{nNv}=0
+}{equ:toroidal_flux_prime_origin}
+
+\subsection{Toroidal Current}
+From Ampere's law, the total torodial current is 
+\equ{
+\mu_{0}I=\mu_{0}\iint\dotp{\vec{J}}{d\vec{a}}=\oint\dotp{\vec{B}}{d\vec{l}}=\oint\dotp{\vec{B}}{e_{u}du}=\oint B_{u}du=2\pi B^{0n}_{u}\cos{nNv}
+}{equ:amperes_law}
+Since the integration area is zero at the origin $B^{0n}_{u}\brackets{s=0}=0$.
+This is consistent with the condition \ref{equ:asubu}.
+At the edge, the total current is enclosed so $2\pi B^{0n}_{u}\brackets{s=1}\cos{nNv}=\mu_{0}I_{Tor}$.
+This implies that $B^{0n}_{u}\brackets{s=1}=0$ for $n>0$.
+
+\section{Fourier Quantities}
+VMEC and SIESTA use a Fourier representation quantities.
+Stellarator symmetric equilibrium quantities contain either a sine or cosine parity.
+Non-stellarator symmetric equilibrium quantities contain both parities.
+
+\subsection{Conversion To Real Space}
+\label{sub:sec:real_space}
+SIESTA quantities can be converted to real space by summing over all Fourier modes.
+\equ{
+A_{real}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} A_{nmc}\brackets{s}\cos\brackets{mu+nNv} + A_{nms}\brackets{s}\sin\brackets{mu+nNv}
+}{equ:fourier_to_real}
+$s$ is a the radial coordinate, $u$ is the poloidal angle, and $v$ is the toroidal angle.
+$m$ is the poloidal mode number, $n$ is the toroidal mode number, and $N$ is the number of field periods.
+$mpol$ is the total number of poloidal modes and $ntor$ is the total number of polidal modes.
+$A_{nmc}$ are the Fourier amplitudes for the cosine parity and $A_{nms}$ are the Fourier amplitudes for the sine parity.
+For the $m=0$ modes, all $n<0$ amplitudes are zero.
+For sin parities, the $m=0,n=0$ amplitude is zero as well since
+\equ{
+\sin\brackets{0u+0Nv}=0.
+}{equ:fourier_sine_00}
+Radial quantities are defined on their a full or half grid.
+Typically base quantities are defined on the full grid.
+Derivatives of full grid quantities are defined on the half grid and derivatives of half grid quantities are defined on the full grid.
+
+\subsection{Cross Products}
+In curvalinear coordinates, the cross product of contravariant components is defined as
+\equ{
+\crossp{\vec{A}}{\vec{B}}=\sum\brackets{\mathcal{J}A^{i}B^{j}-\mathcal{J}A^{j}B^{i}}\co{k}
+}{equ:cross_con}
+for cyclic permutations of $i,j,k$.
+Typical SIESTA quantities have sine parity in the $s$ components and cosine parity in the $u,v$ components.
+Note since this doesn't involve any derivatives, we do not need to be concerned about convervsions between half and full grids.
+This operation only involves terms of constant s.
+
+\subsubsection{Sine $s$ Parity}
+Starting with the $e_{s}$ component the cross product can be written as.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{s}=
+\mathcal{J}A^{u}\cos\brackets{m_{A}u+n_{A}v}B^{v}\cos\brackets{m_{B}u+n_{B}v}\\
+-\mathcal{J}A^{v}\cos\brackets{m_{A}u+n_{A}v}B^{u}\cos\brackets{m_{B}u+n_{B}v}
+}{equ:cross_esubs_sine}
+From the sum to product rules, this operation reduces to.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{s}=
+\frac{1}{2}\mathcal{J}A^{u}B^{v}\cos\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
++\frac{1}{2}\mathcal{J}A^{u}B^{v}\cos\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{v}B^{u}\cos\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{v}B^{u}\cos\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}
+}{equ:cross_esubs2_sine}
+
+For the $e_{u}$ component the cross product can be written as.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{u}=
+\mathcal{J}A^{v}\cos\brackets{m_{A}u+n_{A}v}B^{s}\sin\brackets{m_{B}u+n_{B}v}\\
+-\mathcal{J}A^{s}\sin\brackets{m_{A}u+n_{A}v}B^{v}\cos\brackets{m_{B}u+n_{B}v}
+}{equ:cross_esubu_sine}
+From the sum to product rules, this operation reduces to.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{u}=
+\frac{1}{2}\mathcal{J}A^{v}B^{s}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{v}B^{s}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{s}B^{v}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{s}B^{v}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}
+}{equ:cross_esubu2_sine}
+
+For the $e_{v}$ component the cross product can be written as.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{v}=
+\mathcal{J}A^{s}\sin\brackets{m_{A}u+n_{A}v}B^{v}\cos\brackets{m_{B}u+n_{B}v}\\
+-\mathcal{J}A^{u}\cos\brackets{m_{A}u+n_{A}v}B^{s}\sin\brackets{m_{B}u+n_{B}v}
+}{equ:cross_esubv_sine}
+From the sum to product rules, this operation reduces to.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{v}=
+\frac{1}{2}\mathcal{J}A^{s}B^{u}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
++\frac{1}{2}\mathcal{J}A^{s}B^{u}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{u}B^{s}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
++\frac{1}{2}\mathcal{J}A^{u}B^{s}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}
+}{equ:cross_esubv2_sine}
+For this operation, the resultant quantity flips parity.
+
+\subsubsection{Cosine $s$ Parity}
+Starting with the $e_{s}$ component the cross product can be written as.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{s}=
+\mathcal{J}A^{u}\sin\brackets{m_{A}u+n_{A}v}B^{v}\sin\brackets{m_{B}u+n_{B}v}\\
+-\mathcal{J}A^{v}\sin\brackets{m_{A}u+n_{A}v}B^{u}\sin\brackets{m_{B}u+n_{B}v}
+}{equ:cross_esubs_cosine}
+From the sum to product rules, this operation reduces to.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{s}=
+\frac{1}{2}\mathcal{J}A^{u}B^{v}\cos\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{u}B^{v}\cos\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{v}B^{u}\cos\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
++\frac{1}{2}\mathcal{J}A^{v}B^{u}\cos\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}
+}{equ:cross_esubs2_cosine}
+
+For the $e_{u}$ component the cross product can be written as.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{u}=
+\mathcal{J}A^{v}\sin\brackets{m_{A}u+n_{A}v}B^{s}\cos\brackets{m_{B}u+n_{B}v}\\
+-\mathcal{J}A^{s}\cos\brackets{m_{A}u+n_{A}v}B^{v}\sin\brackets{m_{B}u+n_{B}v}
+}{equ:cross_esubu_cosine}
+From the sum to product rules, this operation reduces to.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{u}=
+\frac{1}{2}\mathcal{J}A^{v}B^{s}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{v}B^{s}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{s}B^{v}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{s}B^{v}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}
+}{equ:cross_esubu2_cosine}
+
+For the $e_{v}$ component the cross product can be written as.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{v}=\mathcal{J}A^{s}\sin\brackets{m_{A}u+n_{A}v}B^{v}\cos\brackets{m_{B}u+n_{B}v}\\
+-\mathcal{J}A^{u}\cos\brackets{m_{A}u+n_{A}v}B^{s}\sin\brackets{m_{B}u+n_{B}v}
+}{equ:cross_esubv_cosine}
+From the sum to product rules, this operation reduces to.
+\equ{
+\brackets{\crossp{\vec{A}}{\vec{B}}}^{v}=
+\frac{1}{2}\mathcal{J}A^{s}B^{u}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
++\frac{1}{2}\mathcal{J}A^{s}B^{u}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}\\
+-\frac{1}{2}\mathcal{J}A^{u}B^{s}\sin\sqbrackets{\brackets{m_{A}+m_{B}}u+\brackets{n_{A}+n_{B}}v}\\
++\frac{1}{2}\mathcal{J}A^{u}B^{s}\sin\sqbrackets{\brackets{m_{A}-m_{B}}u+\brackets{n_{A}-n_{B}}v}
+}{equ:cross_esubv2_cosine}
+For this operation, the resultant quantity flips parity.
+
+\subsection{Boundary Conditions}
+At the center of the computation grid, the position does not vary with changes in the $u$ coordinate.
+This implies that the $\co{u}\brackets{s=0}=0$.
+As a consequence, $A_{u}\brackets{s=0}=\vec{A}\cdot\co{s=0}=0$.
+Additionally in the limit of the grid axis, the grid becomes cylindrical thus the $\con{u}=0$ implying that $A^{u}\brackets{s=0}=\vec{A}\cdot\con{s=0}=0$.
+However we need to consider these in the limit as $s\rightarrow 0$.
+Radial basis vectors change direction based on $u$ so radial $s$ components should have $m=1$ components only.
+The toroidal direction doesn't change as $u$ varies so toroidal components should only have $m=0$ components only. The full boundary conditions are.
+
+\subsubsection{Covariant}
+\equ{
+A^{full}_{s}\brackets{s=0}=0\quad m \ne 1
+}{equ:covariant_boundary_s}
+\equ{
+A^{full}_{u}\brackets{s=0}=0
+}{equ:covariant_boundary_u}
+\equ{
+A^{full}_{v}\brackets{s=0}=0\quad m \ne 0
+}{equ:covariant_boundary_v}
+
+\subsubsection{Contravariant}
+Since the Jacobian, equation \ref{equ:jacobian}, is zero at the origin due to equation \ref{equ:covariant_boundary_u}, we cannot come up with a boundary condition for the contravariant basis vectors directly.
+However we can define the Jaocbian times the contravariant basis
+$\mathcal{J}\con{i}=\crossp{\co{j}}{\co{k}}$.
+At the origin, all of these should be zero due to the Jacobian being zero. 
+\equ{
+\mathcal{J}\con{s}\brackets{s=0}=\crossp{\co{u}}{\co{v}}=0
+}{equ:contravariant_boundary_s}
+Since $\co{u}\brackets{s=0}=0$, this condition is satisfied.
+\equ{
+\mathcal{J}\con{u}\brackets{s=0}=\crossp{\co{v}}{\co{s}}
+}{equ:contravariant_boundary_u}
+From the definition of the cross product,
+\equ{
+\crossp{\co{v}}{\co{s}}=\left|
+\begin{array}{ccc}
+\unitv{r} & \unitv{\phi} & \unitv{z} \\
+\pd{R}{v} & R            & \pd{Z}{v} \\
+\pd{R}{s} & 0            & \pd{Z}{s}
+\end{array}
+\right|=R\pd{Z}{s}\unitv{r}+\brackets{\pd{Z}{v}\pd{R}{s}-\pd{R}{v}\pd{Z}{s}}\unitv{\phi}-R\pd{R}{s}\unitv{z}
+}{equ:ev_cross_es}
+At the origin, $R$ is only non-zero for $m=0$ terms and from equation \ref{equ:dads} radial derivative terms are only non-zero for $m=1$ terms.
+
+For the $\unitv{r}$ component
+\equ{
+R_{m=0,n_{r}}\pd{Z}{s}_{m=1,n_{z}}\cos\brackets{n_{r}v}\sin\brackets{u+n_{z}v}
+}{equ:rhat_ev_cross_es}
+From the product to sum identity
+\equ{
+\frac{1}{2}R_{m=0,n_{r}}\pd{Z}{s}_{m=1,n_{z}}\sqbrackets{\sin\brackets{u+\brackets{n_{r}+n_{z}}v}+\sin\brackets{u+\brackets{n_{z}-n_{r}}v}}
+}{equ:rhat_ev_cross_es_2}
+From here we see that $\mathcal{J}\dotp{\con{u}}{\unitv{r}}$ has a non-zero $m=1$ mode structure.
+
+For the $\unitv{\phi}$ component
+\equ{
+n_{z}Z_{m=0,n_{z}}\pd{R}{s}_{m=1,n_{r}}\cos\brackets{n_{z}v}\cos\brackets{u+n_{r}v}\\
++n_{r}R_{m=0,n_{r}}\pd{Z}{s}_{m=1,n_{z}}\sin\brackets{n_{r}v}\sin\brackets{u+n_{z}v}
+}{equ:phihat_ev_cross_es}
+From the product sum identity
+\equ{
+\frac{1}{2}n_{z}Z_{m=0,n_{z}}\pd{R}{s}_{m=1,n_{r}}\sqbrackets{\cos\brackets{u+\brackets{n_{r}-n_{z}}v}+\cos\brackets{u+\brackets{n_{r}+n_{z}}v}}\\
++\frac{1}{2}n_{r}R_{m=0,n_{r}}\pd{Z}{s}_{m=1,n_{z}}\sqbrackets{\cos\brackets{u+\brackets{n_{z}-n_{r}}v}-\cos\brackets{u+\brackets{n_{r}+n_{z}}v}}
+}{equ:phihat_ev_cross_es_2}
+From here we see that $\mathcal{J}\dotp{\con{u}}{\unitv{\phi}}$ has a non-zero $m=1$ mode structure.
+
+For the $\unitv{z}$ component
+\equ{
+R_{m=0,n_{r}}\pd{R}{s}_{m=1,n_{z}}\cos\brackets{n_{r}v}\cos\brackets{u+n_{z}v}
+}{equ:zhat_ev_cross_es}
+From the product sum identity
+\equ{
+\frac{1}{2}R_{m=0,n_{r}}\pd{R}{s}_{m=1,n_{z}}\sqbrackets{\cos\brackets{u+\brackets{n_{z}-n_{r}}v}-\cos\brackets{u+\brackets{n_{r}+n_{z}}v}}
+}{equ:zhat_ev_cross_es_2}
+From here we see that $\mathcal{J}\dotp{\con{u}}{\unitv{z}}$ has a non-zero $m=1$ mode structure.
+
+\equ{
+\mathcal{J}\con{v}\brackets{s=0}=\crossp{\co{s}}{\co{u}}=0
+}{equ:covtravariant_boundary_v}
+Since $\co{u}\brackets{s=0}=0$, this condition is satisfied.
+
+\equ{
+\mathcal{J}A_{full}^{s}\brackets{s=0}=0
+}{equ:covariant_boundary_s}
+\equ{
+\mathcal{J}A_{full}^{u}\brackets{s=0}=0\quad m \ne 1
+}{equ:covariant_boundary_u}
+\equ{
+\mathcal{J}A_{full}^{v}\brackets{s=0}=0
+}{equ:covariant_boundary_v}
+
+\subsection{Conversion Between Full and Half Gird}
+Sometimes it is necessary to obtain a full grid quantity on the half grid or vice versa.
+Full grid quantities are typically defined from index $1$ to $ns$.
+Half grid quantities are defined from $2$ to $ns$.
+For half grid quantities, the $1$ index is typically zeroed out or used to store other data.
+
+\subsubsection{Conversion From Full to Half Grid}
+Full grid radial quantities are converted to half grid by averaging.
+\equ{
+A^{i}_{half}=\frac{A^{i}_{full}+A^{i-1}_{full}}{2}\quad i=2\rightarrow ns
+}{equ:full_to_half}
+Since the resulting half grid quantity remains within the bounds, there are no special boundary conditions.
+
+\subsubsection{Conversion From Half to Full Grid}
+For indices that do not intersect the boundary, half grid quantities are converted to full grid by averaging.
+\equ{
+A^{i}_{full}=\frac{A^{i+1}_{half}+A^{i}_{half}}{2}\quad i=2\rightarrow ns-1
+}{equ:half_to_full_middle}
+The $ns$ index must be extrapolated in away to preserve the diveregence free condition.
+Extrapolating the $ns$ point from the last half grid point yields.
+\equ{
+A^{ns}_{full}=\frac{3}{2}A^{ns}_{half}-\frac{1}{2}A^{ns-1}_{half}
+}{equ:half_to_full_ns}
+
+For $1$ full index, we can average between the $2$ half and $-2$ ghost half index.
+The ghost point $-2$ should be the same as the no ghost point $2$ evaluated at a $u+\pi$ angle.
+\equ{
+A^{-2}_{half}\brackets{s,u,v}=A^{2}_{half}\brackets{s,u+\pi,v}
+}{equ:half_ghost}
+From equation \ref{equ:fourier_to_real} the ghost points become
+\equ{
+A^{-2}_{half}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} A_{nmc}\brackets{s}\cos\brackets{m\brackets{u+\pi}+nNv} + A_{nms}\brackets{s}\sin\brackets{m\brackets{u+\pi}+nNv}
+}{equ:half_ghost_2}
+\equ{
+A^{-2}_{half}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} A_{nmc}\brackets{s}\cos\brackets{mu+nNv+m\pi} + A_{nms}\brackets{s}\sin\brackets{mu+nNv+m\pi}
+}{equ:half_ghost_3}
+\equ{
+\begin{split}
+A^{-2}_{half}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} A_{nmc}\brackets{s}\sqbrackets{\cos\brackets{mu+nNv}\cos\brackets{m\pi} -\sin\brackets{mu+nNv}\sin\brackets{m\pi}}\\+ A_{nms}\brackets{s}\sqbrackets{\sin\brackets{mu+nNv}\cos\brackets{m\pi}+\cos\brackets{mu+nNv}\sin\brackets{m\pi}}
+\end{split}
+}{equ:half_ghost_4}
+$\sin\brackets{m\pi}$ is zero for any value of m.
+Equation 4 reduces to
+\equ{
+A^{-2}_{half}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} A_{nmc}\brackets{s}\cos\brackets{mu+nNv}\cos\brackets{m\pi}\\+ A_{nms}\brackets{s}\sin\brackets{mu+nNv}\cos\brackets{m\pi}
+}{equ:half_ghost_5}
+\equ{
+\cos\brackets{m\pi}=\left\{
+\begin{array}{ll}
+1  & \textrm{: even} \quad m \\
+-1 & \textrm{: odd } \quad m
+\end{array}
+\right.
+}{equ:cos_pi}
+Using equation \ref{equ:cos_pi} the ghost points correspond to the non-ghost point via
+\equ{
+A^{-2}_{half}=\left\{
+\begin{array}{ll}
+A^{2}_{half}  & \textrm{: even} \quad m \\
+-A^{2}_{half} & \textrm{: odd } \quad m
+\end{array}
+\right.
+}{half_ghost_relationship}
+Using this condition, the odd $m$ modes will average to zero
+\equ{
+A^{1}_{full}=\left\{
+\begin{array}{ll}
+A^{2}_{half} & \textrm{:} \quad m=0 \\
+0            & \textrm{:} \quad m\ne0
+\end{array}
+\right.
+}{equ:half_to_full_1}
+However in cases where the quantity contains a radial derivative, we must account for the change in direction of $s$.
+For quantities composed of a radial derivative, the half to full grid conversion becomes,
+\equ{
+A^{1}_{full}=\left\{
+\begin{array}{ll}
+A^{2}_{half} & \textrm{:} \quad m=1 \\
+0            & \textrm{:} \quad m\ne1
+\end{array}
+\right.
+}{equ:half_to_full_2}
+
+\subsubsection{Test conversion}
+To check the conversion operators we expect that when we convert from one grid to other than back again, we expect to recover the same values back.
+From the interpolation operation, the conversion back to the full grid requires no extrapolation from the $2$ to $ns-1$.
+Putting equation \ref{equ:full_to_half} into equation \ref{equ:half_to_full_middle} yields
+\equ{
+A^{i}_{full}=\frac{A^{i+1}_{full}}{4}+\frac{A^{i}_{full}}{2}+\frac{A^{i-1}_{full}}{4}\quad i=2\rightarrow ns-1
+}{equ:full_to_half_to_full_1}
+This would indicate we should only convert quantities in one direction and never back.
+
+\subsection{Derivatives}
+Derivatives of Fourier quantities are handled differently depending on the changing coordinate.
+
+\subsubsection{Angle Derivatives}
+Angle derivatives can be done numerically in Fourier space and requires no change in grid.
+From equation \ref{equ:fourier_to_real} derivatives with respect to the polodial angle are
+\equ{
+\frac{\partial}{\partial u}A_{real}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} -mA_{nmc}\brackets{s}\sin\brackets{mu+nNv} + mA_{nms}\brackets{s}\cos\brackets{mu+nNv}
+}{equ:fourier_du}
+\equ{
+\frac{\partial}{\partial v}A_{real}\brackets{s,u,v}=\sum^{mpol}_{m=0}\sum^{ntor}_{n=-ntor} -nNA_{nmc}\brackets{s}\sin\brackets{mu+nNv} + nNA_{nms}\brackets{s}\cos\brackets{mu+nNv}
+}{equ:fourier_dv}
+
+\subsubsection{Radial Derivative of Full Grid Quantity}
+Taking a radial derivative in the full grid results in a half grid quantity.
+\equ{
+\frac{\partial A}{\partial s}^{i}_{half}=\frac{A^{i}_{full}-A^{i-1}_{full}}{ds}\quad i=2\rightarrow ns
+}{equ:full_ds}
+Radial derivatives of full grid have no boundary conditions.
+
+\subsubsection{Radial Derivative of Half Grid Quantity}
+Taking a radial derivative in the half grid results in a full grid quantity.
+For non-boundary grid points, the radial derivative of a half grid quantity is
+\equ{
+\frac{\partial A}{\partial s}^{i}_{full}=\frac{A^{i+1}_{half}-A^{i}_{half}}{ds}\quad i=2\rightarrow ns-1
+}{equ:half_ds}
+The $ns$ index must be extrapolated.
+Extrapolating the full grid $ns$ point must preserve $\nabla\cdot\nabla\times\vec{A}=0$
+\equ{
+\frac{\partial A}{\partial s}^{ns}_{full}=\frac{\partial A}{\partial s}^{ns-1}_{full}=\frac{A^{ns}_{half}-A^{ns-1}_{half}}{ds}
+}{equ:half_ds_ns}
+To preserve $\nabla\cdot\nabla\times\vec{A}=0$ the radial derivative at the axis must take the form
+\equ{
+\frac{\partial A}{\partial s}^{1}_{full}=\left\{
+\begin{array}{ll}
+2\frac{A^{2}_{half}}{ds} & \textrm{:}\quad m=1 \\
+0                        & \textrm{:}\quad m\ne1\\
+\end{array}
+\right.
+}{equ:half_ds_ghost}
+Except when the quanity contains a radial derivative, there the $A^{-1}$ is negative resulting in
+\equ{
+\frac{\partial A}{\partial s}^{1}_{full}=\left\{
+\begin{array}{ll}
+2\frac{A^{2}_{half}}{ds} & \textrm{:}\quad m=0 \\
+0                        & \textrm{:}\quad m\ne0\\
+\end{array}
+\right.
+}{equ:half_ds_ghost}
+
+\subsection{Jacobian}
+From equation \ref{equ:jacobian} and the fourier definition of the covariant basis vectors, the jacobian can be written in fourier terms.
+Starting with the $\crossp{\co{u}}{\co{v}}$ term
+\equ{
+\crossp{\co{u}}{\co{v}}=\left|
+\begin{array}{ccc}
+\unitv{r} & \unitv{\phi} & \unitv{z} \\
+\pd{R}{u} & 0            & \pd{Z}{u} \\
+\pd{R}{v} & R            & \pd{Z}{v}
+\end{array}
+\right|=-R\pd{Z}{u}\unitv{r}+\brackets{\pd{Z}{u}\pd{R}{v}-\pd{R}{u}\pd{Z}{v}}\unitv{\phi}+R\pd{R}{u}\unitv{v}
+}{equ:jacobian_cross}
+Take the dot product with the $\co{s}$ term results in
+\equ{
+\dotp{\co{s}}{\crossp{\co{u}}{\co{v}}}=-R\pd{R}{s}\pd{Z}{u}+R\pd{Z}{s}\pd{R}{u}
+}{equ:jacobian_full}
+Since the Jacobian contains radial derivatives, it is most convenient to treat this a half grid quantity.
+From the full to half grid and radial derivatives, equations \ref{equ:full_to_half} and \ref{equ:full_ds}, the half grid Jacobian can be written as.
+\equ{
+\mathcal{J}^{i}_{half}=\\
+-\frac{\brackets{R^{i}_{full}+R^{i-1}_{full}}}{2}\cos\brackets{m_{R}u+n_{R}v}\\
+\frac{\brackets{R^{i}_{full}-R^{i-1}_{full}}}{ds}\cos\brackets{m_{dR}u+n_{dR}v}\\
+\frac{\brackets{Z^{i}_{full}+Z^{i-1}_{full}}}{2}m_{Z}\cos\brackets{m_{Z}u+n_{Z}v}\\
+-\frac{\brackets{R^{i}_{full}+R^{i-1}_{full}}}{2}\cos\brackets{m_{R}u+n_{R}v}\\
+\frac{\brackets{Z^{i}_{full}-Z^{i-1}_{full}}}{ds}\sin\brackets{m_{dZ}u+n_{dZ}v}\\
+\frac{\brackets{R^{i}_{full}+R^{i-1}_{full}}}{2}m_{R}\sin\brackets{m_{R}u+n_{R}v}\\
+\quad i=2\rightarrow ns
+}{equ:jacobian_half}
+The triple $\cos$ product reduces using the product rule to.
+\equ{
+\frac{1}{2}\cos\sqbrackets{\brackets{m_{R}-m_{dR}}u+\brackets{n_{R}-n_{dR}}v}\cos\brackets{m_{z}u+n_{z}v}\\
++\frac{1}{2}\cos\sqbrackets{\brackets{m_{R}+m_{dR}}u+\brackets{n_{R}+n_{dR}}v}\cos\brackets{m_{z}u+n_{z}v}
+}{equ:jacobian_cos}
+\equ{
+\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}-m_{z}}u+\brackets{n_{R}-n_{dR}-n_{Z}}v}\\
++\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}+m_{z}}u+\brackets{n_{R}-n_{dR}+n_{z}}v}\\
++\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}-m_{z}}u+\brackets{n_{R}+n_{dR}-n_{z}}v}\\
++\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}+m_{z}}u+\brackets{n_{R}+n_{dR}+n_{z}}v}
+}{equ:jacobian_cos2}
+The $\cos\sin\sin$ product reduces to.
+\equ{
+\frac{1}{2}\sin\sqbrackets{\brackets{m_{R}+m_{dR}}u+\brackets{n_{R}+n_{dR}}v}\sin\brackets{m_{z}u+n_{z}v}\\
+-\frac{1}{2}\sin\sqbrackets{\brackets{m_{R}-m_{dR}}u+\brackets{n_{R}-n_{dR}}v}\sin\brackets{m_{z}u+n_{z}v}
+}{equ:jacobian_sin}
+\equ{
+\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}-m_{z}}u+\brackets{n_{R}+n_{dR}-n_{Z}}v}\\
+-\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}+m_{z}}u+\brackets{n_{R}+n_{dR}+n_{z}}v}\\
+-\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}-m_{z}}u+\brackets{n_{R}-n_{dR}-n_{z}}v}\\
++\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}+m_{z}}u+\brackets{n_{R}-n_{dR}+n_{z}}v}
+}{equ:jacobian_sin2}
+
+Putting equations \ref{equ:jacobian_cos2} and \ref{equ:jacobian_sin2} into \ref{equ:jacobian_half}.
+\equ{
+\mathcal{J}^{i}_{half}=\\
+-\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{R^{i}_{full}-R^{i-1}_{full}}{ds}\frac{Z^{i}_{full}+Z^{i-1}_{full}}{2}m_{Z}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}-m_{Z}}u+\brackets{n_{R}-n_{dR}-n_{Z}}v}\\
+-\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{R^{i}_{full}-R^{i-1}_{full}}{ds}\frac{Z^{i}_{full}+Z^{i-1}_{full}}{2}m_{Z}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}+m_{Z}}u+\brackets{n_{R}-n_{dR}+n_{z}}v}\\
+-\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{R^{i}_{full}-R^{i-1}_{full}}{ds}\frac{Z^{i}_{full}+Z^{i-1}_{full}}{2}m_{Z}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}-m_{Z}}u+\brackets{n_{R}+n_{dR}-n_{z}}v}\\
+-\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{R^{i}_{full}-R^{i-1}_{full}}{ds}\frac{Z^{i}_{full}+Z^{i-1}_{full}}{2}m_{Z}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}+m_{Z}}u+\brackets{n_{R}+n_{dR}+n_{z}}v}\\
+-\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{Z^{i}_{full}-Z^{i-1}_{full}}{ds}\frac{R^{i}_{full}+R^{i-1}_{full}}{2}m_{R}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}-m_{Z}}u+\brackets{n_{R}+n_{dR}-n_{Z}}v}\\
++\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{Z^{i}_{full}-Z^{i-1}_{full}}{ds}\frac{R^{i}_{full}+R^{i-1}_{full}}{2}m_{R}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}+m_{dR}+m_{Z}}u+\brackets{n_{R}+n_{dR}+n_{z}}v}\\
++\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{Z^{i}_{full}-Z^{i-1}_{full}}{ds}\frac{R^{i}_{full}+R^{i-1}_{full}}{2}m_{R}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}-m_{Z}}u+\brackets{n_{R}-n_{dR}-n_{z}}v}\\
+-\frac{R^{i}_{full}+R^{i-1}_{full}}{2}\frac{Z^{i}_{full}-Z^{i-1}_{full}}{ds}\frac{R^{i}_{full}+R^{i-1}_{full}}{2}m_{R}\frac{1}{4}\cos\sqbrackets{\brackets{m_{R}-m_{dR}+m_{Z}}u+\brackets{n_{R}-n_{dR}+n_{z}}v}\\
+\quad i=2\rightarrow ns
+}{equ:jacobian_half2}
+
+When this is converted down to the $s=0$ point, only the $m=0$ terms are retained for $m_{R}$ and $m_{Z}$.
+Since the $\co{s}$ terms is nonzero for $m=1$, the $m_{dR}=1$.
+Since the Jacobian contains a radial derivative.
+
+\subsection{$\divergence{\curl{\vec{A}}} = 0$ Half Grid}
+\label{sec:div_half}
+We need to check the boundary conditions to ensure that magnetic fields remain divergence free.
+The deviation of the Curl operator in flux coordinates is defined as
+\equ{
+\curl{\vec{A}}=\frac{1}{\mathcal{J}}\sum_{v}\brackets{\frac{\partial A_{u}}{\partial s}-\frac{\partial A_{s}}{\partial u}}\co{v}\quad\textrm{for cyclic perumations of }s,u,v
+}{equ:curl}
+The divergence operator is
+\equ{
+\divergence{\vec{A}}=\frac{1}{\mathcal{J}}\frac{\partial}{\partial i}\mathcal{J}A^{i}\quad i\rightarrow s,u,v
+}{equ:div}
+
+Starting from a full grid quantity $\vec{A}$, the Curl results in a half grid quantity $\vec{B}=\curl{\vec{A}}$.
+$A^{s}$ has $\sin$ parity while $A^{u}$ and $A^{v}$ have $\cos$ parity.
+From the definition of the curl,
+\equ{
+\mathcal{J}B^{s}=\frac{\partial A_{v}}{\partial u}_{half} - \frac{\partial A_{u}}{\partial v}_{half}=-m\brackets{A_{v}}_{half}+nN\brackets{A_{u}}_{half}
+}{equ:curl_b_s}
+\equ{
+\brackets{\mathcal{J}B^{s}}^{i}_{half}=-m\frac{\brackets{A_{v}}^{i}_{full}+\brackets{A_{v}}^{i-1}_{full}}{2}+nN\frac{\brackets{A_{u}}^{i}_{full}+\brackets{A_{u}}^{i-1}_{full}}{2}\quad i=2\rightarrow ns
+}{equ:curl_b_s_i}
+\equ{
+\mathcal{J}B^{u}=\frac{\partial A_{s}}{\partial v}_{half}-\frac{\partial A_{v}}{\partial s}_{half}=nN\brackets{A_{s}}_{half}-\frac{\partial A_{v}}{\partial s}_{half}
+}{equ:curl_b_u}
+\equ{
+\brackets{\mathcal{J}B^{u}}^{i}_{half}=
+nN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{2}-\frac{\brackets{A_{v}}^{i}_{full}-\brackets{A_{v}}^{i-1}_{full}}{ds}\quad i=2\rightarrow ns
+}{equ:curl_b_u_i}
+\equ{
+\mathcal{J}B^{v}=\frac{\partial A_{u}}{\partial s}_{half}-\frac{\partial A_{s}}{\partial u}_{half}=\frac{\partial A_{u}}{\partial s}_{half}-m\brackets{A_{s}}_{half}
+}{equ:curl_b_v}
+\equ{
+\brackets{\mathcal{J}B^{v}}^{i}_{half}=\frac{\brackets{A_{u}}^{i}_{full}-\brackets{A_{u}}^{i-1}_{full}}{ds}-m\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{2}\quad i=2\rightarrow ns
+}{equ:curl_b_v_i}
+Since $A_{s}$ has $\sin$ parity, and $A_{u}$ and $A_{v}$ have $\cos$ parity, $B^{s}$ will have $\sin$ parity, and $B^{u}$ and $B^{v}$ will have $\cos$ parity.
+
+\subsubsection{Non-boundary Terms}
+The non-boundary components of the divergence fall on the full grid.
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{i}_{full}=\frac{\brackets{\mathcal{J}B^{s}}^{i+1}_{half}-\brackets{\mathcal{J}B^{s}}^{i}_{half}}{ds}\quad i=2\rightarrow ns-1
+}{equ:div_jb_s}
+Using equation \ref{equ:curl_b_s_i} this becomes
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{i}_{full}=-m\frac{\brackets{A_{v}}^{i+1}_{full}+\brackets{A_{v}}^{i}_{full}}{2ds}+nN\frac{\brackets{A_{u}}^{i+1}_{full}+\brackets{A_{u}}^{i}_{full}}{2ds}\\
++m\frac{\brackets{A_{v}}^{i}_{full}+\brackets{A_{v}}^{i-1}_{full}}{2ds}-nN\frac{\brackets{A_{u}}^{i}_{full}+\brackets{A_{u}}^{i-1}_{full}}{2ds}\\i=2\rightarrow ns-1
+}{equ:div_jb_s_1}
+All $A^{i}$ terms cancel leaving
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{i}_{full}=-m\frac{\brackets{A_{v}}^{i+1}_{full}}{2ds}+nN\frac{\brackets{A_{u}}^{i+1}_{full}}{2ds}+m\frac{\brackets{A_{v}}^{i-1}_{full}}{2ds}-nN\frac{\brackets{A_{u}}^{i-1}_{full}}{2ds}\quad i=2\rightarrow ns-1
+}{equ:div_jb_s_2}
+The next term
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{i}_{full}=-m\brackets{\mathcal{J}B^{u}}^{i}_{full}=
+-m\frac{\brackets{\mathcal{J}B^{u}}^{i+1}_{half} + \brackets{\mathcal{J}B^{u}}^{i}_{half}}{2}\quad i=2\rightarrow ns-1
+}{equ:div_jb_u}
+Using equation \ref{equ:curl_b_u_i} this becomes
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{i}_{full}=-mnN\frac{\brackets{A_{s}}^{i+1}_{full}+\brackets{A_{s}}^{i}_{full}}{4}+m\frac{\brackets{A_{v}}^{i+1}_{full}-\brackets{A_{v}}^{i}_{full}}{2ds}\\
+-mnN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{4}+m\frac{\brackets{A_{v}}^{i}_{full}-\brackets{A_{v}}^{i-1}_{full}}{2ds}\\
+i=2\rightarrow ns-1
+}{equ:div_jb_u_1}
+All $A^{i}_{v}$ terms cancel leaving
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{i}_{full}=-mnN\frac{\brackets{A_{s}}^{i+1}_{full}+\brackets{A_{s}}^{i}_{full}}{4}+m\frac{\brackets{A_{v}}^{i+1}_{full}}{2ds}\\
+-mnN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{4}-m\frac{\brackets{A_{v}}^{i-1}_{full}}{2ds}\\
+i=2\rightarrow ns-1
+}{equ:div_jb_u_2}
+The last term
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{i}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{i}_{full}=
+-nN\frac{\brackets{\mathcal{J}B^{v}}^{i+1}_{half} + \brackets{\mathcal{J}B^{v}}^{i}_{half}}{2}\quad i=2\rightarrow ns-1
+}{equ:div_jb_v}
+Using equation \ref{equ:curl_b_v_i} this becomes
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{i}_{full}=-nN\frac{\brackets{A_{u}}^{i+1}_{full}-\brackets{A_{u}}^{i}_{full}}{2ds}+mnN\frac{\brackets{A_{s}}^{i+1}_{full}+\brackets{A_{s}}^{i}_{full}}{4}\\
+-nN\frac{\brackets{A_{u}}^{i}_{full}-\brackets{A_{u}}^{i-1}_{full}}{2ds}+mnN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{4}\\
+i=2\rightarrow ns-1
+}{equ:div_jb_v_1}
+All $A^{i}_u$ terms cancel leaving
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{i}_{full}=-nN\frac{\brackets{A_{u}}^{i+1}_{full}}{2ds}+mnN\frac{\brackets{A_{s}}^{i+1}_{full}+\brackets{A_{s}}^{i}_{full}}{4}\\
++nN\frac{\brackets{A_{u}}^{i-1}_{full}}{2ds}+mnN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{4}\\
+i=2\rightarrow ns-1
+}{equ:div_jb_v_2}
+Combining equations \ref{equ:div_jb_s_2}, \ref{equ:div_jb_u_2}, and \ref{equ:div_jb_v_2}
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{i}_{full}+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{i}_{full}+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{i}_{full}=\\
+-m\frac{\brackets{A_{v}}^{i+1}_{full}}{2ds}+nN\frac{\brackets{A_{u}}^{i+1}_{full}}{2ds}+m\frac{\brackets{A_{v}}^{i-1}_{full}}{2ds}-nN\frac{\brackets{A_{u}}^{i-1}_{full}}{2ds}\\
+-mnN\frac{\brackets{A_{s}}^{i+1}_{full}+\brackets{A_{s}}^{i}_{full}}{4}+m\frac{\brackets{A_{v}}^{i+1}_{full}}{2ds}-mnN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{4}-m\frac{\brackets{A_{v}}^{i-1}_{full}}{2ds}\\
+-nN\frac{\brackets{A_{u}}^{i+1}_{full}}{2ds}+mnN\frac{\brackets{A_{s}}^{i+1}_{full}+\brackets{A_{s}}^{i}_{full}}{4}+nN\frac{\brackets{A_{u}}^{i-1}_{full}}{2ds}+mnN\frac{\brackets{A_{s}}^{i}_{full}+\brackets{A_{s}}^{i-1}_{full}}{4}\\
+i=2\rightarrow ns-1
+}{equ:div_total}
+Canceling out terms results in
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{i}_{full}+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{i}_{full}+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{i}_{full}=0\\
+i=2\rightarrow ns-1
+}{equ:div_total_1}
+
+\subsubsection{$ns$ Terms}
+The first $ns$ boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{ns}_{full}=\frac{\brackets{\mathcal{J}B^{s}}^{ns}_{half}-\brackets{\mathcal{J}B^{s}}^{ns-1}_{half}}{ds}
+}{equ:div_jb_s_ns}
+Using equation \ref{equ:curl_b_s_i} this expands to
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{ns}_{full}=-m\frac{\brackets{A_{v}}^{ns}_{full}}{2ds}-m\frac{\brackets{A_{v}}^{ns-1}_{full}}{2ds}+nN\frac{\brackets{A_{u}}^{ns}_{full}}{2ds}+nN\frac{\brackets{A_{u}}^{ns-1}_{full}}{2ds}\\
++m\frac{\brackets{A_{v}}^{ns-1}_{full}}{2ds}+m\frac{\brackets{A_{v}}^{ns-2}_{full}}{2ds}-nN\frac{\brackets{A_{u}}^{ns-1}_{full}}{2ds}-nN\frac{\brackets{A_{u}}^{ns-2}_{full}}{2ds}
+}{equ:div_jb_s_ns_1}
+Which reduces to
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{ns}_{full}=-m\frac{\brackets{A_{v}}^{ns}_{full}}{2ds}+nN\frac{\brackets{A_{u}}^{ns}_{full}}{2ds}\\
++m\frac{\brackets{A_{v}}^{ns-2}_{full}}{2ds}-nN\frac{\brackets{A_{u}}^{ns-2}_{full}}{2ds}
+}{equ:div_jb_s_ns_2}
+
+The second $ns$ boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{ns}_{full}=-m\brackets{\mathcal{J}B^{u}}^{ns}_{full}=-m\brackets{\mathcal{J}B^{u}}^{ns}_{half}
+}{equ:div_jb_u_ns}
+Using equation \ref{equ:curl_b_u_i} this expands to
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{ns}_{full}=-mnN\frac{\brackets{A_{s}}^{ns}_{full}}{2}-mnN\frac{\brackets{A_{s}}^{ns-1}_{full}}{2}+m\frac{\brackets{A_{v}}^{ns}_{full}}{ds}-m\frac{\brackets{A_{v}}^{ns-1}_{full}}{ds}
+}{equ:div_jb_u_ns_1}
+The third ns boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{ns}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{ns}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{ns}_{half}
+}{equ:div_jb_v_ns}
+Using equation \ref{equ:curl_b_v_i} this expands to
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{ns}_{full}=-nN\frac{\brackets{A_{u}}^{ns}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{ns-1}_{full}}{ds}+mnN\frac{\brackets{A_{s}}^{ns}_{full}}{2}+mnN\frac{\brackets{A_{s}}^{ns-1}_{full}}{2}
+}{equ:div_jb_v_ns_1}
+
+Canceling out common terms results in
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{ns}_{full}+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{ns}_{full}+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{ns}_{full}=0
+}{equ:div_total_ns_1}
+
+\subsubsection{Axis Terms}
+\label{sub:sec:div_axis}
+Note these are no longer vector quantities so we use the \ref{equ:half_to_full_1} and \ref{equ:half_ds_ghost} conditions here.
+The first axis boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{1}_{full}=\frac{2\brackets{\mathcal{J}B^{s}}^{2}_{half}}{ds}\quad\textrm{:}\quad m=1
+}{equ:div_jb_s_ghost}
+From equation \ref{equ:curl_b_s_i} this expands to
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{1}_{full}=-m\frac{\brackets{A_{v}}^{2}_{full}}{ds}-m\frac{\brackets{A_{v}}^{1}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{2}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{1}_{full}}{ds}\quad\textrm{:}\quad m=1
+}{equ:div_jb_s_ghost_2}
+From conditions \ref{equ:asubu} and \ref{equ:asubv}, at the origin $A_{u}=0$, and $A_v=0$ for all $m>0$ causing this term to reduce to
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{1}_{full}=-m\frac{\brackets{A_{v}}^{2}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{2}_{full}}{ds}\quad\textrm{:}\quad m=1
+}{equ:div_jb_s_ghost_3}
+
+The second axis boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{1}_{full}=-m\brackets{\mathcal{J}B^{u}}^{1}_{full}=-m\brackets{\mathcal{J}B^{u}}^{2}_{half}
+}{equ:div_jb_u_ghost}
+From equation \ref{equ:covariant_boundary_u}, only the $m=1$ terms of $JB^{u}$ should remain non zero.
+Since the curl term contains a radial derivative, the condition \ref{equ:half_to_full_2} is used here.
+The conversion from the half grid retains only $m=1$ terms consistent with the condition \ref{equ:covariant_boundary_u}.
+Putting equation \ref{equ:curl_b_u_i}
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{1}_{full}=-mnN\frac{\brackets{A_{s}}^{2}_{full}}{2}-mnN\frac{\brackets{A_{s}}^{1}_{full}}{2}+m\frac{\brackets{A_{v}}^{2}_{full}}{ds}-m\frac{\brackets{A_{v}}^{1}_{full}}{ds}\quad\textrm{:}\quad m=1
+}{equ:div_jb_u_ghost_2}
+$A_{v}=0$ for $m=1$ terms based on the covariant basis vectors \ref{equ:covariant_boundary_v}.
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{1}_{full}=-mnN\frac{\brackets{A_{s}}^{2}_{full}}{2}-mnN\frac{\brackets{A_{s}}^{1}_{full}}{2}+m\frac{\brackets{A_{v}}^{2}_{full}}{ds}\quad\textrm{:}\quad m=1
+}{equ:div_jb_u_ghost_3}
+
+The last axis boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{1}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{1}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{2}_{half}
+}{equ:div_jb_v_ghost}
+Since the curl term contains a radial derivative, the condition \ref{equ:half_to_full_2} is used here retaining only $m=1$ terms.
+From equation \ref{equ:curl_b_v_i} this expands to
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{1}_{full}=-nN\frac{\brackets{A_{u}}^{2}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{1}_{full}}{ds}+mnN\frac{\brackets{A_{s}}^{2}_{full}}{2}+mnN\frac{\brackets{A_{s}}^{1}_{full}}{2}\quad\textrm{:}\quad m=1
+}{equ:div_jb_v_ghost_2}
+$A_{v}=0$ for $m=1$ terms based on the covariant basis vectors \ref{equ:covariant_boundary_u}.
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{1}_{full}=-nN\frac{\brackets{A_{u}}^{2}_{full}}{ds}+mnN\frac{\brackets{A_{s}}^{2}_{full}}{2}+mnN\frac{\brackets{A_{s}}^{1}_{full}}{2}\quad\textrm{:}\quad m=1
+}{equ:div_jb_v_ghost_3}
+
+Combining equations \ref{equ:div_jb_s_ghost_3}, \ref{equ:div_jb_u_ghost_3}, and \ref{equ:div_jb_v_ghost_3} together,
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{1}_{full}+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{1}_{full}+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{1}_{full}=\\
+-m\frac{\brackets{A_{v}}^{2}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{2}_{full}}{ds}\\
+-mnN\frac{\brackets{A_{s}}^{2}_{full}}{2}-mnN\frac{\brackets{A_{s}}^{1}_{full}}{2}+m\frac{\brackets{A_{v}}^{2}_{full}}{ds}\\
+-nN\frac{\brackets{A_{u}}^{2}_{full}}{ds}+mnN\frac{\brackets{A_{s}}^{2}_{full}}{2}+mnN\frac{\brackets{A_{s}}^{1}_{full}}{2}\quad\textrm{:}\quad m=1
+}{equ:div_total_1_1}
+Canceling out terms results in 
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}B^{s}}^{1}_{full}+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{1}_{full}+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{1}_{full}=0
+}{equ:div_total_1_2}
+
+\subsection{$\divergence{\curl{\vec{A}}} = 0$ Full Grid}
+Starting from the half grid quantity $\vec{B}$, the Curl results in a full grid quantity $\vec{J}=\curl{\vec{B}}$.
+$B^{s}$ has sin parity while $B^{u}$ and $B^{v}$ have cos parity. From the definition of the curl,
+\equ{
+\mathcal{J}B^{s}=\frac{\partial A_{v}}{\partial u}_{full} - \frac{\partial A_{u}}{\partial v}_{full}=-m\brackets{A_{v}}_{full}+nN\brackets{A_{u}}_{full}
+}{equ:curl_j_s}
+\equ{
+\mathcal{J}A^{u}=\frac{\partial A_{s}}{\partial v}_{full}-\frac{\partial A_{v}}{\partial s}_{half}=nN\brackets{A_{s}}_{full}-\frac{\partial A_{v}}{\partial s}_{full}
+}{equ:curl_j_u}
+\equ{
+\mathcal{J}A^{v}=\frac{\partial A_{u}}{\partial s}_{full}-\frac{\partial A_{s}}{\partial u}_{full}=\frac{\partial A_{u}}{\partial s}_{full}-m\brackets{A_{s}}_{full}
+}{equ:curl_j_v}
+
+\subsubsection{Non-Boundary Terms}
+For the non boundary term, equations \ref{equ:curl_j_s}, \ref{equ:curl_j_u} and \ref{equ:curl_j_v} become
+\equ{
+\brackets{\mathcal{J}J^{s}}^{i}_{full}=-m\frac{\brackets{B_{v}}^{i+1}_{half}+\brackets{B_{v}}^{i}_{half}}{2}+nN\frac{\brackets{B_{u}}^{i+1}_{half}+\brackets{B_{u}}^{i}_{half}}{2}\quad i=2\rightarrow ns-1
+}{equ:curl_j_s_i}
+\equ{
+\brackets{\mathcal{J}J^{u}}^{i}_{full}=
+nN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{2}-\frac{\brackets{B_{v}}^{i+1}_{half}-\brackets{B_{v}}^{i}_{half}}{ds}\quad i=2\rightarrow ns-1
+}{equ:curl_j_u_i}
+\equ{
+\brackets{\mathcal{J}J^{v}}^{i}_{full}=\frac{\brackets{B_{u}}^{i+1}_{half}-\brackets{B_{u}}^{i}_{half}}{ds}-m\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{2}\quad i=2\rightarrow ns-1
+}{equ:curl_j_v_i}
+Since $B_{s}$ has $\sin$ parity, and $B_{u}$ and $B_{v}$ have $\cos$ parity, $J^{s}$ will have $\sin$ parity, and $J^{u}$ and $J^{v}$ will have $\cos$ parity.
+
+The non-boundary components of the divergence fall on the half grid.
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}J^{s}}^{i}_{half}=\frac{\brackets{\mathcal{J}J^{s}}^{i}_{full}-\brackets{\mathcal{J}J^{s}}^{i-1}_{full}}{ds}\quad i=3\rightarrow ns-1
+}{equ:div_jj_s}
+Using equation \ref{equ:curl_j_s_i} this becomes
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}J^{s}}^{i}_{half}=-m\frac{\brackets{B_{v}}^{i+1}_{half}+\brackets{B_{v}}^{i}_{half}}{2ds}+nN\frac{\brackets{B_{u}}^{i+1}_{half}+\brackets{B_{u}}^{i}_{half}}{2ds}\\
++m\frac{\brackets{B_{v}}^{i}_{half}+\brackets{B_{v}}^{i-1}_{half}}{2ds}-nN\frac{\brackets{B_{u}}^{i}_{half}+\brackets{B_{u}}^{i-1}_{half}}{2ds}\\i=3\rightarrow ns-1
+}{equ:div_jj_s_1}
+All $B^{i}$ terms cancel leaving
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}J^{s}}^{i}_{half}=-m\frac{\brackets{B_{v}}^{i+1}_{half}}{2ds}+nN\frac{\brackets{B_{u}}^{i+1}_{half}}{2ds}+m\frac{\brackets{B_{v}}^{i-1}_{half}}{2ds}-nN\frac{\brackets{B_{u}}^{i-1}_{half}}{2ds}\quad i=3\rightarrow ns-1
+}{equ:div_jj_s_2}
+The next term
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}J^{u}}^{i}_{half}=-m\brackets{\mathcal{J}J^{u}}^{i}_{half}=
+-m\frac{\brackets{\mathcal{J}J^{u}}^{i+1}_{full} + \brackets{\mathcal{J}J^{u}}^{i}_{full}}{2}\quad i=3\rightarrow ns-1
+}{equ:div_jj_u}
+Using equation \ref{equ:curl_j_u_i} this becomes
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}J^{u}}^{i}_{half}=-mnN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{4}+m\frac{\brackets{B_{v}}^{i+1}_{half}-\brackets{B_{v}}^{i}_{half}}{2ds}\\
+-mnN\frac{\brackets{B_{s}}^{i}_{half}+\brackets{B_{s}}^{i-1}_{half}}{4}+m\frac{\brackets{B_{v}}^{i}_{half}-\brackets{B_{v}}^{i-1}_{half}}{2ds}\\
+i=3\rightarrow ns-1
+}{equ:div_jj_u_1}
+All $B^{i}_{v}$ terms cancel leaving
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}J^{u}}^{i}_{half}=-mnN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{4}+m\frac{\brackets{B_{v}}^{i+1}_{half}}{2ds}\\
+-mnN\frac{\brackets{B_{s}}^{i}_{half}+\brackets{B_{s}}^{i-1}_{half}}{4}-m\frac{\brackets{B_{v}}^{i-1}_{half}}{2ds}\\
+i=3\rightarrow ns-1
+}{equ:div_jj_u_2}
+The last term
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}J^{v}}^{i}_{half}=-nN\brackets{\mathcal{J}J^{v}}^{i}_{half}=
+-nN\frac{\brackets{\mathcal{J}J^{v}}^{i+1}_{full} + \brackets{\mathcal{J}J^{v}}^{i}_{full}}{2}\quad i=3\rightarrow ns-1
+}{equ:div_jj_v}
+Using equation \ref{equ:curl_j_v_i} this becomes
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}J^{v}}^{i}_{half}=-nN\frac{\brackets{B_{u}}^{i+1}_{half}-\brackets{B_{u}}^{i}_{half}}{2ds}+mnN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{4}\\
+-nN\frac{\brackets{B_{u}}^{i}_{half}-\brackets{B_{u}}^{i-1}_{half}}{2ds}+mnN\frac{\brackets{B_{s}}^{i}_{half}+\brackets{B_{s}}^{i-1}_{half}}{4}\\
+i=3\rightarrow ns-1
+}{equ:div_jj_v_1}
+All $B^{i}_u$ terms cancel leaving
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}J^{v}}^{i}_{half}=-nN\frac{\brackets{B_{u}}^{i+1}_{half}}{2ds}+mnN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{4}\\
++nN\frac{\brackets{B_{u}}^{i-1}_{half}}{2ds}+mnN\frac{\brackets{B_{s}}^{i}_{half}+\brackets{B_{s}}^{i-1}_{half}}{4}\\
+i=3\rightarrow ns-1
+}{equ:div_jj_v_2}
+Combining equations \ref{equ:div_jj_s_2}, \ref{equ:div_jj_u_2}, and \ref{equ:div_jj_v_2}
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}J^{s}}^{i}_{half}+\brackets{\frac{\partial}{\partial u}\mathcal{J}J^{u}}^{i}_{half}+\brackets{\frac{\partial}{\partial v}\mathcal{J}J^{v}}^{i}_{half}=\\
+-m\frac{\brackets{B_{v}}^{i+1}_{half}}{2ds}+nN\frac{\brackets{B_{u}}^{i+1}_{half}}{2ds}+m\frac{\brackets{B_{v}}^{i-1}_{half}}{2ds}-nN\frac{\brackets{B_{u}}^{i-1}_{half}}{2ds}\\
+-mnN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{4}+m\frac{\brackets{B_{v}}^{i+1}_{half}}{2ds}-mnN\frac{\brackets{B_{s}}^{i}_{half}+\brackets{B_{s}}^{i-1}_{half}}{4}-m\frac{\brackets{B_{v}}^{i-1}_{half}}{2ds}\\
+-nN\frac{\brackets{B_{u}}^{i+1}_{half}}{2ds}+mnN\frac{\brackets{B_{s}}^{i+1}_{half}+\brackets{B_{s}}^{i}_{half}}{4}+nN\frac{\brackets{B_{u}}^{i-1}_{half}}{2ds}+mnN\frac{\brackets{B_{s}}^{i}_{half}+\brackets{B_{s}}^{i-1}_{half}}{4}\\
+i=3\rightarrow ns-1
+}{equ:div_j_total}
+Canceling out terms results in
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}J^{s}}^{i}_{half}+\brackets{\frac{\partial}{\partial u}\mathcal{J}J^{u}}^{i}_{half}+\brackets{\frac{\partial}{\partial v}\mathcal{J}J^{v}}^{i}_{half}=0\\
+i=3\rightarrow ns-1
+}{equ:div_j_total_1}
+
+\subsubsection{Near $ns$ Terms}
+The first near $ns$ boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial s}\mathcal{J}J^{s}}^{ns}_{half}=\frac{\brackets{\mathcal{J}J^{s}}^{ns}_{full}-\brackets{\mathcal{J}B^{s}}^{ns-1}_{full}}{ds}
+}{equ:div_jj_s_ns}
+The second near $ns$ boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial u}\mathcal{J}B^{u}}^{ns}_{half}=-m\brackets{\mathcal{J}B^{u}}^{ns}_{half}=-m\frac{\brackets{\mathcal{J}B^{u}}^{ns}_{full}+\brackets{\mathcal{J}B^{u}}^{ns-1}_{full}}{2}
+}{equ:div_jj_u_ns}
+The third ns boundary component is
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{ns}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{ns}_{full}=-nN\brackets{\mathcal{J}B^{v}}^{ns}_{full}
+}{equ:div_jjM_v_ns}
+Using equation \ref{equ:curl_b_v_i} this expands to
+\equ{
+\brackets{\frac{\partial}{\partial v}\mathcal{J}B^{v}}^{ns}_{full}=-nN\frac{\brackets{A_{u}}^{ns}_{full}}{ds}+nN\frac{\brackets{A_{u}}^{ns-1}_{full}}{ds}+mnN\frac{\brackets{A_{s}}^{ns}_{full}}{2}+mnN\frac{\brackets{A_{s}}^{ns-1}_{full}}{2}
+}{equ:div_jj_v_ns_1}
+
+\section{Perturbation}
+\label{sec:perturbation}
+To compute variations of equilibrium, SIESTA applies a displacement $\xi=v\Delta t$.
+The variation of the magnetic field comes from the Faraday's law.
+\equ{
+\pd{\vec{B}}{t}=-\curl{\vec{E}}
+}{equ:faraday}
+The electric field is obtained from the magnetic induction
+\equ{
+\vec{E}=\crossp{\vec{v}}{\vec{B}}
+}{equ:e_field}
+The displacement $\xi$ contains an implicit $\mathcal{J}$ term.
+When the taking the curl in real space ends up with electric field components without a $\mathcal{J}$ term removed.
+The electric field is a full grid quantity.
+To ensure that the divergence of the electric field perturbation remains divergence free, we apply the conditions from section \ref{sec:div_half}.
+
+Additionally, the electric field using a covariant basis vector representation.
+So all the same conditions that were applied to the vector potential in section \ref{sec:div_half} apply here as well.
+\equ{
+E^{full}_{s}\brackets{s=0}=0\quad m \ne 1
+}{equ:covariant_e_boundary_s}
+\equ{
+E^{full}_{u}\brackets{s=0}=0
+}{equ:covariant_e_boundary_u}
+\equ{
+E^{full}_{v}\brackets{s=0}=0\quad m \ne 0
+}{equ:covariant_e_boundary_v}
+The coupling conditions from section \ref{sub:sec:div_axis}.
+\equ{
+m\brackets{E_v}^{2}_{full}=nN\brackets{E_u}^{2}_{full}\quad m = 1
+}{equ:covariant_e_s2_m1_couple}
+\equ{
+\brackets{E_u}^{2}_{full}=0\quad m=0
+}{equ:covariant_eu_s2_m0}
+
+\end{document}
