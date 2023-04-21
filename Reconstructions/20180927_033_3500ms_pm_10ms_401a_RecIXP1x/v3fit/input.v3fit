@@ -1,0 +1,1429 @@
+&v3fit_main_nli
+! suffix: _401a_RecIXP1x
+
+! Reconstruction Controls
+  vmec_nli_filename = 'input.vmec'
+  my_task = 'reconstruct'
+  nrstep = 12
+  dg2_stop = 0.01
+  cut_svd = 2e-05
+  cut_eff = 0.0001
+  cut_marg_eff = 0.01
+  cut_delta_a = 0.01
+  cut_dg2 = 0.5
+  astep_max = 12.0
+  step_type = 'lm'
+
+! Model Parameters
+! Electron Density
+  model_ne_type = 'pp_ne'
+  pp_ne_ptype = 'two_power'
+  ne_pp_unit = 1e+18
+  pp_ne_b =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  pp_ne_as =  0.0 0.04 0.09 0.16 0.25 0.36 0.49 0.64 0.81 1.0 1.1 1.2 1.3 1.5
+  pp_ne_af =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  ne_min = 0.0
+
+! Scaling factor for Thomson Density measurements
+  sfactor_spec_imin(1) = 330
+  sfactor_spec_imax(1) = 371
+  sfactor_spec_fac(1) = 0.6
+
+! Electron Temperature
+  model_te_type = 'pp_te'
+  pp_te_ptype = 'line_segment'
+  pp_te_b =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  pp_te_as =  0.0 0.04 0.09 0.16 0.25 0.36 0.49 0.64 0.81 1.0 0.0 0.0
+  pp_te_af =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  te_min = 0.0
+
+! Zeff profile
+  e_pressure_fraction = 0.5
+
+! XICS Soft X-Ray Emission
+  num_sxrem_p = 1
+  model_sxrem_type_a = 'pp_sxrem'
+  sxrem_min = 0.0
+  pp_sxrem_ptype_a = 'line_segment'
+  pp_sxrem_b_a(1,:) =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  pp_sxrem_as_a(1,:) =  0.0 0.04 0.09 0.16 0.25 0.36 0.49 0.64 0.81 1.0 0.0 0.0
+  pp_sxrem_af_a(1,:) =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+
+! XICS Ti model
+  model_ti_type = 'pp_ti'
+  pp_ti_ptype = 'two_power'
+  pp_ti_b =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  pp_ti_as =  0.0 0.04 0.09 0.16 0.25 0.36 0.49 0.64 0.81 1.0 0.0 0.0
+  pp_ti_af =  0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+  ti_min = 0.0
+
+! Derived Parameters
+  n_dp = 300
+
+  dp_type(1) = 'iotaf'
+  dp_index(1,1) = 1.0
+
+  dp_type(2) = 'iotaf'
+  dp_index(2,1) = 15.0
+
+  dp_type(3) = 'iotaf'
+  dp_index(3,1) = 28.0
+
+  dp_type(4) = 'iotaf'
+  dp_index(4,1) = 41.0
+
+  dp_type(5) = 'iotaf'
+  dp_index(5,1) = 55.0
+
+  dp_type(6) = 'iotaf'
+  dp_index(6,1) = 68.0
+
+  dp_type(7) = 'iotaf'
+  dp_index(7,1) = 81.0
+
+  dp_type(8) = 'iotaf'
+  dp_index(8,1) = 95.0
+
+  dp_type(9) = 'iotaf'
+  dp_index(9,1) = 108.0
+
+  dp_type(10) = 'iotaf'
+  dp_index(10,1) = 121.0
+
+  dp_type(11) = 'iotaf'
+  dp_index(11,1) = 135.0
+
+  dp_type(12) = 'iotaf'
+  dp_index(12,1) = 148.0
+
+  dp_type(13) = 'iotaf'
+  dp_index(13,1) = 161.0
+
+  dp_type(14) = 'iotaf'
+  dp_index(14,1) = 175.0
+
+  dp_type(15) = 'iotaf'
+  dp_index(15,1) = 188.0
+
+  dp_type(16) = 'iotaf'
+  dp_index(16,1) = 201.0
+
+  dp_type(17) = 'iotaf'
+  dp_index(17,1) = 215.0
+
+  dp_type(18) = 'iotaf'
+  dp_index(18,1) = 228.0
+
+  dp_type(19) = 'iotaf'
+  dp_index(19,1) = 241.0
+
+  dp_type(20) = 'iotaf'
+  dp_index(20,1) = 255.0
+
+  dp_type(21) = 'iotaf'
+  dp_index(21,1) = 268.0
+
+  dp_type(22) = 'iotaf'
+  dp_index(22,1) = 281.0
+
+  dp_type(23) = 'iotaf'
+  dp_index(23,1) = 295.0
+
+  dp_type(24) = 'iotaf'
+  dp_index(24,1) = 308.0
+
+  dp_type(25) = 'iotaf'
+  dp_index(25,1) = 321.0
+
+  dp_type(26) = 'iotaf'
+  dp_index(26,1) = 335.0
+
+  dp_type(27) = 'iotaf'
+  dp_index(27,1) = 348.0
+
+  dp_type(28) = 'iotaf'
+  dp_index(28,1) = 361.0
+
+  dp_type(29) = 'iotaf'
+  dp_index(29,1) = 375.0
+
+  dp_type(30) = 'iotaf'
+  dp_index(30,1) = 388.0
+
+  dp_type(31) = 'iotaf'
+  dp_index(31,1) = 401.0
+
+  dp_type(32) = 'jdotb'
+  dp_index(32,1) = 1.0
+
+  dp_type(33) = 'jdotb'
+  dp_index(33,1) = 15.0
+
+  dp_type(34) = 'jdotb'
+  dp_index(34,1) = 28.0
+
+  dp_type(35) = 'jdotb'
+  dp_index(35,1) = 41.0
+
+  dp_type(36) = 'jdotb'
+  dp_index(36,1) = 55.0
+
+  dp_type(37) = 'jdotb'
+  dp_index(37,1) = 68.0
+
+  dp_type(38) = 'jdotb'
+  dp_index(38,1) = 81.0
+
+  dp_type(39) = 'jdotb'
+  dp_index(39,1) = 95.0
+
+  dp_type(40) = 'jdotb'
+  dp_index(40,1) = 108.0
+
+  dp_type(41) = 'jdotb'
+  dp_index(41,1) = 121.0
+
+  dp_type(42) = 'jdotb'
+  dp_index(42,1) = 135.0
+
+  dp_type(43) = 'jdotb'
+  dp_index(43,1) = 148.0
+
+  dp_type(44) = 'jdotb'
+  dp_index(44,1) = 161.0
+
+  dp_type(45) = 'jdotb'
+  dp_index(45,1) = 175.0
+
+  dp_type(46) = 'jdotb'
+  dp_index(46,1) = 188.0
+
+  dp_type(47) = 'jdotb'
+  dp_index(47,1) = 201.0
+
+  dp_type(48) = 'jdotb'
+  dp_index(48,1) = 215.0
+
+  dp_type(49) = 'jdotb'
+  dp_index(49,1) = 228.0
+
+  dp_type(50) = 'jdotb'
+  dp_index(50,1) = 241.0
+
+  dp_type(51) = 'jdotb'
+  dp_index(51,1) = 255.0
+
+  dp_type(52) = 'jdotb'
+  dp_index(52,1) = 268.0
+
+  dp_type(53) = 'jdotb'
+  dp_index(53,1) = 281.0
+
+  dp_type(54) = 'jdotb'
+  dp_index(54,1) = 295.0
+
+  dp_type(55) = 'jdotb'
+  dp_index(55,1) = 308.0
+
+  dp_type(56) = 'jdotb'
+  dp_index(56,1) = 321.0
+
+  dp_type(57) = 'jdotb'
+  dp_index(57,1) = 335.0
+
+  dp_type(58) = 'jdotb'
+  dp_index(58,1) = 348.0
+
+  dp_type(59) = 'jdotb'
+  dp_index(59,1) = 361.0
+
+  dp_type(60) = 'jdotb'
+  dp_index(60,1) = 375.0
+
+  dp_type(61) = 'jdotb'
+  dp_index(61,1) = 388.0
+
+  dp_type(62) = 'jdotb'
+  dp_index(62,1) = 401.0
+
+  dp_type(63) = 'jcurv'
+  dp_index(63,1) = 1.0
+
+  dp_type(64) = 'jcurv'
+  dp_index(64,1) = 15.0
+
+  dp_type(65) = 'jcurv'
+  dp_index(65,1) = 28.0
+
+  dp_type(66) = 'jcurv'
+  dp_index(66,1) = 41.0
+
+  dp_type(67) = 'jcurv'
+  dp_index(67,1) = 55.0
+
+  dp_type(68) = 'jcurv'
+  dp_index(68,1) = 68.0
+
+  dp_type(69) = 'jcurv'
+  dp_index(69,1) = 81.0
+
+  dp_type(70) = 'jcurv'
+  dp_index(70,1) = 95.0
+
+  dp_type(71) = 'jcurv'
+  dp_index(71,1) = 108.0
+
+  dp_type(72) = 'jcurv'
+  dp_index(72,1) = 121.0
+
+  dp_type(73) = 'jcurv'
+  dp_index(73,1) = 135.0
+
+  dp_type(74) = 'jcurv'
+  dp_index(74,1) = 148.0
+
+  dp_type(75) = 'jcurv'
+  dp_index(75,1) = 161.0
+
+  dp_type(76) = 'jcurv'
+  dp_index(76,1) = 175.0
+
+  dp_type(77) = 'jcurv'
+  dp_index(77,1) = 188.0
+
+  dp_type(78) = 'jcurv'
+  dp_index(78,1) = 201.0
+
+  dp_type(79) = 'jcurv'
+  dp_index(79,1) = 215.0
+
+  dp_type(80) = 'jcurv'
+  dp_index(80,1) = 228.0
+
+  dp_type(81) = 'jcurv'
+  dp_index(81,1) = 241.0
+
+  dp_type(82) = 'jcurv'
+  dp_index(82,1) = 255.0
+
+  dp_type(83) = 'jcurv'
+  dp_index(83,1) = 268.0
+
+  dp_type(84) = 'jcurv'
+  dp_index(84,1) = 281.0
+
+  dp_type(85) = 'jcurv'
+  dp_index(85,1) = 295.0
+
+  dp_type(86) = 'jcurv'
+  dp_index(86,1) = 308.0
+
+  dp_type(87) = 'jcurv'
+  dp_index(87,1) = 321.0
+
+  dp_type(88) = 'jcurv'
+  dp_index(88,1) = 335.0
+
+  dp_type(89) = 'jcurv'
+  dp_index(89,1) = 348.0
+
+  dp_type(90) = 'jcurv'
+  dp_index(90,1) = 361.0
+
+  dp_type(91) = 'jcurv'
+  dp_index(91,1) = 375.0
+
+  dp_type(92) = 'jcurv'
+  dp_index(92,1) = 388.0
+
+  dp_type(93) = 'jcurv'
+  dp_index(93,1) = 401.0
+
+  dp_type(94) = 'jcuru'
+  dp_index(94,1) = 1.0
+
+  dp_type(95) = 'jcuru'
+  dp_index(95,1) = 15.0
+
+  dp_type(96) = 'jcuru'
+  dp_index(96,1) = 28.0
+
+  dp_type(97) = 'jcuru'
+  dp_index(97,1) = 41.0
+
+  dp_type(98) = 'jcuru'
+  dp_index(98,1) = 55.0
+
+  dp_type(99) = 'jcuru'
+  dp_index(99,1) = 68.0
+
+  dp_type(100) = 'jcuru'
+  dp_index(100,1) = 81.0
+
+  dp_type(101) = 'jcuru'
+  dp_index(101,1) = 95.0
+
+  dp_type(102) = 'jcuru'
+  dp_index(102,1) = 108.0
+
+  dp_type(103) = 'jcuru'
+  dp_index(103,1) = 121.0
+
+  dp_type(104) = 'jcuru'
+  dp_index(104,1) = 135.0
+
+  dp_type(105) = 'jcuru'
+  dp_index(105,1) = 148.0
+
+  dp_type(106) = 'jcuru'
+  dp_index(106,1) = 161.0
+
+  dp_type(107) = 'jcuru'
+  dp_index(107,1) = 175.0
+
+  dp_type(108) = 'jcuru'
+  dp_index(108,1) = 188.0
+
+  dp_type(109) = 'jcuru'
+  dp_index(109,1) = 201.0
+
+  dp_type(110) = 'jcuru'
+  dp_index(110,1) = 215.0
+
+  dp_type(111) = 'jcuru'
+  dp_index(111,1) = 228.0
+
+  dp_type(112) = 'jcuru'
+  dp_index(112,1) = 241.0
+
+  dp_type(113) = 'jcuru'
+  dp_index(113,1) = 255.0
+
+  dp_type(114) = 'jcuru'
+  dp_index(114,1) = 268.0
+
+  dp_type(115) = 'jcuru'
+  dp_index(115,1) = 281.0
+
+  dp_type(116) = 'jcuru'
+  dp_index(116,1) = 295.0
+
+  dp_type(117) = 'jcuru'
+  dp_index(117,1) = 308.0
+
+  dp_type(118) = 'jcuru'
+  dp_index(118,1) = 321.0
+
+  dp_type(119) = 'jcuru'
+  dp_index(119,1) = 335.0
+
+  dp_type(120) = 'jcuru'
+  dp_index(120,1) = 348.0
+
+  dp_type(121) = 'jcuru'
+  dp_index(121,1) = 361.0
+
+  dp_type(122) = 'jcuru'
+  dp_index(122,1) = 375.0
+
+  dp_type(123) = 'jcuru'
+  dp_index(123,1) = 388.0
+
+  dp_type(124) = 'jcuru'
+  dp_index(124,1) = 401.0
+
+  dp_type(125) = 'raxis_cc'
+  dp_index(125,1) = 0
+
+  dp_type(126) = 'raxis_cc'
+  dp_index(126,1) = 1
+
+  dp_type(127) = 'raxis_cc'
+  dp_index(127,1) = 2
+
+  dp_type(128) = 'raxis_cc'
+  dp_index(128,1) = 3
+
+  dp_type(129) = 'raxis_cc'
+  dp_index(129,1) = 4
+
+  dp_type(130) = 'raxis_cc'
+  dp_index(130,1) = 5
+
+  dp_type(131) = 'raxis_cc'
+  dp_index(131,1) = 6
+
+  dp_type(132) = 'raxis_cc'
+  dp_index(132,1) = 7
+
+  dp_type(133) = 'raxis_cc'
+  dp_index(133,1) = 8
+
+  dp_type(134) = 'zaxis_cs'
+  dp_index(134,1) = 0
+
+  dp_type(135) = 'zaxis_cs'
+  dp_index(135,1) = 1
+
+  dp_type(136) = 'zaxis_cs'
+  dp_index(136,1) = 2
+
+  dp_type(137) = 'zaxis_cs'
+  dp_index(137,1) = 3
+
+  dp_type(138) = 'zaxis_cs'
+  dp_index(138,1) = 4
+
+  dp_type(139) = 'zaxis_cs'
+  dp_index(139,1) = 5
+
+  dp_type(140) = 'zaxis_cs'
+  dp_index(140,1) = 6
+
+  dp_type(141) = 'zaxis_cs'
+  dp_index(141,1) = 7
+
+  dp_type(142) = 'zaxis_cs'
+  dp_index(142,1) = 8
+
+  dp_type(143) = 'betaxis'
+  dp_index(143,1) = 1
+
+  dp_type(144) = 'betatot'
+  dp_index(144,1) = 1
+
+  dp_type(145) = 'betator'
+  dp_index(145,1) = 1
+
+  dp_type(146) = 'ne_grid'
+  dp_index(146,1) = 1.0
+
+  dp_type(147) = 'ne_grid'
+  dp_index(147,1) = 15.0
+
+  dp_type(148) = 'ne_grid'
+  dp_index(148,1) = 28.0
+
+  dp_type(149) = 'ne_grid'
+  dp_index(149,1) = 41.0
+
+  dp_type(150) = 'ne_grid'
+  dp_index(150,1) = 55.0
+
+  dp_type(151) = 'ne_grid'
+  dp_index(151,1) = 68.0
+
+  dp_type(152) = 'ne_grid'
+  dp_index(152,1) = 81.0
+
+  dp_type(153) = 'ne_grid'
+  dp_index(153,1) = 95.0
+
+  dp_type(154) = 'ne_grid'
+  dp_index(154,1) = 108.0
+
+  dp_type(155) = 'ne_grid'
+  dp_index(155,1) = 121.0
+
+  dp_type(156) = 'ne_grid'
+  dp_index(156,1) = 135.0
+
+  dp_type(157) = 'ne_grid'
+  dp_index(157,1) = 148.0
+
+  dp_type(158) = 'ne_grid'
+  dp_index(158,1) = 161.0
+
+  dp_type(159) = 'ne_grid'
+  dp_index(159,1) = 175.0
+
+  dp_type(160) = 'ne_grid'
+  dp_index(160,1) = 188.0
+
+  dp_type(161) = 'ne_grid'
+  dp_index(161,1) = 201.0
+
+  dp_type(162) = 'ne_grid'
+  dp_index(162,1) = 215.0
+
+  dp_type(163) = 'ne_grid'
+  dp_index(163,1) = 228.0
+
+  dp_type(164) = 'ne_grid'
+  dp_index(164,1) = 241.0
+
+  dp_type(165) = 'ne_grid'
+  dp_index(165,1) = 255.0
+
+  dp_type(166) = 'ne_grid'
+  dp_index(166,1) = 268.0
+
+  dp_type(167) = 'ne_grid'
+  dp_index(167,1) = 281.0
+
+  dp_type(168) = 'ne_grid'
+  dp_index(168,1) = 295.0
+
+  dp_type(169) = 'ne_grid'
+  dp_index(169,1) = 308.0
+
+  dp_type(170) = 'ne_grid'
+  dp_index(170,1) = 321.0
+
+  dp_type(171) = 'ne_grid'
+  dp_index(171,1) = 335.0
+
+  dp_type(172) = 'ne_grid'
+  dp_index(172,1) = 348.0
+
+  dp_type(173) = 'ne_grid'
+  dp_index(173,1) = 361.0
+
+  dp_type(174) = 'ne_grid'
+  dp_index(174,1) = 375.0
+
+  dp_type(175) = 'ne_grid'
+  dp_index(175,1) = 388.0
+
+  dp_type(176) = 'ne_grid'
+  dp_index(176,1) = 401.0
+
+  dp_type(177) = 'te_grid'
+  dp_index(177,1) = 1.0
+
+  dp_type(178) = 'te_grid'
+  dp_index(178,1) = 15.0
+
+  dp_type(179) = 'te_grid'
+  dp_index(179,1) = 28.0
+
+  dp_type(180) = 'te_grid'
+  dp_index(180,1) = 41.0
+
+  dp_type(181) = 'te_grid'
+  dp_index(181,1) = 55.0
+
+  dp_type(182) = 'te_grid'
+  dp_index(182,1) = 68.0
+
+  dp_type(183) = 'te_grid'
+  dp_index(183,1) = 81.0
+
+  dp_type(184) = 'te_grid'
+  dp_index(184,1) = 95.0
+
+  dp_type(185) = 'te_grid'
+  dp_index(185,1) = 108.0
+
+  dp_type(186) = 'te_grid'
+  dp_index(186,1) = 121.0
+
+  dp_type(187) = 'te_grid'
+  dp_index(187,1) = 135.0
+
+  dp_type(188) = 'te_grid'
+  dp_index(188,1) = 148.0
+
+  dp_type(189) = 'te_grid'
+  dp_index(189,1) = 161.0
+
+  dp_type(190) = 'te_grid'
+  dp_index(190,1) = 175.0
+
+  dp_type(191) = 'te_grid'
+  dp_index(191,1) = 188.0
+
+  dp_type(192) = 'te_grid'
+  dp_index(192,1) = 201.0
+
+  dp_type(193) = 'te_grid'
+  dp_index(193,1) = 215.0
+
+  dp_type(194) = 'te_grid'
+  dp_index(194,1) = 228.0
+
+  dp_type(195) = 'te_grid'
+  dp_index(195,1) = 241.0
+
+  dp_type(196) = 'te_grid'
+  dp_index(196,1) = 255.0
+
+  dp_type(197) = 'te_grid'
+  dp_index(197,1) = 268.0
+
+  dp_type(198) = 'te_grid'
+  dp_index(198,1) = 281.0
+
+  dp_type(199) = 'te_grid'
+  dp_index(199,1) = 295.0
+
+  dp_type(200) = 'te_grid'
+  dp_index(200,1) = 308.0
+
+  dp_type(201) = 'te_grid'
+  dp_index(201,1) = 321.0
+
+  dp_type(202) = 'te_grid'
+  dp_index(202,1) = 335.0
+
+  dp_type(203) = 'te_grid'
+  dp_index(203,1) = 348.0
+
+  dp_type(204) = 'te_grid'
+  dp_index(204,1) = 361.0
+
+  dp_type(205) = 'te_grid'
+  dp_index(205,1) = 375.0
+
+  dp_type(206) = 'te_grid'
+  dp_index(206,1) = 388.0
+
+  dp_type(207) = 'te_grid'
+  dp_index(207,1) = 401.0
+
+  dp_type(208) = 'ti_grid'
+  dp_index(208,1) = 1.0
+
+  dp_type(209) = 'ti_grid'
+  dp_index(209,1) = 15.0
+
+  dp_type(210) = 'ti_grid'
+  dp_index(210,1) = 28.0
+
+  dp_type(211) = 'ti_grid'
+  dp_index(211,1) = 41.0
+
+  dp_type(212) = 'ti_grid'
+  dp_index(212,1) = 55.0
+
+  dp_type(213) = 'ti_grid'
+  dp_index(213,1) = 68.0
+
+  dp_type(214) = 'ti_grid'
+  dp_index(214,1) = 81.0
+
+  dp_type(215) = 'ti_grid'
+  dp_index(215,1) = 95.0
+
+  dp_type(216) = 'ti_grid'
+  dp_index(216,1) = 108.0
+
+  dp_type(217) = 'ti_grid'
+  dp_index(217,1) = 121.0
+
+  dp_type(218) = 'ti_grid'
+  dp_index(218,1) = 135.0
+
+  dp_type(219) = 'ti_grid'
+  dp_index(219,1) = 148.0
+
+  dp_type(220) = 'ti_grid'
+  dp_index(220,1) = 161.0
+
+  dp_type(221) = 'ti_grid'
+  dp_index(221,1) = 175.0
+
+  dp_type(222) = 'ti_grid'
+  dp_index(222,1) = 188.0
+
+  dp_type(223) = 'ti_grid'
+  dp_index(223,1) = 201.0
+
+  dp_type(224) = 'ti_grid'
+  dp_index(224,1) = 215.0
+
+  dp_type(225) = 'ti_grid'
+  dp_index(225,1) = 228.0
+
+  dp_type(226) = 'ti_grid'
+  dp_index(226,1) = 241.0
+
+  dp_type(227) = 'ti_grid'
+  dp_index(227,1) = 255.0
+
+  dp_type(228) = 'ti_grid'
+  dp_index(228,1) = 268.0
+
+  dp_type(229) = 'ti_grid'
+  dp_index(229,1) = 281.0
+
+  dp_type(230) = 'ti_grid'
+  dp_index(230,1) = 295.0
+
+  dp_type(231) = 'ti_grid'
+  dp_index(231,1) = 308.0
+
+  dp_type(232) = 'ti_grid'
+  dp_index(232,1) = 321.0
+
+  dp_type(233) = 'ti_grid'
+  dp_index(233,1) = 335.0
+
+  dp_type(234) = 'ti_grid'
+  dp_index(234,1) = 348.0
+
+  dp_type(235) = 'ti_grid'
+  dp_index(235,1) = 361.0
+
+  dp_type(236) = 'ti_grid'
+  dp_index(236,1) = 375.0
+
+  dp_type(237) = 'ti_grid'
+  dp_index(237,1) = 388.0
+
+  dp_type(238) = 'ti_grid'
+  dp_index(238,1) = 401.0
+
+  dp_type(239) = 'ze_grid'
+  dp_index(239,1) = 1.0
+
+  dp_type(240) = 'ze_grid'
+  dp_index(240,1) = 15.0
+
+  dp_type(241) = 'ze_grid'
+  dp_index(241,1) = 28.0
+
+  dp_type(242) = 'ze_grid'
+  dp_index(242,1) = 41.0
+
+  dp_type(243) = 'ze_grid'
+  dp_index(243,1) = 55.0
+
+  dp_type(244) = 'ze_grid'
+  dp_index(244,1) = 68.0
+
+  dp_type(245) = 'ze_grid'
+  dp_index(245,1) = 81.0
+
+  dp_type(246) = 'ze_grid'
+  dp_index(246,1) = 95.0
+
+  dp_type(247) = 'ze_grid'
+  dp_index(247,1) = 108.0
+
+  dp_type(248) = 'ze_grid'
+  dp_index(248,1) = 121.0
+
+  dp_type(249) = 'ze_grid'
+  dp_index(249,1) = 135.0
+
+  dp_type(250) = 'ze_grid'
+  dp_index(250,1) = 148.0
+
+  dp_type(251) = 'ze_grid'
+  dp_index(251,1) = 161.0
+
+  dp_type(252) = 'ze_grid'
+  dp_index(252,1) = 175.0
+
+  dp_type(253) = 'ze_grid'
+  dp_index(253,1) = 188.0
+
+  dp_type(254) = 'ze_grid'
+  dp_index(254,1) = 201.0
+
+  dp_type(255) = 'ze_grid'
+  dp_index(255,1) = 215.0
+
+  dp_type(256) = 'ze_grid'
+  dp_index(256,1) = 228.0
+
+  dp_type(257) = 'ze_grid'
+  dp_index(257,1) = 241.0
+
+  dp_type(258) = 'ze_grid'
+  dp_index(258,1) = 255.0
+
+  dp_type(259) = 'ze_grid'
+  dp_index(259,1) = 268.0
+
+  dp_type(260) = 'ze_grid'
+  dp_index(260,1) = 281.0
+
+  dp_type(261) = 'ze_grid'
+  dp_index(261,1) = 295.0
+
+  dp_type(262) = 'ze_grid'
+  dp_index(262,1) = 308.0
+
+  dp_type(263) = 'ze_grid'
+  dp_index(263,1) = 321.0
+
+  dp_type(264) = 'ze_grid'
+  dp_index(264,1) = 335.0
+
+  dp_type(265) = 'ze_grid'
+  dp_index(265,1) = 348.0
+
+  dp_type(266) = 'ze_grid'
+  dp_index(266,1) = 361.0
+
+  dp_type(267) = 'ze_grid'
+  dp_index(267,1) = 375.0
+
+  dp_type(268) = 'ze_grid'
+  dp_index(268,1) = 388.0
+
+  dp_type(269) = 'ze_grid'
+  dp_index(269,1) = 401.0
+
+  dp_type(270) = 'sxrem_grid'
+  dp_index(270,1) = 1.0
+
+  dp_type(271) = 'sxrem_grid'
+  dp_index(271,1) = 15.0
+
+  dp_type(272) = 'sxrem_grid'
+  dp_index(272,1) = 28.0
+
+  dp_type(273) = 'sxrem_grid'
+  dp_index(273,1) = 41.0
+
+  dp_type(274) = 'sxrem_grid'
+  dp_index(274,1) = 55.0
+
+  dp_type(275) = 'sxrem_grid'
+  dp_index(275,1) = 68.0
+
+  dp_type(276) = 'sxrem_grid'
+  dp_index(276,1) = 81.0
+
+  dp_type(277) = 'sxrem_grid'
+  dp_index(277,1) = 95.0
+
+  dp_type(278) = 'sxrem_grid'
+  dp_index(278,1) = 108.0
+
+  dp_type(279) = 'sxrem_grid'
+  dp_index(279,1) = 121.0
+
+  dp_type(280) = 'sxrem_grid'
+  dp_index(280,1) = 135.0
+
+  dp_type(281) = 'sxrem_grid'
+  dp_index(281,1) = 148.0
+
+  dp_type(282) = 'sxrem_grid'
+  dp_index(282,1) = 161.0
+
+  dp_type(283) = 'sxrem_grid'
+  dp_index(283,1) = 175.0
+
+  dp_type(284) = 'sxrem_grid'
+  dp_index(284,1) = 188.0
+
+  dp_type(285) = 'sxrem_grid'
+  dp_index(285,1) = 201.0
+
+  dp_type(286) = 'sxrem_grid'
+  dp_index(286,1) = 215.0
+
+  dp_type(287) = 'sxrem_grid'
+  dp_index(287,1) = 228.0
+
+  dp_type(288) = 'sxrem_grid'
+  dp_index(288,1) = 241.0
+
+  dp_type(289) = 'sxrem_grid'
+  dp_index(289,1) = 255.0
+
+  dp_type(290) = 'sxrem_grid'
+  dp_index(290,1) = 268.0
+
+  dp_type(291) = 'sxrem_grid'
+  dp_index(291,1) = 281.0
+
+  dp_type(292) = 'sxrem_grid'
+  dp_index(292,1) = 295.0
+
+  dp_type(293) = 'sxrem_grid'
+  dp_index(293,1) = 308.0
+
+  dp_type(294) = 'sxrem_grid'
+  dp_index(294,1) = 321.0
+
+  dp_type(295) = 'sxrem_grid'
+  dp_index(295,1) = 335.0
+
+  dp_type(296) = 'sxrem_grid'
+  dp_index(296,1) = 348.0
+
+  dp_type(297) = 'sxrem_grid'
+  dp_index(297,1) = 361.0
+
+  dp_type(298) = 'sxrem_grid'
+  dp_index(298,1) = 375.0
+
+  dp_type(299) = 'sxrem_grid'
+  dp_index(299,1) = 388.0
+
+  dp_type(300) = 'sxrem_grid'
+  dp_index(300,1) = 401.0
+
+! Reconstruction Parameters
+  n_rp = 7
+
+  rp_type(1) = 'pres_scale'
+  rp_index(1) = 0
+  rp_vrnc(1) = 500.0
+  rp_range_type(1,1) = 'value'
+  rp_range_value(1,1) = 0.0
+  rp_range_type(1,2) = 'value'
+  rp_range_value(1,2) = 100000000.0
+
+  rp_type(2) = 'phiedge'
+  rp_index(2) = 0
+  rp_vrnc(2) = 0.001
+  rp_range_type(2,1) = 'infinity'
+  rp_range_value(2,1) = -1e+19
+  rp_range_type(2,2) = 'infinity'
+  rp_range_value(2,2) = 1e+19
+
+  rp_type(3) = 'curtor'
+  rp_index(3) = 0
+  rp_vrnc(3) = 50.0
+  rp_range_type(3,1) = 'infinity'
+  rp_range_value(3,1) = -1e+19
+  rp_range_type(3,2) = 'infinity'
+  rp_range_value(3,2) = 1e+19
+
+  rp_type(4) = 'am'
+  rp_index(4) = 2
+  rp_vrnc(4) = 1.0
+  rp_range_type(4,1) = 'value'
+  rp_range_value(4,1) = 2.0
+  rp_range_type(4,2) = 'value'
+  rp_range_value(4,2) = 10.0
+
+  rp_type(5) = 'am'
+  rp_index(5) = 3
+  rp_vrnc(5) = 0.1
+  rp_range_type(5,1) = 'value'
+  rp_range_value(5,1) = 0.0
+  rp_range_type(5,2) = 'value'
+  rp_range_value(5,2) = 1.0
+
+  rp_type(6) = 'ac'
+  rp_index(6) = 1
+  rp_vrnc(6) = 0.2
+  rp_range_type(6,1) = 'value'
+  rp_range_value(6,1) = -10.0
+  rp_range_type(6,2) = 'value'
+  rp_range_value(6,2) = 10.0
+
+  rp_type(7) = 'ac'
+  rp_index(7) = 2
+  rp_vrnc(7) = 0.2
+  rp_range_type(7,1) = 'value'
+  rp_range_value(7,1) = -10.0
+  rp_range_type(7,2) = 'value'
+  rp_range_value(7,2) = 10.0
+
+
+! Reconstruction Signals
+
+! Magnetics
+  mdsig_list_filename = '/u/jsch/v3fit_runs/DIAGNOSTICS/MAGNETICS/V7_Kisslinger_ideal_v1_nfp_5_stellsym_nzeta_80/w7x_magnetic_diagnostics_sens.dat_mdsig.LIST'
+  mag_a = T
+! Saddle Flux loops
+  sdo_weight_a(  1) = 1.00e+00 sdo_sigma_a(  1) =  4.00000e-05 sdo_data_a(  1) =  1.13849e-03  !QXS10CE110
+  sdo_weight_a(  2) = 1.00e+00 sdo_sigma_a(  2) =  2.50000e-05 sdo_data_a(  2) = -7.79228e-04  !QXS10CE120
+  sdo_weight_a(  3) = 1.00e+00 sdo_sigma_a(  3) =  5.00000e-05 sdo_data_a(  3) =  2.25176e-03  !QXS10CE210
+  sdo_weight_a(  4) = 1.00e+00 sdo_sigma_a(  4) =  7.00000e-05 sdo_data_a(  4) = -1.59080e-03  !QXS10CE220
+  sdo_weight_a(  5) = 1.00e+00 sdo_sigma_a(  5) =  7.00000e-05 sdo_data_a(  5) =  1.47597e-03  !QXS11CE210
+  sdo_weight_a(  6) = 1.00e+00 sdo_sigma_a(  6) =  5.00000e-05 sdo_data_a(  6) =  2.29740e-03  !QXS11CE220
+  sdo_weight_a(  7) = 1.00e+00 sdo_sigma_a(  7) =  2.50000e-05 sdo_data_a(  7) =  7.69407e-04  !QXS11CE110
+  sdo_weight_a(  8) = 1.00e+00 sdo_sigma_a(  8) =  4.00000e-05 sdo_data_a(  8) = -1.13880e-03  !QXS11CE120
+  sdo_weight_a(  9) = 1.00e+00 sdo_sigma_a(  9) =  4.00000e-05 sdo_data_a(  9) =  1.12440e-03  !QXS20CE110
+  sdo_weight_a( 10) = 1.00e+00 sdo_sigma_a( 10) =  2.50000e-05 sdo_data_a( 10) = -7.72932e-04  !QXS20CE120
+  sdo_weight_a( 11) = 1.00e+00 sdo_sigma_a( 11) =  7.00000e-05 sdo_data_a( 11) = -1.56110e-03  !QXS20CE220
+  sdo_weight_a( 12) = 1.00e+00 sdo_sigma_a( 12) =  5.00000e-05 sdo_data_a( 12) = -2.19333e-03  !QXS20CE210
+  sdo_weight_a( 13) = 1.00e+00 sdo_sigma_a( 13) =  7.00000e-05 sdo_data_a( 13) =  1.64389e-03  !QXS21CE210
+  sdo_weight_a( 14) = 1.00e+00 sdo_sigma_a( 14) =  5.00000e-05 sdo_data_a( 14) =  2.24698e-03  !QXS21CE220
+  sdo_weight_a( 15) = 1.00e+00 sdo_sigma_a( 15) =  2.50000e-05 sdo_data_a( 15) =  8.02934e-04  !QXS21CE110
+  sdo_weight_a( 16) = 1.00e+00 sdo_sigma_a( 16) =  4.00000e-05 sdo_data_a( 16) = -1.13790e-03  !QXS21CE120
+  sdo_weight_a( 17) = 1.00e-20 sdo_sigma_a( 17) =  4.00000e-05 sdo_data_a( 17) =  1.03585e-03  !QXS30CE110
+  sdo_weight_a( 18) = 1.00e+00 sdo_sigma_a( 18) =  2.50000e-05 sdo_data_a( 18) = -7.85692e-04  !QXS30CE120
+  sdo_weight_a( 19) = 1.00e+00 sdo_sigma_a( 19) =  7.00000e-05 sdo_data_a( 19) = -1.56134e-03  !QXS30CE220
+  sdo_weight_a( 20) = 1.00e+00 sdo_sigma_a( 20) =  5.00000e-05 sdo_data_a( 20) = -2.24463e-03  !QXS30CE210
+  sdo_weight_a( 21) = 1.00e-20 sdo_sigma_a( 21) =  7.00000e-05 sdo_data_a( 21) =  1.95494e-03  !QXS31CE210
+  sdo_weight_a( 22) = 1.00e-20 sdo_sigma_a( 22) =  5.00000e-05 sdo_data_a( 22) =  1.97216e-03  !QXS31CE220
+  sdo_weight_a( 23) = 1.00e+00 sdo_sigma_a( 23) =  2.50000e-05 sdo_data_a( 23) =  7.89523e-04  !QXS31CE110
+  sdo_weight_a( 24) = 1.00e+00 sdo_sigma_a( 24) =  4.00000e-05 sdo_data_a( 24) = -1.16646e-03  !QXS31CE120
+  sdo_weight_a( 25) = 1.00e+00 sdo_sigma_a( 25) =  4.00000e-05 sdo_data_a( 25) =  1.14119e-03  !QXS40CE110
+  sdo_weight_a( 26) = 1.00e+00 sdo_sigma_a( 26) =  2.50000e-05 sdo_data_a( 26) = -7.97159e-04  !QXS40CE120
+  sdo_weight_a( 27) = 1.00e+00 sdo_sigma_a( 27) =  7.00000e-05 sdo_data_a( 27) = -1.63774e-03  !QXS40CE220
+  sdo_weight_a( 28) = 1.00e+00 sdo_sigma_a( 28) =  5.00000e-05 sdo_data_a( 28) = -2.15073e-03  !QXS40CE210
+  sdo_weight_a( 29) = 1.00e+00 sdo_sigma_a( 29) =  7.00000e-05 sdo_data_a( 29) =  1.54890e-03  !QXS41CE210
+  sdo_weight_a( 30) = 1.00e+00 sdo_sigma_a( 30) =  5.00000e-05 sdo_data_a( 30) =  2.27376e-03  !QXS41CE220
+  sdo_weight_a( 31) = 1.00e+00 sdo_sigma_a( 31) =  2.50000e-05 sdo_data_a( 31) =  7.85335e-04  !QXS41CE110
+  sdo_weight_a( 32) = 1.00e+00 sdo_sigma_a( 32) =  4.00000e-05 sdo_data_a( 32) = -1.12425e-03  !QXS41CE120
+  sdo_weight_a( 33) = 1.00e+00 sdo_sigma_a( 33) =  4.00000e-05 sdo_data_a( 33) =  1.14123e-03  !QXS50CE110
+  sdo_weight_a( 34) = 1.00e+00 sdo_sigma_a( 34) =  2.50000e-05 sdo_data_a( 34) = -7.64454e-04  !QXS50CE120
+  sdo_weight_a( 35) = 1.00e+00 sdo_sigma_a( 35) =  5.00000e-05 sdo_data_a( 35) =  2.32552e-03  !QXS50CE210
+  sdo_weight_a( 36) = 1.00e+00 sdo_sigma_a( 36) =  7.00000e-05 sdo_data_a( 36) = -1.51665e-03  !QXS50CE220
+  sdo_weight_a( 37) = 1.00e+00 sdo_sigma_a( 37) =  7.00000e-05 sdo_data_a( 37) =  1.57965e-03  !QXS51CE210
+  sdo_weight_a( 38) = 1.00e+00 sdo_sigma_a( 38) =  5.00000e-05 sdo_data_a( 38) =  2.25697e-03  !QXS51CE220
+  sdo_weight_a( 39) = 1.00e+00 sdo_sigma_a( 39) =  2.50000e-05 sdo_data_a( 39) =  7.97261e-04  !QXS51CE110
+  sdo_weight_a( 40) = 1.00e+00 sdo_sigma_a( 40) =  4.00000e-05 sdo_data_a( 40) = -1.14551e-03  !QXS51CE120
+! Diamagnetic loops
+  sdo_weight_a( 41) = 1.00e-20 sdo_sigma_a( 41) =  1.00000e+20 sdo_data_a( 41) = -3.57636e-03  !QXD20CE001
+  sdo_weight_a( 42) = 1.00e-20 sdo_sigma_a( 42) =  1.00000e+20 sdo_data_a( 42) = -3.57638e-03  !QXD20CE002
+  sdo_weight_a( 43) = 1.00e-20 sdo_sigma_a( 43) =  1.00000e+20 sdo_data_a( 43) =  3.39543e-03  !QXD31CE001
+  sdo_weight_a( 44) = 1.00e-40 sdo_sigma_a( 44) =  1.00000e+20 sdo_data_a( 44) =  3.61046e-05  !QXD31CE002
+  sdo_weight_a( 45) = 1.00e-20 sdo_sigma_a( 45) =  1.00000e+20 sdo_data_a( 45) =  4.59686e-06  !QXD31CE101
+  sdo_weight_a( 46) = 1.00e-40 sdo_sigma_a( 46) =  1.00000e+20 sdo_data_a( 46) =  8.90825e-07  !QXD31CE102
+  sdo_weight_a( 47) = 1.00e-20 sdo_sigma_a( 47) =  1.00000e+20 sdo_data_a( 47) =  1.22471e-05  !QXD31CE201
+  sdo_weight_a( 48) = 1.00e-40 sdo_sigma_a( 48) =  1.00000e+20 sdo_data_a( 48) =  1.18544e-06  !QXD31CE202
+  sdo_weight_a( 49) = 1.00e-20 sdo_sigma_a( 49) =  1.00000e+20 sdo_data_a( 49) = -1.27394e-05  !QXD31CE301
+  sdo_weight_a( 50) = 1.00e-40 sdo_sigma_a( 50) =  1.00000e+20 sdo_data_a( 50) =  4.76068e-07  !QXD31CE302
+  sdo_weight_a( 51) = 1.00e-20 sdo_sigma_a( 51) =  1.00000e+20 sdo_data_a( 51) =  2.61974e-06  !QXD31CE401
+  sdo_weight_a( 52) = 1.00e-40 sdo_sigma_a( 52) =  1.00000e+20 sdo_data_a( 52) =  3.03329e-06  !QXD31CE402
+  sdo_weight_a( 53) = 1.00e-20 sdo_sigma_a( 53) =  1.00000e+20 sdo_data_a( 53) = -3.60770e-03  !QXD50CE001
+  sdo_weight_a( 54) = 1.00e-20 sdo_sigma_a( 54) =  1.00000e+20 sdo_data_a( 54) = -3.59884e-03  !QXD50CE002
+! Rogowskis
+  sdo_weight_a( 55) = 1.00e+00 sdo_sigma_a( 55) =  1.00000e-05 sdo_data_a( 55) = -2.85398e-04  !QXO21CE111
+  sdo_weight_a( 56) = 1.00e+00 sdo_sigma_a( 56) =  1.00000e-05 sdo_data_a( 56) = -2.87396e-04  !QXO21CE112
+  sdo_weight_a( 57) = 1.00e+00 sdo_sigma_a( 57) =  1.00000e-05 sdo_data_a( 57) = -2.84579e-04  !QXO21CE113
+  sdo_weight_a( 58) = 1.00e+00 sdo_sigma_a( 58) =  1.00000e-05 sdo_data_a( 58) = -2.83999e-04  !QXO21CE114
+  sdo_weight_a( 59) = 1.00e+00 sdo_sigma_a( 59) =  1.00000e-05 sdo_data_a( 59) = -4.00894e-04  !QXO21CE121
+  sdo_weight_a( 60) = 1.00e+00 sdo_sigma_a( 60) =  1.00000e-05 sdo_data_a( 60) = -3.96359e-04  !QXO21CE122
+  sdo_weight_a( 61) = 1.00e-20 sdo_sigma_a( 61) =  1.00000e-05 sdo_data_a( 61) = -2.86593e-06  !QXO21CE123
+  sdo_weight_a( 62) = 1.00e+00 sdo_sigma_a( 62) =  1.00000e-05 sdo_data_a( 62) = -3.70790e-04  !QXO21CE124
+  sdo_weight_a( 63) = 1.00e+00 sdo_sigma_a( 63) =  1.00000e-05 sdo_data_a( 63) =  4.69700e-05  !QXO21CE131
+  sdo_weight_a( 64) = 1.00e+00 sdo_sigma_a( 64) =  1.00000e-05 sdo_data_a( 64) =  5.03764e-05  !QXO21CE132
+  sdo_weight_a( 65) = 1.00e+00 sdo_sigma_a( 65) =  1.00000e-05 sdo_data_a( 65) =  2.10144e-05  !QXO21CE133
+  sdo_weight_a( 66) = 1.00e+00 sdo_sigma_a( 66) =  1.00000e-05 sdo_data_a( 66) =  2.54429e-05  !QXO21CE134
+  sdo_weight_a( 67) = 1.00e+00 sdo_sigma_a( 67) =  1.00000e-05 sdo_data_a( 67) =  1.37888e-04  !QXO21CE141
+  sdo_weight_a( 68) = 1.00e+00 sdo_sigma_a( 68) =  1.00000e-05 sdo_data_a( 68) =  1.39427e-04  !QXO21CE142
+  sdo_weight_a( 69) = 1.00e+00 sdo_sigma_a( 69) =  1.00000e-05 sdo_data_a( 69) =  1.25547e-04  !QXO21CE143
+  sdo_weight_a( 70) = 1.00e+00 sdo_sigma_a( 70) =  1.00000e-05 sdo_data_a( 70) =  1.25083e-04  !QXO21CE144
+  sdo_weight_a( 71) = 1.00e+00 sdo_sigma_a( 71) =  1.00000e-05 sdo_data_a( 71) =  1.64865e-04  !QXO21CE151
+  sdo_weight_a( 72) = 1.00e+00 sdo_sigma_a( 72) =  1.00000e-05 sdo_data_a( 72) =  1.69544e-04  !QXO21CE152
+  sdo_weight_a( 73) = 1.00e+00 sdo_sigma_a( 73) =  1.00000e-05 sdo_data_a( 73) =  1.67479e-04  !QXO21CE153
+  sdo_weight_a( 74) = 1.00e+00 sdo_sigma_a( 74) =  1.00000e-05 sdo_data_a( 74) =  1.72743e-04  !QXO21CE154
+  sdo_weight_a( 75) = 1.00e+00 sdo_sigma_a( 75) =  1.00000e-05 sdo_data_a( 75) =  2.90101e-05  !QXO21CE161
+  sdo_weight_a( 76) = 1.00e+00 sdo_sigma_a( 76) =  1.00000e-05 sdo_data_a( 76) =  2.68946e-05  !QXO21CE162
+  sdo_weight_a( 77) = 1.00e+00 sdo_sigma_a( 77) =  1.00000e-05 sdo_data_a( 77) =  1.05189e-05  !QXO21CE163
+  sdo_weight_a( 78) = 1.00e+00 sdo_sigma_a( 78) =  1.00000e-05 sdo_data_a( 78) =  6.41811e-06  !QXO21CE164
+  sdo_weight_a( 79) = 1.00e+00 sdo_sigma_a( 79) =  1.00000e-05 sdo_data_a( 79) = -3.82494e-04  !QXO21CE171
+  sdo_weight_a( 80) = 1.00e+00 sdo_sigma_a( 80) =  1.00000e-05 sdo_data_a( 80) = -4.04737e-04  !QXO21CE172
+  sdo_weight_a( 81) = 1.00e+00 sdo_sigma_a( 81) =  1.00000e-05 sdo_data_a( 81) = -3.63403e-04  !QXO21CE173
+  sdo_weight_a( 82) = 1.00e+00 sdo_sigma_a( 82) =  1.00000e-05 sdo_data_a( 82) = -3.73611e-04  !QXO21CE174
+  sdo_weight_a( 83) = 1.00e+00 sdo_sigma_a( 83) =  1.00000e-05 sdo_data_a( 83) = -2.51907e-04  !QXO21CE181
+  sdo_weight_a( 84) = 1.00e-20 sdo_sigma_a( 84) =  1.00000e+20 sdo_data_a( 84) =  2.92035e-05  !QXO21CE182
+  sdo_weight_a( 85) = 1.00e+00 sdo_sigma_a( 85) =  1.00000e-05 sdo_data_a( 85) = -2.59735e-04  !QXO21CE183
+  sdo_weight_a( 86) = 1.00e+00 sdo_sigma_a( 86) =  1.00000e-05 sdo_data_a( 86) = -2.58362e-04  !QXO21CE184
+  sdo_weight_a( 87) = 1.00e+00 sdo_sigma_a( 87) =  1.00000e-05 sdo_data_a( 87) = -2.92676e-04  !QXO21CE213
+  sdo_weight_a( 88) = 1.00e+00 sdo_sigma_a( 88) =  1.00000e-05 sdo_data_a( 88) = -2.94514e-04  !QXO21CE214
+  sdo_weight_a( 89) = 1.00e+00 sdo_sigma_a( 89) =  1.00000e-05 sdo_data_a( 89) = -2.08656e-04  !QXO21CE263
+  sdo_weight_a( 90) = 1.00e+00 sdo_sigma_a( 90) =  1.00000e-05 sdo_data_a( 90) = -2.16210e-04  !QXO21CE264
+  sdo_weight_a( 91) = 1.00e+00 sdo_sigma_a( 91) =  1.00000e-05 sdo_data_a( 91) = -2.91121e-04  !QXO21CE273
+  sdo_weight_a( 92) = 1.00e+00 sdo_sigma_a( 92) =  1.00000e-05 sdo_data_a( 92) = -2.88711e-04  !QXO21CE274
+  sdo_weight_a( 93) = 1.00e+00 sdo_sigma_a( 93) =  1.00000e-05 sdo_data_a( 93) = -2.73457e-04  !QXO21CE311
+  sdo_weight_a( 94) = 1.00e+00 sdo_sigma_a( 94) =  1.00000e-05 sdo_data_a( 94) = -2.71439e-04  !QXO21CE312
+  sdo_weight_a( 95) = 1.00e+00 sdo_sigma_a( 95) =  1.00000e-05 sdo_data_a( 95) = -2.44375e-04  !QXO21CE313
+  sdo_weight_a( 96) = 1.00e-20 sdo_sigma_a( 96) =  1.00000e-05 sdo_data_a( 96) = -2.54413e-05  !QXO21CE314
+  sdo_weight_a( 97) = 1.00e+00 sdo_sigma_a( 97) =  1.00000e-05 sdo_data_a( 97) = -4.80973e-05  !QXO21CE321
+  sdo_weight_a( 98) = 1.00e+00 sdo_sigma_a( 98) =  1.00000e-05 sdo_data_a( 98) = -5.24105e-05  !QXO21CE322
+  sdo_weight_a( 99) = 1.00e+00 sdo_sigma_a( 99) =  1.00000e-05 sdo_data_a( 99) = -5.80262e-05  !QXO21CE323
+  sdo_weight_a(100) = 1.00e+00 sdo_sigma_a(100) =  1.00000e-05 sdo_data_a(100) = -5.92980e-05  !QXO21CE324
+  sdo_weight_a(101) = 1.00e+00 sdo_sigma_a(101) =  1.00000e-05 sdo_data_a(101) = -1.36005e-05  !QXO21CE331
+  sdo_weight_a(102) = 1.00e+00 sdo_sigma_a(102) =  1.00000e-05 sdo_data_a(102) = -1.61925e-05  !QXO21CE332
+  sdo_weight_a(103) = 1.00e+00 sdo_sigma_a(103) =  1.00000e-05 sdo_data_a(103) = -2.02663e-05  !QXO21CE333
+  sdo_weight_a(104) = 1.00e+00 sdo_sigma_a(104) =  1.00000e-05 sdo_data_a(104) = -2.12227e-05  !QXO21CE334
+  sdo_weight_a(105) = 1.00e+00 sdo_sigma_a(105) =  1.00000e-05 sdo_data_a(105) =  1.19953e-06  !QXO21CE341
+  sdo_weight_a(106) = 1.00e+00 sdo_sigma_a(106) =  1.00000e-05 sdo_data_a(106) =  8.84878e-07  !QXO21CE342
+  sdo_weight_a(107) = 1.00e+00 sdo_sigma_a(107) =  1.00000e-05 sdo_data_a(107) = -3.84927e-06  !QXO21CE343
+  sdo_weight_a(108) = 1.00e+00 sdo_sigma_a(108) =  1.00000e-05 sdo_data_a(108) = -4.90297e-06  !QXO21CE344
+  sdo_weight_a(109) = 1.00e+00 sdo_sigma_a(109) =  1.00000e-05 sdo_data_a(109) =  1.27694e-04  !QXO21CE351
+  sdo_weight_a(110) = 1.00e+00 sdo_sigma_a(110) =  1.00000e-05 sdo_data_a(110) =  1.20463e-04  !QXO21CE352
+  sdo_weight_a(111) = 1.00e+00 sdo_sigma_a(111) =  1.00000e-05 sdo_data_a(111) =  1.10835e-04  !QXO21CE353
+  sdo_weight_a(112) = 1.00e-20 sdo_sigma_a(112) =  1.00000e+20 sdo_data_a(112) = -6.49791e-06  !QXO21CE354
+  sdo_weight_a(113) = 1.00e+00 sdo_sigma_a(113) =  1.00000e-05 sdo_data_a(113) = -2.02951e-04  !QXO21CE381
+  sdo_weight_a(114) = 1.00e+00 sdo_sigma_a(114) =  1.00000e-05 sdo_data_a(114) = -1.93367e-04  !QXO21CE382
+  sdo_weight_a(115) = 1.00e+00 sdo_sigma_a(115) =  1.00000e-05 sdo_data_a(115) = -1.97988e-04  !QXO21CE383
+  sdo_weight_a(116) = 1.00e+00 sdo_sigma_a(116) =  1.00000e-05 sdo_data_a(116) = -1.91886e-04  !QXO21CE384
+  sdo_weight_a(117) = 1.00e+00 sdo_sigma_a(117) =  1.00000e-05 sdo_data_a(117) = -2.74866e-04  !QXO21CE391
+  sdo_weight_a(118) = 1.00e+00 sdo_sigma_a(118) =  1.00000e-05 sdo_data_a(118) = -2.67668e-04  !QXO21CE392
+  sdo_weight_a(119) = 1.00e+00 sdo_sigma_a(119) =  1.00000e-05 sdo_data_a(119) = -2.60456e-04  !QXO21CE393
+  sdo_weight_a(120) = 1.00e-20 sdo_sigma_a(120) =  1.00000e-05 sdo_data_a(120) =  4.16408e-05  !QXO21CE394
+  sdo_weight_a(121) = 1.00e+00 sdo_sigma_a(121) =  1.00000e-05 sdo_data_a(121) = -1.10772e-05  !QXO21CE471
+  sdo_weight_a(122) = 1.00e+00 sdo_sigma_a(122) =  1.00000e-05 sdo_data_a(122) = -9.01537e-06  !QXO21CE472
+  sdo_weight_a(123) = 1.00e+00 sdo_sigma_a(123) =  1.00000e-05 sdo_data_a(123) = -2.64463e-05  !QXO21CE473
+  sdo_weight_a(124) = 1.00e+00 sdo_sigma_a(124) =  1.00000e-05 sdo_data_a(124) = -2.34232e-05  !QXO21CE474
+  sdo_weight_a(125) = 1.00e+00 sdo_sigma_a(125) =  1.00000e-05 sdo_data_a(125) = -3.29947e-04  !QXO30CE231
+  sdo_weight_a(126) = 1.00e+00 sdo_sigma_a(126) =  1.00000e-05 sdo_data_a(126) = -3.33497e-04  !QXO30CE232
+  sdo_weight_a(127) = 1.00e+00 sdo_sigma_a(127) =  1.00000e-05 sdo_data_a(127) = -2.83846e-04  !QXO30CE233
+  sdo_weight_a(128) = 1.00e+00 sdo_sigma_a(128) =  1.00000e-05 sdo_data_a(128) = -2.84252e-04  !QXO30CE234
+  sdo_weight_a(129) = 1.00e+00 sdo_sigma_a(129) =  1.00000e-05 sdo_data_a(129) = -2.73591e-04  !QXO30CE241
+  sdo_weight_a(130) = 1.00e+00 sdo_sigma_a(130) =  1.00000e-05 sdo_data_a(130) = -2.75111e-04  !QXO30CE242
+  sdo_weight_a(131) = 1.00e+00 sdo_sigma_a(131) =  1.00000e-05 sdo_data_a(131) = -2.35615e-04  !QXO30CE243
+  sdo_weight_a(132) = 1.00e+00 sdo_sigma_a(132) =  1.00000e-05 sdo_data_a(132) = -2.31795e-04  !QXO30CE244
+  sdo_weight_a(133) = 1.00e+00 sdo_sigma_a(133) =  1.00000e-05 sdo_data_a(133) = -3.39435e-04  !QXO30CE291
+  sdo_weight_a(134) = 1.00e+00 sdo_sigma_a(134) =  1.00000e-05 sdo_data_a(134) = -3.43044e-04  !QXO30CE292
+  sdo_weight_a(135) = 1.00e+00 sdo_sigma_a(135) =  1.00000e-05 sdo_data_a(135) = -3.11654e-04  !QXO30CE293
+  sdo_weight_a(136) = 1.00e+00 sdo_sigma_a(136) =  1.00000e-05 sdo_data_a(136) = -3.12962e-04  !QXO30CE294
+  sdo_weight_a(137) = 1.00e+00 sdo_sigma_a(137) =  1.00000e-05 sdo_data_a(137) = -2.59839e-04  !QXO30CE311
+  sdo_weight_a(138) = 1.00e+00 sdo_sigma_a(138) =  1.00000e-05 sdo_data_a(138) = -2.64985e-04  !QXO30CE312
+  sdo_weight_a(139) = 1.00e+00 sdo_sigma_a(139) =  1.00000e-05 sdo_data_a(139) = -2.46099e-04  !QXO30CE313
+  sdo_weight_a(140) = 1.00e+00 sdo_sigma_a(140) =  1.00000e-05 sdo_data_a(140) = -2.51776e-04  !QXO30CE314
+  sdo_weight_a(141) = 1.00e+00 sdo_sigma_a(141) =  1.00000e-05 sdo_data_a(141) = -1.59181e-04  !QXO30CE321
+  sdo_weight_a(142) = 1.00e+00 sdo_sigma_a(142) =  1.00000e-05 sdo_data_a(142) = -1.70532e-04  !QXO30CE322
+  sdo_weight_a(143) = 1.00e+00 sdo_sigma_a(143) =  1.00000e-05 sdo_data_a(143) = -1.67495e-04  !QXO30CE323
+  sdo_weight_a(144) = 1.00e-20 sdo_sigma_a(144) =  1.00000e+20 sdo_data_a(144) =  7.50773e-05  !QXO30CE324
+  sdo_weight_a(145) = 1.00e+00 sdo_sigma_a(145) =  1.00000e-05 sdo_data_a(145) =  1.30755e-04  !QXO30CE351
+  sdo_weight_a(146) = 1.00e+00 sdo_sigma_a(146) =  1.00000e-05 sdo_data_a(146) =  1.37675e-04  !QXO30CE352
+  sdo_weight_a(147) = 1.00e+00 sdo_sigma_a(147) =  1.00000e-05 sdo_data_a(147) =  1.15503e-04  !QXO30CE353
+  sdo_weight_a(148) = 1.00e+00 sdo_sigma_a(148) =  1.00000e-05 sdo_data_a(148) =  1.17899e-04  !QXO30CE354
+  sdo_weight_a(149) = 1.00e+00 sdo_sigma_a(149) =  1.00000e-05 sdo_data_a(149) = -1.53871e-06  !QXO30CE361
+  sdo_weight_a(150) = 1.00e+00 sdo_sigma_a(150) =  1.00000e-05 sdo_data_a(150) =  3.41642e-06  !QXO30CE362
+  sdo_weight_a(151) = 1.00e+00 sdo_sigma_a(151) =  1.00000e-05 sdo_data_a(151) =  1.81175e-06  !QXO30CE363
+  sdo_weight_a(152) = 1.00e+00 sdo_sigma_a(152) =  1.00000e-05 sdo_data_a(152) =  1.18420e-06  !QXO30CE364
+  sdo_weight_a(153) = 1.00e+00 sdo_sigma_a(153) =  1.00000e-05 sdo_data_a(153) = -4.51550e-06  !QXO30CE371
+  sdo_weight_a(154) = 1.00e+00 sdo_sigma_a(154) =  1.00000e-05 sdo_data_a(154) = -3.59486e-06  !QXO30CE372
+  sdo_weight_a(155) = 1.00e+00 sdo_sigma_a(155) =  1.00000e-05 sdo_data_a(155) = -1.05014e-05  !QXO30CE373
+  sdo_weight_a(156) = 1.00e+00 sdo_sigma_a(156) =  1.00000e-05 sdo_data_a(156) = -8.14406e-06  !QXO30CE374
+  sdo_weight_a(157) = 1.00e+00 sdo_sigma_a(157) =  1.00000e-05 sdo_data_a(157) = -6.09659e-05  !QXO30CE381
+  sdo_weight_a(158) = 1.00e+00 sdo_sigma_a(158) =  1.00000e-05 sdo_data_a(158) = -5.95468e-05  !QXO30CE382
+  sdo_weight_a(159) = 1.00e+00 sdo_sigma_a(159) =  1.00000e-05 sdo_data_a(159) = -6.40288e-05  !QXO30CE383
+  sdo_weight_a(160) = 1.00e+00 sdo_sigma_a(160) =  1.00000e-05 sdo_data_a(160) = -6.25002e-05  !QXO30CE384
+  sdo_weight_a(161) = 1.00e+00 sdo_sigma_a(161) =  1.00000e-05 sdo_data_a(161) = -2.85840e-04  !QXO30CE391
+  sdo_weight_a(162) = 1.00e+00 sdo_sigma_a(162) =  1.00000e-05 sdo_data_a(162) = -2.88048e-04  !QXO30CE392
+  sdo_weight_a(163) = 1.00e+00 sdo_sigma_a(163) =  1.00000e-05 sdo_data_a(163) = -2.57476e-04  !QXO30CE393
+  sdo_weight_a(164) = 1.00e+00 sdo_sigma_a(164) =  1.00000e-05 sdo_data_a(164) = -2.58404e-04  !QXO30CE394
+  sdo_weight_a(165) = 1.00e+00 sdo_sigma_a(165) =  1.00000e-05 sdo_data_a(165) = -1.98104e-06  !QXO30CE431
+  sdo_weight_a(166) = 1.00e+00 sdo_sigma_a(166) =  1.00000e-05 sdo_data_a(166) =  2.24270e-06  !QXO30CE432
+  sdo_weight_a(167) = 1.00e+00 sdo_sigma_a(167) =  1.00000e-05 sdo_data_a(167) = -1.32313e-05  !QXO30CE433
+  sdo_weight_a(168) = 1.00e+00 sdo_sigma_a(168) =  1.00000e-05 sdo_data_a(168) = -1.62357e-05  !QXO30CE434
+  sdo_weight_a(169) = 1.00e+00 sdo_sigma_a(169) =  1.00000e-05 sdo_data_a(169) = -2.83269e-04  !QXO31CE113
+  sdo_weight_a(170) = 1.00e+00 sdo_sigma_a(170) =  1.00000e-05 sdo_data_a(170) = -2.83688e-04  !QXO31CE114
+  sdo_weight_a(171) = 1.00e+00 sdo_sigma_a(171) =  1.00000e-05 sdo_data_a(171) = -3.82979e-04  !QXO31CE123
+  sdo_weight_a(172) = 1.00e+00 sdo_sigma_a(172) =  1.00000e-05 sdo_data_a(172) = -3.84057e-04  !QXO31CE124
+  sdo_weight_a(173) = 1.00e+00 sdo_sigma_a(173) =  1.00000e-05 sdo_data_a(173) =  3.15728e-05  !QXO31CE133
+  sdo_weight_a(174) = 1.00e+00 sdo_sigma_a(174) =  1.00000e-05 sdo_data_a(174) =  3.46151e-05  !QXO31CE134
+  sdo_weight_a(175) = 1.00e+00 sdo_sigma_a(175) =  1.00000e-05 sdo_data_a(175) =  1.34056e-04  !QXO31CE143
+  sdo_weight_a(176) = 1.00e+00 sdo_sigma_a(176) =  1.00000e-05 sdo_data_a(176) =  1.34558e-04  !QXO31CE144
+  sdo_weight_a(177) = 1.00e+00 sdo_sigma_a(177) =  1.00000e-05 sdo_data_a(177) =  1.51481e-04  !QXO31CE153
+  sdo_weight_a(178) = 1.00e+00 sdo_sigma_a(178) =  1.00000e-05 sdo_data_a(178) =  1.56035e-04  !QXO31CE154
+  sdo_weight_a(179) = 1.00e+00 sdo_sigma_a(179) =  1.00000e-05 sdo_data_a(179) = -1.40725e-05  !QXO31CE163
+  sdo_weight_a(180) = 1.00e+00 sdo_sigma_a(180) =  1.00000e-05 sdo_data_a(180) = -1.44690e-05  !QXO31CE164
+  sdo_weight_a(181) = 1.00e+00 sdo_sigma_a(181) =  1.00000e-05 sdo_data_a(181) = -3.41400e-04  !QXO31CE173
+  sdo_weight_a(182) = 1.00e-20 sdo_sigma_a(182) =  1.00000e+20 sdo_data_a(182) = -5.47949e-06  !QXO31CE174
+  sdo_weight_a(183) = 1.00e+00 sdo_sigma_a(183) =  1.00000e-05 sdo_data_a(183) = -2.55780e-04  !QXO31CE183
+  sdo_weight_a(184) = 1.00e+00 sdo_sigma_a(184) =  1.00000e-05 sdo_data_a(184) = -2.52040e-04  !QXO31CE184
+  sdo_weight_a(185) = 1.00e-20 sdo_sigma_a(185) =  1.00000e+20 sdo_data_a(185) = -1.61416e-06  !QXO40CE231
+  sdo_weight_a(186) = 1.00e-20 sdo_sigma_a(186) =  1.00000e+20 sdo_data_a(186) = -2.89749e-06  !QXO40CE232
+  sdo_weight_a(187) = 1.00e+00 sdo_sigma_a(187) =  1.00000e-05 sdo_data_a(187) = -3.05535e-04  !QXO40CE233
+  sdo_weight_a(188) = 1.00e+00 sdo_sigma_a(188) =  1.00000e-05 sdo_data_a(188) = -3.02144e-04  !QXO40CE234
+  sdo_weight_a(189) = 1.00e-20 sdo_sigma_a(189) =  1.00000e+20 sdo_data_a(189) = -6.18378e-05  !QXO40CE241
+  sdo_weight_a(190) = 1.00e-20 sdo_sigma_a(190) =  1.00000e+20 sdo_data_a(190) = -6.40689e-05  !QXO40CE242
+  sdo_weight_a(191) = 1.00e+00 sdo_sigma_a(191) =  1.00000e-05 sdo_data_a(191) = -2.24328e-04  !QXO40CE243
+  sdo_weight_a(192) = 1.00e+00 sdo_sigma_a(192) =  1.00000e-05 sdo_data_a(192) = -2.24230e-04  !QXO40CE244
+  sdo_weight_a(193) = 1.00e-20 sdo_sigma_a(193) =  1.00000e+20 sdo_data_a(193) =  7.42350e-06  !QXO40CE291
+  sdo_weight_a(194) = 1.00e-20 sdo_sigma_a(194) =  1.00000e+20 sdo_data_a(194) =  8.14039e-06  !QXO40CE292
+  sdo_weight_a(195) = 1.00e+00 sdo_sigma_a(195) =  1.00000e-05 sdo_data_a(195) = -3.04724e-04  !QXO40CE293
+  sdo_weight_a(196) = 1.00e+00 sdo_sigma_a(196) =  1.00000e-05 sdo_data_a(196) = -3.04835e-04  !QXO40CE294
+  sdo_weight_a(197) = 1.00e-20 sdo_sigma_a(197) =  1.00000e+20 sdo_data_a(197) =  4.24296e-05  !QXO40CE311
+  sdo_weight_a(198) = 1.00e-20 sdo_sigma_a(198) =  1.00000e+20 sdo_data_a(198) =  4.39002e-05  !QXO40CE312
+  sdo_weight_a(199) = 1.00e+00 sdo_sigma_a(199) =  1.00000e-05 sdo_data_a(199) = -2.55341e-04  !QXO40CE313
+  sdo_weight_a(200) = 1.00e+00 sdo_sigma_a(200) =  1.00000e-05 sdo_data_a(200) = -2.62099e-04  !QXO40CE314
+  sdo_weight_a(201) = 1.00e+00 sdo_sigma_a(201) =  1.00000e-05 sdo_data_a(201) = -1.90855e-04  !QXO40CE321
+  sdo_weight_a(202) = 1.00e+00 sdo_sigma_a(202) =  1.00000e-05 sdo_data_a(202) = -2.03679e-04  !QXO40CE322
+  sdo_weight_a(203) = 1.00e+00 sdo_sigma_a(203) =  1.00000e-05 sdo_data_a(203) = -1.97761e-04  !QXO40CE323
+  sdo_weight_a(204) = 1.00e+00 sdo_sigma_a(204) =  1.00000e-05 sdo_data_a(204) = -2.00703e-04  !QXO40CE324
+  sdo_weight_a(205) = 1.00e-20 sdo_sigma_a(205) =  1.00000e+20 sdo_data_a(205) = -1.93830e-06  !QXO40CE351
+  sdo_weight_a(206) = 1.00e-20 sdo_sigma_a(206) =  1.00000e+20 sdo_data_a(206) = -1.59662e-06  !QXO40CE352
+  sdo_weight_a(207) = 1.00e+00 sdo_sigma_a(207) =  1.00000e-05 sdo_data_a(207) =  1.16506e-04  !QXO40CE353
+  sdo_weight_a(208) = 1.00e+00 sdo_sigma_a(208) =  1.00000e-05 sdo_data_a(208) =  1.19507e-04  !QXO40CE354
+  sdo_weight_a(209) = 1.00e-20 sdo_sigma_a(209) =  1.00000e+20 sdo_data_a(209) =  3.32501e-06  !QXO40CE361
+  sdo_weight_a(210) = 1.00e-20 sdo_sigma_a(210) =  1.00000e+20 sdo_data_a(210) =  2.20034e-06  !QXO40CE362
+  sdo_weight_a(211) = 1.00e+00 sdo_sigma_a(211) =  1.00000e-05 sdo_data_a(211) = -4.74857e-06  !QXO40CE363
+  sdo_weight_a(212) = 1.00e+00 sdo_sigma_a(212) =  1.00000e-05 sdo_data_a(212) = -3.68262e-06  !QXO40CE364
+  sdo_weight_a(213) = 1.00e-20 sdo_sigma_a(213) =  1.00000e+20 sdo_data_a(213) = -4.00804e-06  !QXO40CE371
+  sdo_weight_a(214) = 1.00e-20 sdo_sigma_a(214) =  1.00000e+20 sdo_data_a(214) = -3.96480e-06  !QXO40CE372
+  sdo_weight_a(215) = 1.00e+00 sdo_sigma_a(215) =  1.00000e-05 sdo_data_a(215) = -1.71663e-05  !QXO40CE373
+  sdo_weight_a(216) = 1.00e+00 sdo_sigma_a(216) =  1.00000e-05 sdo_data_a(216) = -1.46820e-05  !QXO40CE374
+  sdo_weight_a(217) = 1.00e-20 sdo_sigma_a(217) =  1.00000e+20 sdo_data_a(217) = -2.23610e-05  !QXO40CE381
+  sdo_weight_a(218) = 1.00e-20 sdo_sigma_a(218) =  1.00000e+20 sdo_data_a(218) = -2.27337e-05  !QXO40CE382
+  sdo_weight_a(219) = 1.00e+00 sdo_sigma_a(219) =  1.00000e-05 sdo_data_a(219) = -5.74128e-05  !QXO40CE383
+  sdo_weight_a(220) = 1.00e+00 sdo_sigma_a(220) =  1.00000e-05 sdo_data_a(220) = -5.38620e-05  !QXO40CE384
+  sdo_weight_a(221) = 1.00e-20 sdo_sigma_a(221) =  1.00000e+20 sdo_data_a(221) = -2.36882e-05  !QXO40CE391
+  sdo_weight_a(222) = 1.00e-20 sdo_sigma_a(222) =  1.00000e+20 sdo_data_a(222) = -2.24945e-05  !QXO40CE392
+  sdo_weight_a(223) = 1.00e+00 sdo_sigma_a(223) =  1.00000e-05 sdo_data_a(223) = -2.45262e-04  !QXO40CE393
+  sdo_weight_a(224) = 1.00e+00 sdo_sigma_a(224) =  1.00000e-05 sdo_data_a(224) = -2.46190e-04  !QXO40CE394
+  sdo_weight_a(225) = 1.00e-20 sdo_sigma_a(225) =  1.00000e+20 sdo_data_a(225) =  4.18572e-05  !QXO40CE431
+  sdo_weight_a(226) = 1.00e-20 sdo_sigma_a(226) =  1.00000e+20 sdo_data_a(226) =  5.09989e-05  !QXO40CE432
+  sdo_weight_a(227) = 1.00e+00 sdo_sigma_a(227) =  1.00000e-05 sdo_data_a(227) = -2.27793e-05  !QXO40CE433
+  sdo_weight_a(228) = 1.00e+00 sdo_sigma_a(228) =  1.00000e-05 sdo_data_a(228) = -2.50622e-05  !QXO40CE434
+  sdo_weight_a(229) = 1.00e+00 sdo_sigma_a(229) =  5.00000e-05 sdo_data_a(229) = -1.11185e-03  !QXR11CE001
+  sdo_weight_a(230) = 1.00e+00 sdo_sigma_a(230) =  5.00000e-05 sdo_data_a(230) = -8.81411e-04  !QXR11CE002
+  sdo_weight_a(231) = 1.00e+00 sdo_sigma_a(231) =  5.00000e-05 sdo_data_a(231) = -1.15446e-03  !QXR11CE003
+  sdo_weight_a(232) = 1.00e+00 sdo_sigma_a(232) =  5.00000e-05 sdo_data_a(232) = -1.15377e-03  !QXR11CE004
+  sdo_weight_a(233) = 1.00e+00 sdo_sigma_a(233) =  5.00000e-05 sdo_data_a(233) = -1.11155e-03  !QXR40CE003
+  sdo_weight_a(234) = 1.00e+00 sdo_sigma_a(234) =  5.00000e-05 sdo_data_a(234) = -1.11163e-03  !QXR40CE004
+
+! XICS
+ sxrch_dot_filename = 'w7x_xics.dot'
+  sdo_weight_a(235) = 1.00e-20 sdo_sigma_a(235) =  1.39085e-01 sdo_data_a(235) =  1.23494e+00  !xics_emiss 27
+  sdo_weight_a(236) = 1.00e-20 sdo_sigma_a(236) =  1.99935e-01 sdo_data_a(236) =  3.81238e+00  !xics_emiss 82
+  sdo_weight_a(237) = 1.00e-20 sdo_sigma_a(237) =  2.79161e-01 sdo_data_a(237) =  7.89824e+00  !xics_emiss 137
+  sdo_weight_a(238) = 1.00e-20 sdo_sigma_a(238) =  3.88408e-01 sdo_data_a(238) =  1.55999e+01  !xics_emiss 192
+  sdo_weight_a(239) = 1.00e-20 sdo_sigma_a(239) =  5.31357e-01 sdo_data_a(239) =  2.89575e+01  !xics_emiss 247
+  sdo_weight_a(240) = 1.00e-20 sdo_sigma_a(240) =  7.09449e-01 sdo_data_a(240) =  4.99434e+01  !xics_emiss 302
+  sdo_weight_a(241) = 1.00e-20 sdo_sigma_a(241) =  9.04269e-01 sdo_data_a(241) =  7.93648e+01  !xics_emiss 357
+  sdo_weight_a(242) = 1.00e-20 sdo_sigma_a(242) =  1.08979e+00 sdo_data_a(242) =  1.15970e+02  !xics_emiss 412
+  sdo_weight_a(243) = 1.00e-20 sdo_sigma_a(243) =  1.34356e+00 sdo_data_a(243) =  1.49635e+02  !xics_emiss 467
+  sdo_weight_a(244) = 1.00e-20 sdo_sigma_a(244) =  1.38920e+00 sdo_data_a(244) =  1.80397e+02  !xics_emiss 522
+  sdo_weight_a(245) = 1.00e-20 sdo_sigma_a(245) =  1.53191e+00 sdo_data_a(245) =  2.15579e+02  !xics_emiss 577
+  sdo_weight_a(246) = 1.00e-20 sdo_sigma_a(246) =  1.60145e+00 sdo_data_a(246) =  2.28896e+02  !xics_emiss 632
+  sdo_weight_a(247) = 1.00e-20 sdo_sigma_a(247) =  1.58801e+00 sdo_data_a(247) =  2.28991e+02  !xics_emiss 687
+  sdo_weight_a(248) = 1.00e-20 sdo_sigma_a(248) =  1.56628e+00 sdo_data_a(248) =  2.26648e+02  !xics_emiss 742
+  sdo_weight_a(249) = 1.00e-20 sdo_sigma_a(249) =  1.58017e+00 sdo_data_a(249) =  2.20114e+02  !xics_emiss 797
+  sdo_weight_a(250) = 1.00e-20 sdo_sigma_a(250) =  1.55489e+00 sdo_data_a(250) =  2.10615e+02  !xics_emiss 852
+  sdo_weight_a(251) = 1.00e-20 sdo_sigma_a(251) =  1.51422e+00 sdo_data_a(251) =  1.98126e+02  !xics_emiss 907
+  sdo_weight_a(252) = 1.00e-20 sdo_sigma_a(252) =  1.60121e+00 sdo_data_a(252) =  1.91200e+02  !xics_emiss 962
+  sdo_weight_a(253) = 1.00e-20 sdo_sigma_a(253) =  1.47668e+00 sdo_data_a(253) =  1.90043e+02  !xics_emiss 1017
+  sdo_weight_a(254) = 1.00e-20 sdo_sigma_a(254) =  1.46052e+00 sdo_data_a(254) =  1.86253e+02  !xics_emiss 1072
+  sdo_weight_a(255) = 1.00e-20 sdo_sigma_a(255) =  1.40432e+00 sdo_data_a(255) =  1.72829e+02  !xics_emiss 1127
+  sdo_weight_a(256) = 1.00e-20 sdo_sigma_a(256) =  1.35718e+00 sdo_data_a(256) =  1.60197e+02  !xics_emiss 1182
+  sdo_weight_a(257) = 1.00e-20 sdo_sigma_a(257) =  1.34093e+00 sdo_data_a(257) =  1.55378e+02  !xics_emiss 1237
+  sdo_weight_a(258) = 1.00e-20 sdo_sigma_a(258) =  1.27010e+00 sdo_data_a(258) =  1.43888e+02  !xics_emiss 1292
+  sdo_weight_a(259) = 1.00e-20 sdo_sigma_a(259) =  1.20140e+00 sdo_data_a(259) =  1.34255e+02  !xics_emiss 1347
+  sdo_weight_a(260) = 1.00e-20 sdo_sigma_a(260) =  1.15336e+00 sdo_data_a(260) =  1.20342e+02  !xics_emiss 1402
+  sdo_weight_a(261) = 1.00e-20 sdo_sigma_a(261) =  1.22239e+02 sdo_data_a(261) =  2.59673e+02  !xics_ti 27
+  sdo_weight_a(262) = 1.00e-20 sdo_sigma_a(262) =  1.94284e+02 sdo_data_a(262) =  9.91339e+02  !xics_ti 82
+  sdo_weight_a(263) = 1.00e-20 sdo_sigma_a(263) =  3.67959e+02 sdo_data_a(263) =  3.29673e+03  !xics_ti 137
+  sdo_weight_a(264) = 1.00e-20 sdo_sigma_a(264) =  6.67359e+02 sdo_data_a(264) =  9.30823e+03  !xics_ti 192
+  sdo_weight_a(265) = 1.00e-20 sdo_sigma_a(265) =  1.08742e+03 sdo_data_a(265) =  2.12064e+04  !xics_ti 247
+  sdo_weight_a(266) = 1.00e-20 sdo_sigma_a(266) =  1.65807e+03 sdo_data_a(266) =  4.33192e+04  !xics_ti 302
+  sdo_weight_a(267) = 1.00e-20 sdo_sigma_a(267) =  2.33311e+03 sdo_data_a(267) =  7.70877e+04  !xics_ti 357
+  sdo_weight_a(268) = 1.00e-20 sdo_sigma_a(268) =  3.04916e+03 sdo_data_a(268) =  1.24711e+05  !xics_ti 412
+  sdo_weight_a(269) = 1.00e-20 sdo_sigma_a(269) =  3.95819e+03 sdo_data_a(269) =  1.71721e+05  !xics_ti 467
+  sdo_weight_a(270) = 1.00e-20 sdo_sigma_a(270) =  4.18653e+03 sdo_data_a(270) =  2.11689e+05  !xics_ti 522
+  sdo_weight_a(271) = 1.00e-20 sdo_sigma_a(271) =  4.88034e+03 sdo_data_a(271) =  2.70217e+05  !xics_ti 577
+  sdo_weight_a(272) = 1.00e-20 sdo_sigma_a(272) =  5.28266e+03 sdo_data_a(272) =  2.97909e+05  !xics_ti 632
+  sdo_weight_a(273) = 1.00e-20 sdo_sigma_a(273) =  5.24775e+03 sdo_data_a(273) =  3.00404e+05  !xics_ti 687
+  sdo_weight_a(274) = 1.00e-20 sdo_sigma_a(274) =  5.10908e+03 sdo_data_a(274) =  3.01552e+05  !xics_ti 742
+  sdo_weight_a(275) = 1.00e-20 sdo_sigma_a(275) =  5.21698e+03 sdo_data_a(275) =  2.95580e+05  !xics_ti 797
+  sdo_weight_a(276) = 1.00e-20 sdo_sigma_a(276) =  5.34595e+03 sdo_data_a(276) =  2.90710e+05  !xics_ti 852
+  sdo_weight_a(277) = 1.00e-20 sdo_sigma_a(277) =  5.31482e+03 sdo_data_a(277) =  2.79069e+05  !xics_ti 907
+  sdo_weight_a(278) = 1.00e-20 sdo_sigma_a(278) =  5.56000e+03 sdo_data_a(278) =  2.68087e+05  !xics_ti 962
+  sdo_weight_a(279) = 1.00e-20 sdo_sigma_a(279) =  5.13694e+03 sdo_data_a(279) =  2.69181e+05  !xics_ti 1017
+  sdo_weight_a(280) = 1.00e-20 sdo_sigma_a(280) =  4.93037e+03 sdo_data_a(280) =  2.54222e+05  !xics_ti 1072
+  sdo_weight_a(281) = 1.00e-20 sdo_sigma_a(281) =  4.80946e+03 sdo_data_a(281) =  2.40987e+05  !xics_ti 1127
+  sdo_weight_a(282) = 1.00e-20 sdo_sigma_a(282) =  4.55421e+03 sdo_data_a(282) =  2.19140e+05  !xics_ti 1182
+  sdo_weight_a(283) = 1.00e-20 sdo_sigma_a(283) =  4.67127e+03 sdo_data_a(283) =  2.24074e+05  !xics_ti 1237
+  sdo_weight_a(284) = 1.00e-20 sdo_sigma_a(284) =  4.15426e+03 sdo_data_a(284) =  1.91382e+05  !xics_ti 1292
+  sdo_weight_a(285) = 1.00e-20 sdo_sigma_a(285) =  3.78639e+03 sdo_data_a(285) =  1.73181e+05  !xics_ti 1347
+  sdo_weight_a(286) = 1.00e-20 sdo_sigma_a(286) =  3.70628e+03 sdo_data_a(286) =  1.60295e+05  !xics_ti 1402
+
+! Interferometer
+  ipch_dot_filename = '/u/jsch/v3fit_runs/DIAGNOSTICS/INTEFEROMETER/V2/w7x_interferometer_v0.dot'
+  sdo_weight_a(287) = 1.00e-20 sdo_sigma_a(287) =  5.00023e+18 sdo_data_a(287) =  4.10180e+19  !INTERFEROMETER1
+
+! Thomson Scattering
+  thscte_dot_filename = '/u/jsch/v3fit_runs/DIAGNOSTICS/THOMSON/V3/w7x_thomson_v0.dot'
+  sdo_weight_a(288) = 1.00e-20 sdo_sigma_a(288) =  5.22941e+02 sdo_data_a(288) =  4.43190e+03  !TE1
+  sdo_weight_a(289) = 1.00e-20 sdo_sigma_a(289) =  3.29107e+02 sdo_data_a(289) =  4.11293e+03  !TE2
+  sdo_weight_a(290) = 1.00e-20 sdo_sigma_a(290) =  5.01494e+02 sdo_data_a(290) =  4.83375e+03  !TE3
+  sdo_weight_a(291) = 1.00e-20 sdo_sigma_a(291) =  3.00522e+02 sdo_data_a(291) =  3.94930e+03  !TE4
+  sdo_weight_a(292) = 1.00e-20 sdo_sigma_a(292) =  4.12631e+02 sdo_data_a(292) =  3.74340e+03  !TE5
+  sdo_weight_a(293) = 1.00e-20 sdo_sigma_a(293) =  2.73538e+02 sdo_data_a(293) =  2.60349e+03  !TE6
+  sdo_weight_a(294) = 1.00e-20 sdo_sigma_a(294) =  1.32333e+02 sdo_data_a(294) =  2.25838e+03  !TE7
+  sdo_weight_a(295) = 1.00e-20 sdo_sigma_a(295) =  1.18230e+02 sdo_data_a(295) =  1.75929e+03  !TE8
+  sdo_weight_a(296) = 1.00e-20 sdo_sigma_a(296) =  1.34616e+02 sdo_data_a(296) =  1.46301e+03  !TE9
+  sdo_weight_a(297) = 1.00e-20 sdo_sigma_a(297) =  1.09879e+02 sdo_data_a(297) =  1.11791e+03  !TE10
+  sdo_weight_a(298) = 1.00e-20 sdo_sigma_a(298) =  8.44827e+01 sdo_data_a(298) =  9.37404e+02  !TE11
+  sdo_weight_a(299) = 1.00e-20 sdo_sigma_a(299) =  7.86071e+01 sdo_data_a(299) =  5.92125e+02  !TE12
+  sdo_weight_a(300) = 1.00e-20 sdo_sigma_a(300) =  2.53020e+01 sdo_data_a(300) =  3.14892e+02  !TE13
+  sdo_weight_a(301) = 1.00e-20 sdo_sigma_a(301) =  9.76811e+00 sdo_data_a(301) =  7.77150e+01  !TE14
+  sdo_weight_a(302) = 1.00e-20 sdo_sigma_a(302) =  5.39921e+00 sdo_data_a(302) =  2.16798e+01  !TE15
+  sdo_weight_a(303) = 1.00e-20 sdo_sigma_a(303) =  4.01282e+03 sdo_data_a(303) =  1.26692e+03  !TE16
+  sdo_weight_a(304) = 1.00e-20 sdo_sigma_a(304) =  3.07252e+02 sdo_data_a(304) =  4.60492e+03  !TE1004
+  sdo_weight_a(305) = 1.00e-20 sdo_sigma_a(305) =  2.17661e+02 sdo_data_a(305) =  4.09276e+03  !TE1005
+  sdo_weight_a(306) = 1.00e-20 sdo_sigma_a(306) =  4.63846e+01 sdo_data_a(306) =  1.25668e+02  !TE1006
+  sdo_weight_a(307) = 1.00e-20 sdo_sigma_a(307) =  2.79728e+02 sdo_data_a(307) =  3.33972e+03  !TE1016
+  sdo_weight_a(308) = 1.00e-20 sdo_sigma_a(308) =  1.75174e+02 sdo_data_a(308) =  2.69780e+03  !TE1017
+  sdo_weight_a(309) = 1.00e-20 sdo_sigma_a(309) =  5.22252e+03 sdo_data_a(309) =  1.15650e+04  !TE1018
+  sdo_weight_a(310) = 1.00e-20 sdo_sigma_a(310) =  1.98216e+02 sdo_data_a(310) =  1.93764e+03  !TE1025
+  sdo_weight_a(311) = 1.00e-20 sdo_sigma_a(311) =  2.56124e+02 sdo_data_a(311) =  2.26701e+03  !TE1026
+  sdo_weight_a(312) = 1.00e-20 sdo_sigma_a(312) =  3.11114e+02 sdo_data_a(312) =  1.36443e+03  !TE1035
+  sdo_weight_a(313) = 1.00e-20 sdo_sigma_a(313) =  2.40588e+02 sdo_data_a(313) =  1.18000e+03  !TE1036
+  sdo_weight_a(314) = 1.00e-20 sdo_sigma_a(314) =  9.08321e+01 sdo_data_a(314) =  7.95281e+02  !TE1041
+  sdo_weight_a(315) = 1.00e-20 sdo_sigma_a(315) =  1.07232e+02 sdo_data_a(315) =  8.61498e+02  !TE1042
+  sdo_weight_a(316) = 1.00e-20 sdo_sigma_a(316) =  1.77968e+02 sdo_data_a(316) =  1.04111e+03  !TE1045
+  sdo_weight_a(317) = 1.00e-20 sdo_sigma_a(317) =  1.11871e+02 sdo_data_a(317) =  6.26296e+02  !TE1046
+  sdo_weight_a(318) = 1.00e-20 sdo_sigma_a(318) =  7.03723e+01 sdo_data_a(318) =  5.07922e+02  !TE1053
+  sdo_weight_a(319) = 1.00e-20 sdo_sigma_a(319) =  7.97095e+01 sdo_data_a(319) =  5.85852e+02  !TE1054
+  sdo_weight_a(320) = 1.00e-20 sdo_sigma_a(320) =  1.16183e+02 sdo_data_a(320) =  3.42144e+02  !TE1057
+  sdo_weight_a(321) = 1.00e-20 sdo_sigma_a(321) =  6.02217e+01 sdo_data_a(321) =  2.06345e+02  !TE1058
+  sdo_weight_a(322) = 1.00e-20 sdo_sigma_a(322) =  8.64054e+01 sdo_data_a(322) =  2.96220e+02  !TE1063
+  sdo_weight_a(323) = 1.00e-20 sdo_sigma_a(323) =  9.96039e+01 sdo_data_a(323) =  1.36470e+02  !TE1064
+  sdo_weight_a(324) = 1.00e-20 sdo_sigma_a(324) =  2.78321e+01 sdo_data_a(324) =  1.22357e+02  !TE1069
+  sdo_weight_a(325) = 0.00e+00 sdo_sigma_a(325) =  1.00000e+25 sdo_data_a(325) =  0.00000e+00  !TE1070
+  sdo_weight_a(326) = 1.00e-20 sdo_sigma_a(326) =  1.23683e+04 sdo_data_a(326) =  2.32289e+03  !TE1073
+  sdo_weight_a(327) = 1.00e-20 sdo_sigma_a(327) =  3.17060e+04 sdo_data_a(327) =  2.50000e+04  !TE1074
+  sdo_weight_a(328) = 1.00e-20 sdo_sigma_a(328) =  4.19430e+04 sdo_data_a(328) =  2.49999e+04  !TE1075
+  sdo_weight_a(329) = 1.00e-20 sdo_sigma_a(329) =  2.62144e+03 sdo_data_a(329) =  2.33799e+03  !TE1076
+  sdo_weight_a(330) = 1.00e-20 sdo_sigma_a(330) =  1.13680e+18 sdo_data_a(330) =  2.07518e+19  !NE1
+  sdo_weight_a(331) = 1.00e-20 sdo_sigma_a(331) =  9.02640e+17 sdo_data_a(331) =  1.94606e+19  !NE2
+  sdo_weight_a(332) = 1.00e-20 sdo_sigma_a(332) =  1.02479e+18 sdo_data_a(332) =  2.05477e+19  !NE3
+  sdo_weight_a(333) = 1.00e-20 sdo_sigma_a(333) =  8.90294e+17 sdo_data_a(333) =  2.55601e+19  !NE4
+  sdo_weight_a(334) = 1.00e-20 sdo_sigma_a(334) =  1.41770e+18 sdo_data_a(334) =  2.75471e+19  !NE5
+  sdo_weight_a(335) = 1.00e-20 sdo_sigma_a(335) =  1.46701e+18 sdo_data_a(335) =  2.66786e+19  !NE6
+  sdo_weight_a(336) = 1.00e-20 sdo_sigma_a(336) =  1.04517e+18 sdo_data_a(336) =  2.73992e+19  !NE7
+  sdo_weight_a(337) = 1.00e-20 sdo_sigma_a(337) =  9.34439e+17 sdo_data_a(337) =  2.43956e+19  !NE8
+  sdo_weight_a(338) = 1.00e-20 sdo_sigma_a(338) =  1.10703e+18 sdo_data_a(338) =  2.46867e+19  !NE9
+  sdo_weight_a(339) = 1.00e-20 sdo_sigma_a(339) =  1.08921e+18 sdo_data_a(339) =  2.26364e+19  !NE10
+  sdo_weight_a(340) = 1.00e-20 sdo_sigma_a(340) =  1.53118e+18 sdo_data_a(340) =  2.60022e+19  !NE11
+  sdo_weight_a(341) = 1.00e-20 sdo_sigma_a(341) =  1.40280e+18 sdo_data_a(341) =  1.84651e+19  !NE12
+  sdo_weight_a(342) = 1.00e-20 sdo_sigma_a(342) =  1.12776e+18 sdo_data_a(342) =  2.06071e+19  !NE13
+  sdo_weight_a(343) = 1.00e-20 sdo_sigma_a(343) =  1.43700e+18 sdo_data_a(343) =  1.68924e+19  !NE14
+  sdo_weight_a(344) = 1.00e-20 sdo_sigma_a(344) =  1.17595e+18 sdo_data_a(344) =  7.98469e+18  !NE15
+  sdo_weight_a(345) = 1.00e-20 sdo_sigma_a(345) =  7.31704e+17 sdo_data_a(345) =  6.72514e+17  !NE16
+  sdo_weight_a(346) = 1.00e-20 sdo_sigma_a(346) =  1.25108e+18 sdo_data_a(346) =  3.43583e+19  !NE1004
+  sdo_weight_a(347) = 1.00e-20 sdo_sigma_a(347) =  1.12268e+18 sdo_data_a(347) =  3.24078e+19  !NE1005
+  sdo_weight_a(348) = 1.00e-20 sdo_sigma_a(348) =  1.55602e+18 sdo_data_a(348) =  7.50393e+18  !NE1006
+  sdo_weight_a(349) = 1.00e-20 sdo_sigma_a(349) =  1.12960e+18 sdo_data_a(349) =  2.55980e+19  !NE1016
+  sdo_weight_a(350) = 1.00e-20 sdo_sigma_a(350) =  1.19758e+18 sdo_data_a(350) =  2.76791e+19  !NE1017
+  sdo_weight_a(351) = 1.00e-20 sdo_sigma_a(351) =  6.43261e+17 sdo_data_a(351) =  3.91413e+18  !NE1018
+  sdo_weight_a(352) = 1.00e-20 sdo_sigma_a(352) =  1.48343e+18 sdo_data_a(352) =  2.58620e+19  !NE1025
+  sdo_weight_a(353) = 1.00e-20 sdo_sigma_a(353) =  1.45876e+18 sdo_data_a(353) =  2.39800e+19  !NE1026
+  sdo_weight_a(354) = 1.00e-20 sdo_sigma_a(354) =  2.54031e+18 sdo_data_a(354) =  2.16446e+19  !NE1035
+  sdo_weight_a(355) = 1.00e-20 sdo_sigma_a(355) =  2.79398e+18 sdo_data_a(355) =  2.28382e+19  !NE1036
+  sdo_weight_a(356) = 1.00e-20 sdo_sigma_a(356) =  2.37632e+18 sdo_data_a(356) =  2.43703e+19  !NE1041
+  sdo_weight_a(357) = 1.00e-20 sdo_sigma_a(357) =  2.31227e+18 sdo_data_a(357) =  2.44046e+19  !NE1042
+  sdo_weight_a(358) = 1.00e-20 sdo_sigma_a(358) =  2.32952e+18 sdo_data_a(358) =  1.98839e+19  !NE1045
+  sdo_weight_a(359) = 1.00e-20 sdo_sigma_a(359) =  2.33463e+18 sdo_data_a(359) =  1.77686e+19  !NE1046
+  sdo_weight_a(360) = 1.00e-20 sdo_sigma_a(360) =  1.10935e+18 sdo_data_a(360) =  1.06350e+19  !NE1053
+  sdo_weight_a(361) = 1.00e-20 sdo_sigma_a(361) =  2.02810e+18 sdo_data_a(361) =  1.82424e+19  !NE1054
+  sdo_weight_a(362) = 1.00e-20 sdo_sigma_a(362) =  2.02810e+18 sdo_data_a(362) =  1.82424e+19  !NE1057
+  sdo_weight_a(363) = 1.00e-20 sdo_sigma_a(363) =  2.77954e+18 sdo_data_a(363) =  1.82971e+19  !NE1058
+  sdo_weight_a(364) = 1.00e-20 sdo_sigma_a(364) =  2.13971e+18 sdo_data_a(364) =  1.37628e+19  !NE1063
+  sdo_weight_a(365) = 1.00e-20 sdo_sigma_a(365) =  4.43080e+18 sdo_data_a(365) =  1.29221e+19  !NE1064
+  sdo_weight_a(366) = 1.00e-20 sdo_sigma_a(366) =  3.16775e+18 sdo_data_a(366) =  1.47121e+19  !NE1069
+  sdo_weight_a(367) = 0.00e+00 sdo_sigma_a(367) =  1.00000e+25 sdo_data_a(367) =  0.00000e+00  !NE1070
+  sdo_weight_a(368) = 1.00e-20 sdo_sigma_a(368) =  1.00004e+18 sdo_data_a(368) =  6.20997e+17  !NE1073
+  sdo_weight_a(369) = 1.00e-20 sdo_sigma_a(369) =  1.14552e+18 sdo_data_a(369) =  2.34050e+18  !NE1074
+  sdo_weight_a(370) = 1.00e-20 sdo_sigma_a(370) =  2.33101e+18 sdo_data_a(370) =  3.09820e+18  !NE1075
+  sdo_weight_a(371) = 1.00e-20 sdo_sigma_a(371) =  2.02869e+18 sdo_data_a(371) =  3.63098e+18  !NE1076
+
+! Limiter Grid
+  limiter_grid_file = '/u/jsch/v3fit_runs/LGRIDS/V2/W7X_divertor.dot.nc'
+  lif_on_edge(1) = T
+  sdo_data_a(372) = 0.0
+  sdo_sigma_a(372) = 0.005
+  sdo_weight_a(372) = 10.0
+
+  
+  ! Iota at the edge
+  n_prior = 1
+  prior_name(1) = 'edge_iota'
+  prior_param_name(1) = 'iotaf'
+  prior_indices(1,1) = 401
+  prior_units(1) = ''
+  sdo_data_a(373) = 0.97
+  sdo_sigma_a(373) = 0.001
+  sdo_weight_a(373) = 1.0e-20
+/
