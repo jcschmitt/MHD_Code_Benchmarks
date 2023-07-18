@@ -1,0 +1,10 @@
+Coil Files
+
+mgrid/xgrid/makegrid command summary
+
+
+VMEC files
+jsch@cobra02:~/v3fit_runs/w7x_v3fit_fingerprints/XPs/XP_20180927.16/fingerprint> cp NS_51/input.vmec_8x8 ~/W7X_Files/input.vmec_lowdef
+jsch@cobra02:~/v3fit_runs/w7x_v3fit_fingerprints/XPs/XP_20180927.16/fingerprint> cp NS_401/APHI1/input.vmec ~/W7X_Files/input.vmec_highdef
+
+

@@ -1,0 +1,10 @@
+w7x_Kisslinger_ideal_v1_nfp_5_stellsym_nzeta_80
+R
+y
+4.30
+6.40
+-1.20
+1.20
+80
+211
+241
