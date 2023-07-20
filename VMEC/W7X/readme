@@ -5,7 +5,7 @@ Coils:  This folder contains a coils definition for the W7-X coil set, and two s
 
 EIM_Configuration/NS_401_APHI_v1  This folder contains a zero-pressure, zero-current free-boundary VMEC input file. The LCFS of the solutions 'just touches' the divertor structure in W7-X. The input file is set up to use an optimized APHI array and 401 surfaces. This is for the 'so-called-standard' EIM configuration.  The extcur coil current array includes 'correction currents' that account for changes in the rotational transform due to E-M forces on the field coils. 
 
-FOM003_Configuration: This folder constains two free-boundary VMEC input files for the FOM003 configuration. One file is for a 'low-resolution', NS=51, MPOL=8,NTOR=8 solution.  The other is for a 'high-resolution',  NS=401, MPOL=12, NTOR=12, with a modified APHI array.
+FOM003_Configuration: This folder contains two free-boundary VMEC input files for the FOM003 configuration. One file is for a 'low-resolution', NS=51, MPOL=8,NTOR=8 solution.  The other is for a 'high-resolution',  NS=401, MPOL=12, NTOR=12, with a modified APHI array.
 
 
 
